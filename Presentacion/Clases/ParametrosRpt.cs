@@ -7,7 +7,9 @@ namespace Presentacion.Clases
 {
     public class ParametrosRpt
     {
- 
+
+        public string nombre_secretatio { get; set; }
+
         public string juicio_referido_titulo_credito { get; set; }
         public string numero_titulo_credito { get; set; }
         public string identificacion_clientes { get; set; }
