@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptMatrizJuicios : ReportClass {
+    public class rptTituloFomento : ReportClass {
         
-        public rptMatrizJuicios() {
+        public rptTituloFomento() {
         }
         
         public override string ResourceName {
             get {
-                return "rptMatrizJuicios.rpt";
+                return "rptTituloFomento.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptMatrizJuicios.rpt";
+                return "Presentacion.Reporte.rptTituloFomento.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Presentacion.Reporte {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptMatrizJuicios : Component, ICachedReport {
+    public class CachedrptTituloFomento : Component, ICachedReport {
         
-        public CachedrptMatrizJuicios() {
+        public CachedrptTituloFomento() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptMatrizJuicios rpt = new rptMatrizJuicios();
+            rptTituloFomento rpt = new rptTituloFomento();
             rpt.Site = this.Site;
             return rpt;
         }
