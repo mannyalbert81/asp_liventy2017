@@ -466,6 +466,12 @@
       <DependentUpon>rptMatrizJuicios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte\rptProvidenciaLevantamiento2.cs">
+      <DependentUpon>rptProvidenciaLevantamiento2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reporte\rptProvidenciaLevantamiento.cs">
       <DependentUpon>rptProvidenciaLevantamiento.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -544,6 +550,10 @@
     <EmbeddedResource Include="Reporte\rptMatrizJuicios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptMatrizJuicios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaLevantamiento2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
