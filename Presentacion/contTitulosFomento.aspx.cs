@@ -29,18 +29,19 @@ namespace Presentacion
             
             string columnas = "numero_titulo_credito_fomento, identificacion_cliente, nombre_abg_secretario";
             string tablas = " titulo_credito_fomento";
-            string where = " encontrado = 'FALSE' AND  nombre_abg_secretario = '"+ parametros.nombre_secretatio + "'   ";
-            //string order_by = "juicios.numero_juicios";
-
-            String where_to = "";
-
+            string where = " encontrado = 'FALSE'";
             
+           
+            String where_to = "";
+            if (!String.IsNullOrEmpty(parametros.nombre_secretatio))
+            {
+                where_to += " AND titulo_credito_fomento.nombre_abg_secretario='" + parametros.nombre_secretatio + "'";
+            }
+           
+
             where = where + where_to;
 
-            //para pruebas
-            //try { where += " AND clientes.identificacion_clientes LIKE '" + Request.QueryString["p"].ToString()+"%'" ; } catch (Exception) { parametros.id_provincias = 0; }
-           
-            //termina pruebas
+          
 
             Datas.dtTitulosFomento dtInforme = new Datas.dtTitulosFomento();
 
