@@ -335,6 +335,8 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columnnombre_ciudad;
             
+            private global::System.Data.DataColumn columncomprarado_fomento;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -594,6 +596,14 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn comprarado_fomentoColumn {
+                get {
+                    return this.columncomprarado_fomento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -657,7 +667,8 @@ namespace Presentacion.Datas {
                         int id_secretario, 
                         string secretarios, 
                         int id_ciudad, 
-                        string nombre_ciudad) {
+                        string nombre_ciudad, 
+                        bool comprarado_fomento) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         orden,
@@ -687,7 +698,8 @@ namespace Presentacion.Datas {
                         id_secretario,
                         secretarios,
                         id_ciudad,
-                        nombre_ciudad};
+                        nombre_ciudad,
+                        comprarado_fomento};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -738,6 +750,7 @@ namespace Presentacion.Datas {
                 this.columnsecretarios = base.Columns["secretarios"];
                 this.columnid_ciudad = base.Columns["id_ciudad"];
                 this.columnnombre_ciudad = base.Columns["nombre_ciudad"];
+                this.columncomprarado_fomento = base.Columns["comprarado_fomento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -799,6 +812,8 @@ namespace Presentacion.Datas {
                 base.Columns.Add(this.columnid_ciudad);
                 this.columnnombre_ciudad = new global::System.Data.DataColumn("nombre_ciudad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_ciudad);
+                this.columncomprarado_fomento = new global::System.Data.DataColumn("comprarado_fomento", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncomprarado_fomento);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1398,6 +1413,22 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool comprarado_fomento {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDataTable1.comprarado_fomentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'comprarado_fomento\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.comprarado_fomentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsordenNull() {
                 return this.IsNull(this.tableDataTable1.ordenColumn);
             }
@@ -1730,6 +1761,18 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setnombre_ciudadNull() {
                 this[this.tableDataTable1.nombre_ciudadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscomprarado_fomentoNull() {
+                return this.IsNull(this.tableDataTable1.comprarado_fomentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcomprarado_fomentoNull() {
+                this[this.tableDataTable1.comprarado_fomentoColumn] = global::System.Convert.DBNull;
             }
         }
         
