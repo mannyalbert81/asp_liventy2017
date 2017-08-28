@@ -281,7 +281,7 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columntotal;
             
-            private global::System.Data.DataColumn columnmodificado;
+            private global::System.Data.DataColumn columnimpulsores;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -326,9 +326,9 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn modificadoColumn {
+            public global::System.Data.DataColumn impulsoresColumn {
                 get {
-                    return this.columnmodificado;
+                    return this.columnimpulsores;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(int total, System.DateTime modificado) {
+            public DataTable1Row AddDataTable1Row(int total, string impulsores) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         total,
-                        modificado};
+                        impulsores};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -397,7 +397,7 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columntotal = base.Columns["total"];
-                this.columnmodificado = base.Columns["modificado"];
+                this.columnimpulsores = base.Columns["impulsores"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -405,8 +405,8 @@ namespace Presentacion.Datas {
             private void InitClass() {
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
-                this.columnmodificado = new global::System.Data.DataColumn("modificado", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmodificado);
+                this.columnimpulsores = new global::System.Data.DataColumn("impulsores", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimpulsores);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -565,17 +565,17 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime modificado {
+            public string impulsores {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.modificadoColumn]));
+                        return ((string)(this[this.tableDataTable1.impulsoresColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'modificado\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'impulsores\' de la tabla \'DataTable1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.modificadoColumn] = value;
+                    this[this.tableDataTable1.impulsoresColumn] = value;
                 }
             }
             
@@ -593,14 +593,14 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsmodificadoNull() {
-                return this.IsNull(this.tableDataTable1.modificadoColumn);
+            public bool IsimpulsoresNull() {
+                return this.IsNull(this.tableDataTable1.impulsoresColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetmodificadoNull() {
-                this[this.tableDataTable1.modificadoColumn] = global::System.Convert.DBNull;
+            public void SetimpulsoresNull() {
+                this[this.tableDataTable1.impulsoresColumn] = global::System.Convert.DBNull;
             }
         }
         

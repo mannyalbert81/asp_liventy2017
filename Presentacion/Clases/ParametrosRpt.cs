@@ -36,6 +36,9 @@ namespace Presentacion.Clases
         public DateTime hora_providencias { get; set; }
         public string razon_providencias { get; set; }
         public string comprarado_fomento { get; set;  }
+        public string fecha_desde { get; set; }
+        public string fecha_hasta { get; set; }
+
 
     }
 }

@@ -9,8 +9,8 @@ namespace Datos
 {
     class MetodosDatos
     {
-        //public static string cadenaConexion = @"Server=186.4.241.148;Port=5432;User Id=postgres;Password=.Romina.2012;Database=coactiva_liventy;Preload Reader = true;";
-        public static string cadenaConexion = @"Server=localhost;Port=5432;User Id=postgres;Password=.Romina.2012;Database=coactiva_liventy;Preload Reader = true;";
+       // public static string cadenaConexion = @"Server=186.4.203.42;Port=5432;User Id=postgres;Password=.Romina.2012;Database=coactiva_liventy;Preload Reader = true;";
+        public static string cadenaConexion = @"Server=localhost;Port=5432;User Id=postgres;Password=.Romina.2012;Database=ad_coactiva_liventy_2408;Preload Reader = true;";
 
         //186.65.24.196
         //hjh
@@ -40,7 +40,6 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             return comando;
         }
-
         public static int EjecutarComando(NpgsqlCommand comando)
         {
             try

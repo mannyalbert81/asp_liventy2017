@@ -281,7 +281,7 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columntotal;
             
-            private global::System.Data.DataColumn columnfecha_ultima_providencia;
+            private global::System.Data.DataColumn columnimpulsores;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -326,9 +326,9 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_ultima_providenciaColumn {
+            public global::System.Data.DataColumn impulsoresColumn {
                 get {
-                    return this.columnfecha_ultima_providencia;
+                    return this.columnimpulsores;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(int total, System.DateTime fecha_ultima_providencia) {
+            public DataTable1Row AddDataTable1Row(int total, string impulsores) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         total,
-                        fecha_ultima_providencia};
+                        impulsores};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -397,7 +397,7 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columntotal = base.Columns["total"];
-                this.columnfecha_ultima_providencia = base.Columns["fecha_ultima_providencia"];
+                this.columnimpulsores = base.Columns["impulsores"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -405,8 +405,8 @@ namespace Presentacion.Datas {
             private void InitClass() {
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
-                this.columnfecha_ultima_providencia = new global::System.Data.DataColumn("fecha_ultima_providencia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_ultima_providencia);
+                this.columnimpulsores = new global::System.Data.DataColumn("impulsores", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimpulsores);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -565,18 +565,17 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_ultima_providencia {
+            public string impulsores {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.fecha_ultima_providenciaColumn]));
+                        return ((string)(this[this.tableDataTable1.impulsoresColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ultima_providencia\' de la tabla \'DataTable1\' es DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'impulsores\' de la tabla \'DataTable1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.fecha_ultima_providenciaColumn] = value;
+                    this[this.tableDataTable1.impulsoresColumn] = value;
                 }
             }
             
@@ -594,14 +593,14 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_ultima_providenciaNull() {
-                return this.IsNull(this.tableDataTable1.fecha_ultima_providenciaColumn);
+            public bool IsimpulsoresNull() {
+                return this.IsNull(this.tableDataTable1.impulsoresColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_ultima_providenciaNull() {
-                this[this.tableDataTable1.fecha_ultima_providenciaColumn] = global::System.Convert.DBNull;
+            public void SetimpulsoresNull() {
+                this[this.tableDataTable1.impulsoresColumn] = global::System.Convert.DBNull;
             }
         }
         

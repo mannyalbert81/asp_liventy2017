@@ -29,8 +29,9 @@ namespace Presentacion
             parametros.numero_titulo_credito = Request.QueryString["numero_titulo_credito"];
             parametros.identificacion_clientes = Request.QueryString["identificacion_clientes"];
             parametros.comprarado_fomento = Request.QueryString["comprarado_fomento"];
+            parametros.fecha_desde = Request.QueryString["fecha_desde"];
+            parametros.fecha_hasta = Request.QueryString["fecha_hasta"];
 
-            
 
             try { parametros.id_provincias = Convert.ToInt32(Request.QueryString["id_provincias"]); } catch (Exception) { parametros.id_provincias = 0; }
             try { parametros.id_abogado = Convert.ToInt32(Request.QueryString["id_abogado"]); } catch (Exception) { parametros.id_abogado = 0; }
@@ -44,7 +45,7 @@ namespace Presentacion
 
             string columnas = "juicios.orden, juicios.regional, juicios.juicio_referido_titulo_credito, juicios.year_juicios, clientes.id_clientes, clientes.identificacion_clientes, clientes.nombres_clientes, clientes.nombre_garantes, provincias.id_provincias, provincias.nombre_provincias, titulo_credito.id_titulo_credito, titulo_credito.numero_titulo_credito, juicios.fecha_emision_juicios, juicios.cuantia_inicial, juicios.riesgo_actual, estados_procesales_juicios.id_estados_procesales_juicios, estados_procesales_juicios.nombre_estados_procesales_juicios, juicios.descripcion_estado_procesal, juicios.fecha_ultima_providencia, juicios.estrategia_seguir, juicios.observaciones, asignacion_secretarios_view.id_abogado, asignacion_secretarios_view.impulsores, asignacion_secretarios_view.id_secretario, asignacion_secretarios_view.secretarios, ciudad.id_ciudad, ciudad.nombre_ciudad, juicios.comprarado_fomento";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
-            string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND titulo_credito.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
+            string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
             //string order_by = "juicios.numero_juicios";
 
             String where_to = "";
@@ -78,7 +79,10 @@ namespace Presentacion
                 {
                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
                 }
-
+                if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                {
+                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                }
 
 
             }
@@ -113,8 +117,11 @@ namespace Presentacion
                 {
                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
                 }
+                if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                {
+                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                }
 
-                
 
             }
             if (parametros.id_rol == 23)
@@ -148,13 +155,14 @@ namespace Presentacion
                 {
                     where_to += " AND juicios.comprarado_fomento = '" + parametros.comprarado_fomento + "'";
                 }
-
-
+                if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                {
+                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                }
             }
 
 
             where = where + where_to;
-
             //para pruebas
             //try { where += " AND clientes.identificacion_clientes LIKE '" + Request.QueryString["p"].ToString()+"%'" ; } catch (Exception) { parametros.id_provincias = 0; }
            
