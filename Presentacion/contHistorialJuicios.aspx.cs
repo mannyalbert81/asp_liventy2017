@@ -28,7 +28,7 @@ namespace Presentacion
 
             parametros.juicio_referido_titulo_credito = Request.QueryString["juicio_referido_titulo_credito"];
             parametros.numero_titulo_credito = Request.QueryString["numero_titulo_credito"];
-            parametros.comprarado_fomento = Request.QueryString["comprarado_fomento"];
+           
             parametros.fecha_desde = Request.QueryString["fecha_desde"];
             parametros.fecha_hasta = Request.QueryString["fecha_hasta"];
 
@@ -221,10 +221,7 @@ namespace Presentacion
                 {
                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
                 }
-                if (!String.IsNullOrEmpty(parametros.comprarado_fomento))
-                {
-                    where_to += " AND juicios.comprarado_fomento = '" + parametros.comprarado_fomento + "'";
-                }
+              
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";

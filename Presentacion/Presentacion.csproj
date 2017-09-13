@@ -141,11 +141,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="conMatrizRestructuracion.aspx" />
     <Content Include="contGraficas.aspx" />
     <Content Include="contGraficasActualizacionMatrizJuicios.aspx" />
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
     <Content Include="contHistorialJuicios.aspx" />
+    <Content Include="contMatrizRestructuracion.aspx" />
     <Content Include="contTitulosFomento.aspx" />
     <Content Include="contOficios.aspx" />
     <Content Include="contProvidenciaLevantamiento.aspx" />
@@ -371,13 +371,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ParametrosRpt.cs" />
-    <Compile Include="conMatrizRestructuracion.aspx.cs">
-      <DependentUpon>conMatrizRestructuracion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="conMatrizRestructuracion.aspx.designer.cs">
-      <DependentUpon>conMatrizRestructuracion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="contGraficas.aspx.cs">
       <DependentUpon>contGraficas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -405,6 +398,13 @@
     </Compile>
     <Compile Include="contHistorialJuicios.aspx.designer.cs">
       <DependentUpon>contHistorialJuicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contMatrizRestructuracion.aspx.cs">
+      <DependentUpon>contMatrizRestructuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contMatrizRestructuracion.aspx.designer.cs">
+      <DependentUpon>contMatrizRestructuracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="contTitulosFomento.aspx.cs">
       <DependentUpon>contTitulosFomento.aspx</DependentUpon>

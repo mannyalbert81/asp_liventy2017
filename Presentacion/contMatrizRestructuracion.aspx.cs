@@ -1,4 +1,5 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
+﻿
+using CrystalDecisions.CrystalReports.Engine;
 using Negocio;
 using Npgsql;
 using Presentacion.Clases;
@@ -10,25 +11,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 namespace Presentacion
 {
-    public partial class conMatrizRestructuracion : System.Web.UI.Page
+    public partial class contMatrizRestructuracion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             ReportDocument crystalReport = new ReportDocument();
             DataTable dt_Reporte1 = new DataTable();
             ParametrosRpt parametros = new ParametrosRpt();
 
 
-            //var dsBalanceComprobacionDetallado = new Datas.dsBalanceComprobacionDetallado();
-
-
             parametros.juicio_referido_titulo_credito = Request.QueryString["juicio_referido_titulo_credito"];
             parametros.numero_titulo_credito = Request.QueryString["numero_titulo_credito"];
-            parametros.comprarado_fomento = Request.QueryString["comprarado_fomento"];
-            parametros.fecha_desde = Request.QueryString["fecha_desde"];
+             parametros.fecha_desde = Request.QueryString["fecha_desde"];
             parametros.fecha_hasta = Request.QueryString["fecha_hasta"];
 
 
@@ -52,18 +49,18 @@ namespace Presentacion
 
 
 
-            string columnas =     "titulo_credito.numero_titulo_credito,"+ 
-                                  "clientes.nombres_clientes,"+ 
-                                  "provincias.nombre_provincias,"+ 
-                                  "juicios_restructuracion.fecha_providencia_restructuracion,"+ 
-                                  "asignacion_secretarios_view.secretarios,"+ 
-                                  "asignacion_secretarios_view.impulsores,"+ 
-                                  "tipo_restructuracion.nombre_tipo_restructuracion,"+ 
-                                  "juicios.juicio_referido_titulo_credito,"+ 
-                                  "juicios_restructuracion.levantamiento_medida,"+ 
+            string columnas = "titulo_credito.numero_titulo_credito," +
+                                  "clientes.nombres_clientes," +
+                                  "provincias.nombre_provincias," +
+                                  "juicios_restructuracion.fecha_providencia_restructuracion," +
+                                  "asignacion_secretarios_view.secretarios," +
+                                  "asignacion_secretarios_view.impulsores," +
+                                  "tipo_restructuracion.nombre_tipo_restructuracion," +
+                                  "juicios.juicio_referido_titulo_credito," +
+                                  "juicios_restructuracion.levantamiento_medida," +
                                   "juicios_restructuracion.archivado_restructuracion";
-            string tablas = "  public.titulo_credito, public.juicios, public.clientes, public.juicios_restructuracion, public.provincias, public.asignacion_secretarios_view, public.tipo_restructuracion";
-            string where = "titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND clientes.id_clientes = titulo_credito.id_clientes AND juicios_restructuracion.id_juicios = juicios.id_juicios AND provincias.id_provincias = clientes.id_provincias AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND tipo_restructuracion.id_tipo_restructuracion = juicios_restructuracion.id_tipo_restructuracion";
+            string tablas = "  public.titulo_credito, public.juicios, public.clientes, public.juicios_restructuracion, public.provincias, public.asignacion_secretarios_view, public.tipo_restructuracion, public.estados_procesales_juicios, public.ciudad";
+            string where = "asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND clientes.id_clientes = titulo_credito.id_clientes AND juicios_restructuracion.id_juicios = juicios.id_juicios AND provincias.id_provincias = clientes.id_provincias AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND tipo_restructuracion.id_tipo_restructuracion = juicios_restructuracion.id_tipo_restructuracion";
 
             String where_to = "";
             if (parametros.id_rol == 3)
@@ -125,7 +122,7 @@ namespace Presentacion
                 }
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
-                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                    where_to += " AND  DATE(juicios_restructuracion.fecha_providencia_restructuracion) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
                 }
 
 
@@ -193,7 +190,7 @@ namespace Presentacion
 
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
-                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                    where_to += " AND  DATE(juicios_restructuracion.fecha_providencia_restructuracion) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
                 }
 
 
@@ -225,13 +222,10 @@ namespace Presentacion
                 {
                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
                 }
-                if (!String.IsNullOrEmpty(parametros.comprarado_fomento))
-                {
-                    where_to += " AND juicios.comprarado_fomento = '" + parametros.comprarado_fomento + "'";
-                }
+               
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
-                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                    where_to += " AND  DATE(juicios_restructuracion.fecha_providencia_restructuracion) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
                 }
 
                 if (parametros.id_estados_procesales_juicios > 0)
@@ -255,14 +249,11 @@ namespace Presentacion
             CrystalReportViewer1.ReportSource = ObjRep;
             CrystalReportViewer1.DataBind();
 
-
-
-
         }
+
         protected void CrystalReportViewer1_Init(object sender, EventArgs e)
         {
 
         }
     }
-
 }
