@@ -73,10 +73,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
       <Private>True</Private>
@@ -133,6 +141,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="conMatrizRestructuracion.aspx" />
     <Content Include="contGraficas.aspx" />
     <Content Include="contGraficasActualizacionMatrizJuicios.aspx" />
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
@@ -204,7 +213,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="packages.config" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="app\entrega.nfc.apk" />
@@ -281,6 +289,17 @@
     <Content Include="Datas\dtOficios.xsc">
       <DependentUpon>dtOficios.xsd</DependentUpon>
     </Content>
+    <Content Include="Datas\dtMatrizRestructuracion.xsc">
+      <DependentUpon>dtMatrizRestructuracion.xsd</DependentUpon>
+    </Content>
+    <None Include="Datas\dtMatrizRestructuracion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtMatrizRestructuracion.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datas\dtMatrizRestructuracion.xss">
+      <DependentUpon>dtMatrizRestructuracion.xsd</DependentUpon>
+    </Content>
     <None Include="Datas\dtOficios.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -319,6 +338,7 @@
     <Content Include="Datas\dtTitulosFomento.xss">
       <DependentUpon>dtTitulosFomento.xsd</DependentUpon>
     </Content>
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\censoclientes.pubxml" />
     <None Include="Properties\PublishProfiles\contabilidad2016.pubxml" />
     <None Include="Properties\PublishProfiles\controlentrega.pubxml" />
@@ -351,6 +371,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ParametrosRpt.cs" />
+    <Compile Include="conMatrizRestructuracion.aspx.cs">
+      <DependentUpon>conMatrizRestructuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="conMatrizRestructuracion.aspx.designer.cs">
+      <DependentUpon>conMatrizRestructuracion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contGraficas.aspx.cs">
       <DependentUpon>contGraficas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +485,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtMatrizJuicios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datas\dtMatrizRestructuracion.cs">
+      <DependentUpon>dtMatrizRestructuracion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datas\dtMatrizRestructuracion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtMatrizRestructuracion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datas\dtOficios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -507,6 +542,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptJuiciosEstadisticas.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptMatrizRestructuracion.cs">
+      <DependentUpon>rptMatrizRestructuracion.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reporte\rptMatrizJuicios.cs">
       <AutoGen>True</AutoGen>
@@ -606,6 +647,10 @@
     <EmbeddedResource Include="Reporte\rptJuiciosEstadisticas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptJuiciosEstadisticas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptMatrizRestructuracion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMatrizRestructuracion.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptMatrizJuicios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
