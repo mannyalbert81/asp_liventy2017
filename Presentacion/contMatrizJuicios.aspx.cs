@@ -27,10 +27,20 @@ namespace Presentacion
             
             parametros.juicio_referido_titulo_credito = Request.QueryString["juicio_referido_titulo_credito"];
             parametros.numero_titulo_credito = Request.QueryString["numero_titulo_credito"];
-            parametros.identificacion_clientes = Request.QueryString["identificacion_clientes"];
             parametros.comprarado_fomento = Request.QueryString["comprarado_fomento"];
             parametros.fecha_desde = Request.QueryString["fecha_desde"];
             parametros.fecha_hasta = Request.QueryString["fecha_hasta"];
+
+
+            parametros.identificacion_clientes = Request.QueryString["identificacion_clientes"];
+            parametros.identificacion_clientes_1 = Request.QueryString["identificacion_clientes_1"];
+            parametros.identificacion_clientes_2 = Request.QueryString["identificacion_clientes_2"];
+            parametros.identificacion_clientes_3 = Request.QueryString["identificacion_clientes_3"];
+
+            parametros.identificacion_garantes = Request.QueryString["identificacion_garantes"];
+            parametros.identificacion_garantes_1 = Request.QueryString["identificacion_garantes_1"];
+            parametros.identificacion_garantes_2 = Request.QueryString["identificacion_garantes_2"];
+            parametros.identificacion_garantes_3 = Request.QueryString["identificacion_garantes_3"];
 
 
             try { parametros.id_provincias = Convert.ToInt32(Request.QueryString["id_provincias"]); } catch (Exception) { parametros.id_provincias = 0; }
@@ -79,6 +89,35 @@ namespace Presentacion
                 {
                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
                 }
+                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_1))
+                {
+                    where_to += " AND clientes.identificacion_clientes_1 = '" + parametros.identificacion_clientes_1 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_2))
+                {
+                    where_to += " AND clientes.identificacion_clientes_2 = '" + parametros.identificacion_clientes_2 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_3))
+                {
+                    where_to += " AND clientes.identificacion_clientes_3 = '" + parametros.identificacion_clientes_3 + "'";
+                }
+
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes))
+                {
+                    where_to += " AND clientes.identificacion_garantes = '" + parametros.identificacion_garantes + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_1))
+                {
+                    where_to += " AND clientes.identificacion_garantes_1 = '" + parametros.identificacion_garantes_1 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_2))
+                {
+                    where_to += " AND clientes.identificacion_garantes_2 = '" + parametros.identificacion_garantes_2 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_3))
+                {
+                    where_to += " AND clientes.identificacion_garantes_3 = '" + parametros.identificacion_garantes_3 + "'";
+                }
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
@@ -117,6 +156,36 @@ namespace Presentacion
                 {
                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
                 }
+                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_1))
+                {
+                    where_to += " AND clientes.identificacion_clientes_1 = '" + parametros.identificacion_clientes_1 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_2))
+                {
+                    where_to += " AND clientes.identificacion_clientes_2 = '" + parametros.identificacion_clientes_2 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_3))
+                {
+                    where_to += " AND clientes.identificacion_clientes_3 = '" + parametros.identificacion_clientes_3 + "'";
+                }
+
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes))
+                {
+                    where_to += " AND clientes.identificacion_garantes = '" + parametros.identificacion_garantes + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_1))
+                {
+                    where_to += " AND clientes.identificacion_garantes_1 = '" + parametros.identificacion_garantes_1 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_2))
+                {
+                    where_to += " AND clientes.identificacion_garantes_2 = '" + parametros.identificacion_garantes_2 + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_3))
+                {
+                    where_to += " AND clientes.identificacion_garantes_3 = '" + parametros.identificacion_garantes_3 + "'";
+                }
+
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
@@ -158,6 +227,11 @@ namespace Presentacion
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                }
+
+                if (parametros.id_estados_procesales_juicios > 0)
+                {
+                    where_to += " AND estados_procesales_juicios.id_estados_procesales_juicios=" + parametros.id_estados_procesales_juicios + "";
                 }
             }
 

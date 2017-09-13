@@ -32,12 +32,21 @@ namespace Presentacion
             string _id_abogado = "";
             string _juicio_referido_titulo_credito = "";
             string _numero_titulo_credito = "";
-            string _identificacion_clientes = "";
+            
             string _id_estados_procesales_juicios = "";
             string _id_provincias = "";
             string _id_secretario = "";
 
-           
+            string _identificacion_clientes = "";
+            string _identificacion_clientes_1 = "";
+            string _identificacion_clientes_2 = "";
+            string _identificacion_clientes_3 = "";
+
+            string _identificacion_garantes = "";
+            string _identificacion_garantes_1 = "";
+            string _identificacion_garantes_2 = "";
+            string _identificacion_garantes_3 = "";
+
 
             string _razon_providencias = "0";
 
@@ -51,6 +60,15 @@ namespace Presentacion
             string where6 = "";
             string where7 = "";
             string where8 = "";
+
+            string where9 = "";
+            string where10 = "";
+            string where11 = "";
+            string where12 = "";
+            string where13 = "";
+            string where14 = "";
+            string where15 = "";
+            string where16 = "";
 
 
             if (!String.IsNullOrEmpty(Request.QueryString["razon_providencias"]))
@@ -98,6 +116,63 @@ namespace Presentacion
                 where4 = "  AND clientes.identificacion_clientes = '" + _identificacion_clientes + "'       ";
 
             }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_clientes_1"]))
+            {
+                _identificacion_clientes_1 = Request.QueryString["identificacion_clientes_1"];
+
+                where9 = "  AND clientes.identificacion_clientes_1 = '" + _identificacion_clientes_1 + "'       ";
+
+            }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_clientes_2"]))
+            {
+                _identificacion_clientes_2 = Request.QueryString["identificacion_clientes_2"];
+
+                where10 = "  AND clientes.identificacion_clientes_2 = '" + _identificacion_clientes_2 + "'       ";
+
+            }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_clientes_3"]))
+            {
+                _identificacion_clientes_3 = Request.QueryString["identificacion_clientes_3"];
+
+                where11 = "  AND clientes.identificacion_clientes_3 = '" + _identificacion_clientes_3 + "'       ";
+
+            }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_garantes"]))
+            {
+                _identificacion_garantes = Request.QueryString["identificacion_garantes"];
+
+                where12 = "  AND clientes.identificacion_garantes = '" + _identificacion_garantes + "'       ";
+
+            }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_garantes_1"]))
+            {
+                _identificacion_garantes_1 = Request.QueryString["identificacion_garantes_1"];
+
+                where13 = "  AND clientes.identificacion_garantes_1 = '" + _identificacion_garantes_1 + "'       ";
+
+            }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_garantes_2"]))
+            {
+                _identificacion_garantes_2 = Request.QueryString["identificacion_garantes_2"];
+
+                where14 = "  AND clientes.identificacion_garantes_2 = '" + _identificacion_garantes_2 + "'       ";
+
+            }
+
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_garantes_3"]))
+            {
+                _identificacion_garantes_3 = Request.QueryString["identificacion_garantes_3"];
+
+                where15 = "  AND clientes.identificacion_garantes_3 = '" + _identificacion_garantes_3 + "'       ";
+
+            }
+
 
             if (!String.IsNullOrEmpty(Request.QueryString["id_estados_procesales_juicios"]))
             {
@@ -155,6 +230,13 @@ namespace Presentacion
 
 
             }
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_desde"]))
+            {
+                string fecha_desde = Request.QueryString["fecha_desde"];
+                string fecha_hasta = Request.QueryString["fecha_hasta"];
+
+                where16 += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + fecha_desde + "' AND '" + fecha_hasta + "'";
+            }
 
 
 
@@ -184,7 +266,7 @@ namespace Presentacion
             //where = where + " AND juicios.id_juicios = 22310";
             //termina pruebas
             String where_to = "";
-            where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8;
+            where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8 + where9 + where10 + where11 + where12 + where13 + where14 + where15 + where16;
             
             string _nombre_documento = "PS"+_id_juicios + _id_abogado + _juicio_referido_titulo_credito + _numero_titulo_credito + _identificacion_clientes + _id_estados_procesales_juicios;
             //where = where + where_to;

@@ -136,6 +136,7 @@
     <Content Include="contGraficas.aspx" />
     <Content Include="contGraficasActualizacionMatrizJuicios.aspx" />
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
+    <Content Include="contHistorialJuicios.aspx" />
     <Content Include="contTitulosFomento.aspx" />
     <Content Include="contOficios.aspx" />
     <Content Include="contProvidenciaLevantamiento.aspx" />
@@ -250,6 +251,17 @@
     <Content Include="Datas\dtMatrizJuiciosN.xsc">
       <DependentUpon>dtMatrizJuiciosN.xsd</DependentUpon>
     </Content>
+    <Content Include="Datas\dtHistorialJuicios.xsc">
+      <DependentUpon>dtHistorialJuicios.xsd</DependentUpon>
+    </Content>
+    <None Include="Datas\dtHistorialJuicios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtHistorialJuicios.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datas\dtHistorialJuicios.xss">
+      <DependentUpon>dtHistorialJuicios.xsd</DependentUpon>
+    </Content>
     <None Include="Datas\dtMatrizJuiciosN.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dtMatrizJuiciosN.Designer.cs</LastGenOutput>
@@ -360,6 +372,13 @@
     <Compile Include="contGraficasProvidenciasMatrizJuicios.aspx.designer.cs">
       <DependentUpon>contGraficasProvidenciasMatrizJuicios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="contHistorialJuicios.aspx.cs">
+      <DependentUpon>contHistorialJuicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contHistorialJuicios.aspx.designer.cs">
+      <DependentUpon>contHistorialJuicios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contTitulosFomento.aspx.cs">
       <DependentUpon>contTitulosFomento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -423,6 +442,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtGraficasProvidencias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datas\dtHistorialJuicios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtHistorialJuicios.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datas\dtMatrizJuiciosN.Designer.cs">
       <DependentUpon>dtMatrizJuiciosN.xsd</DependentUpon>
@@ -489,6 +513,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptMatrizJuicios.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptHistorialMatrizJuicios.cs">
+      <DependentUpon>rptHistorialMatrizJuicios.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reporte\rptProvidenciaLevantamiento2.cs">
       <DependentUpon>rptProvidenciaLevantamiento2.rpt</DependentUpon>
@@ -580,6 +610,10 @@
     <EmbeddedResource Include="Reporte\rptMatrizJuicios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptMatrizJuicios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptHistorialMatrizJuicios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHistorialMatrizJuicios.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

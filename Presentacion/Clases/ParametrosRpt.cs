@@ -13,6 +13,16 @@ namespace Presentacion.Clases
         public string juicio_referido_titulo_credito { get; set; }
         public string numero_titulo_credito { get; set; }
         public string identificacion_clientes { get; set; }
+        public string identificacion_clientes_1 { get; set; }
+        public string identificacion_clientes_2 { get; set; }
+        public string identificacion_clientes_3 { get; set; }
+
+        public string identificacion_garantes { get; set; }
+        public string identificacion_garantes_1 { get; set; }
+        public string identificacion_garantes_2 { get; set; }
+        public string identificacion_garantes_3 { get; set; }
+
+
         public int id_provincias { get; set; }
         public int id_abogado { get; set; }
         public int id_estados_procesales_juicios { get; set; }
