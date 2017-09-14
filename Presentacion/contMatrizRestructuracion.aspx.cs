@@ -28,6 +28,8 @@ namespace Presentacion
              parametros.fecha_desde = Request.QueryString["fecha_desde"];
             parametros.fecha_hasta = Request.QueryString["fecha_hasta"];
 
+            parametros.levantamiento_medida = Request.QueryString["levantamiento_medida"];
+            parametros.archivado_restructuracion = Request.QueryString["archivado_restructuracion"];
 
             parametros.identificacion_clientes = Request.QueryString["identificacion_clientes"];
             parametros.identificacion_clientes_1 = Request.QueryString["identificacion_clientes_1"];
@@ -46,6 +48,7 @@ namespace Presentacion
             try { parametros.id_secretario = Convert.ToInt32(Request.QueryString["id_secretario"]); } catch (Exception) { parametros.id_secretario = 0; }
             try { parametros.id_ciudad = Convert.ToInt32(Request.QueryString["id_ciudad"]); } catch (Exception) { parametros.id_ciudad = 0; }
             try { parametros.id_rol = Convert.ToInt32(Request.QueryString["id_rol"]); } catch (Exception) { parametros.id_rol = 0; }
+            try { parametros.id_tipo_restructuracion = Convert.ToInt32(Request.QueryString["id_tipo_restructuracion"]); } catch (Exception) { parametros.id_tipo_restructuracion = 0; }
 
 
 
@@ -232,6 +235,22 @@ namespace Presentacion
                 {
                     where_to += " AND estados_procesales_juicios.id_estados_procesales_juicios=" + parametros.id_estados_procesales_juicios + "";
                 }
+
+
+                if (parametros.id_tipo_restructuracion > 0)
+                {
+                    where_to += " AND tipo_restructuracion.id_tipo_restructuracion=" + parametros.id_tipo_restructuracion + "";
+                }
+                if (!String.IsNullOrEmpty(parametros.levantamiento_medida))
+                {
+                    where_to += " AND juicios_restructuracion.levantamiento_medida = '" + parametros.levantamiento_medida + "'";
+                }
+                if (!String.IsNullOrEmpty(parametros.archivado_restructuracion))
+                {
+                    where_to += " AND juicios_restructuracion.archivado_restructuracion = '" + parametros.archivado_restructuracion + "'";
+                }
+
+
             }
 
             where = where + where_to;

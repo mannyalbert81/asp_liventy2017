@@ -49,6 +49,10 @@ namespace Presentacion.Clases
         public string fecha_desde { get; set; }
         public string fecha_hasta { get; set; }
 
+        public int id_tipo_restructuracion { get; set; }
+        public string levantamiento_medida { get; set; }
+        public string archivado_restructuracion { get; set; }
+
 
     }
 }
