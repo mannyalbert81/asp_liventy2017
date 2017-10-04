@@ -300,6 +300,8 @@ namespace Presentacion
                 if (Request.QueryString["numero_oficio"] != "")
                 {
                     _numeroOficio = Request.QueryString["numero_oficio"];
+                }else {
+                    _numeroOficio = "S/N";
                 }
 
             }
