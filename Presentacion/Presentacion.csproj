@@ -579,14 +579,20 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reporte\rptProvidenciaLevantamiento.cs">
+      <DependentUpon>rptProvidenciaLevantamiento.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reporte\rptProvidenciaLevantamiento2.cs">
       <DependentUpon>rptProvidenciaLevantamiento2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Reporte\rptProvidenciaLevantamiento.cs">
-      <DependentUpon>rptProvidenciaLevantamiento.rpt</DependentUpon>
+    <Compile Include="Reporte\rptProvidenciaLevantamiento1.cs">
+      <DependentUpon>rptProvidenciaLevantamiento1.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -678,13 +684,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHistorialMatrizJuicios.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaLevantamiento.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProvidenciaLevantamiento2.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento.rpt">
+    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptProvidenciaLevantamiento.cs</LastGenOutput>
+      <LastGenOutput>rptProvidenciaLevantamiento1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

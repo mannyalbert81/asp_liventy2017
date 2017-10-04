@@ -49,8 +49,6 @@ namespace Presentacion
             string where7 = "";
             string where8 = "";
 
-
-
             String where_to = "";
 
             parametros.juicio_referido_titulo_credito = Request.QueryString["juicio_referido_titulo_credito"];
@@ -73,6 +71,7 @@ namespace Presentacion
             try { parametros.id_secretario = Convert.ToInt32(Request.QueryString["id_secretario"]); } catch (Exception) { parametros.id_secretario = 0; }
             try { parametros.id_ciudad = Convert.ToInt32(Request.QueryString["id_ciudad"]); } catch (Exception) { parametros.id_ciudad = 0; }
             try { parametros.id_rol = Convert.ToInt32(Request.QueryString["id_rol"]); } catch (Exception) { parametros.id_rol = 0; }
+            try { parametros.id_juicios = Convert.ToInt32(Request.QueryString["id_juicios"]); } catch (Exception) { parametros.id_juicios = 0; }
 
             string columnas = "juicios.id_juicios, juicios.juicio_referido_titulo_credito, clientes.identificacion_clientes, " +
                              "clientes.nombres_clientes, clientes.identificacion_garantes, clientes.nombre_garantes, " +
@@ -111,6 +110,10 @@ namespace Presentacion
                 if (parametros.id_provincias > 0)
                 {
                     where_to += " AND provincias.id_provincias=" + parametros.id_provincias + "";
+                }
+                if (parametros.id_juicios > 0)
+                {
+                    where_to += " AND juicios.id_juicios=" + parametros.id_juicios + "";
                 }
                 if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
                 {
@@ -266,39 +269,47 @@ namespace Presentacion
             }
             
 
-            if (!String.IsNullOrEmpty(Request.QueryString["fecha_avoco"]))
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_levantamiento"]))
             {
-
-                string fecha = Request.QueryString["fecha_avoco"];
-                string hora = Request.QueryString["hora_avoco"];
+                string fecha = Request.QueryString["fecha_levantamiento"];
+                string hora = Request.QueryString["hora_levantamiento"];
 
                 if (fecha != "0")
                 {
                     _fecha_avoco = Convert.ToDateTime(fecha + " " + hora);
                     _fecha_avoco_razones = Convert.ToDateTime(fecha + " " + hora);
                 }
-
-
-
+                
             }
 
-            if (!String.IsNullOrEmpty(Request.QueryString["razon_avoco"]))
+            if (!String.IsNullOrEmpty(Request.QueryString["razon_levantamiento"]))
             {
 
 
-                if (Request.QueryString["razon_avoco"] != "0")
+                if (Request.QueryString["razon_levantamiento"] != "")
                 {
-                    _razon_avoco = Request.QueryString["razon_avoco"];
+                    _razon_avoco = Request.QueryString["razon_levantamiento"];
                 }
 
             }
-            
-           
+            string _numeroOficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio"] != "")
+                {
+                    _numeroOficio = Request.QueryString["numero_oficio"];
+                }
+
+            }
+
+
             //para pruebas
-            where = where + " AND juicios.id_juicios = 22310";
+            //where = where + " AND juicios.id_juicios = 22310";
             //termina pruebas
 
-            where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8;
+            where = where + where_to;
 
             string _nombre_documento = "PL" + _id_juicios + _id_abogado + _juicio_referido_titulo_credito + _numero_titulo_credito + _identificacion_clientes + _id_estados_procesales_juicios;
             //where = where + where_to;
@@ -343,7 +354,8 @@ namespace Presentacion
             Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
 
             NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
-            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where);
+            
             daInforme.Fill(dtInforme, "juicios");
             int reg = dtInforme.Tables[1].Rows.Count;
             Reporte.rptProvidenciaLevantamiento ObjRep = new Reporte.rptProvidenciaLevantamiento();
@@ -356,7 +368,9 @@ namespace Presentacion
             ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("f", ci));
             ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("f", ci));
             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
-            ObjRep.SetParameterValue("_citador", nombrecitador);
+            ObjRep.SetParameterValue("_citador", nombrecitador); 
+             ObjRep.SetParameterValue("_oficio", _numeroOficio);
+            ObjRep.SetParameterValue("_fecha_providencias", _fecha_avoco.ToString("f", ci));
             ObjRep.SetParameterValue("_leyendaCitador", leyendaCitador); 
             ObjRep.SetParameterValue("_dirigido", dirigidoA);
 
