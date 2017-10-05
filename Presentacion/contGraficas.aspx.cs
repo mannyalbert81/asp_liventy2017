@@ -13,6 +13,9 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
+using MessagingToolkit.QRCode.Codec;
+
 
 namespace Presentacion
 {
@@ -45,8 +48,9 @@ namespace Presentacion
             try{parametros.id_ciudad = Convert.ToInt32(Request.QueryString["id_ciudad"]); } catch (Exception) { parametros.id_ciudad = 0; }
             try{parametros.id_rol = Convert.ToInt32(Request.QueryString["id_rol"]); } catch (Exception) { parametros.id_rol = 0; }
 
+            string _numero_titulo_credito = "";
 
-            
+
             string columnas = "COUNT(id_juicios) as total, estados_procesales_juicios.id_estados_procesales_juicios, estados_procesales_juicios.nombre_estados_procesales_juicios";
             string tablas = " public.juicios, public.estados_procesales_juicios, public.clientes, public.provincias, public.titulo_credito, public.asignacion_secretarios_view, public.ciudad";
             string where = " estados_procesales_juicios.id_estados_procesales_juicios = juicios.id_estados_procesales_juicios AND clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad";
@@ -174,8 +178,48 @@ namespace Presentacion
           
             dt_Reporte1 = AccesoLogica.Select(columnas, tablas, where, grupo, id);
 
+            QRCodeEncoder enconder = new QRCodeEncoder();
+            Bitmap img;
+            System.Drawing.Image QR;
+            int registros = dt_Reporte1.Rows.Count;
+
+            if (registros>0) {
+
+                foreach (DataRow renglon in dt_Reporte1.Rows)
+                {
+                    _numero_titulo_credito = Convert.ToString(renglon["numero_titulo_credito"].ToString());
+
+                     img = enconder.Encode(_numero_titulo_credito);
+                     QR = (System.Drawing.Image)img;
+
+                }
+
+
+
+
+            }
+
            
-            dsGraficas.Tables.Add(dt_Reporte1);
+
+           /*
+
+            using (MemoryStream ms= new MemoryStream()){
+
+                QR.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] imageBytes = ms.ToArray();
+                string imgCtrl = "data:image/gif;base64," + Convert.ToBase64String(imageBytes);
+              
+            }
+
+
+    */
+
+
+
+
+
+
+                dsGraficas.Tables.Add(dt_Reporte1);
             
             
             string cadena = Server.MapPath("~/Reporte/rptGraficas.rpt");
