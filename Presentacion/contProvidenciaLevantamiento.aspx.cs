@@ -305,15 +305,28 @@ namespace Presentacion
                 }
 
             }
+            string _nombre_documento="";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_archivo_providencias"]))
+            {
 
 
-            //para pruebas
-            //where = where + " AND juicios.id_juicios = 22310";
-            //termina pruebas
+                if (Request.QueryString["nombre_archivo_providencias"] != "")
+                {
+                    _nombre_documento = Request.QueryString["numero_oficio"];
+                }else {
+                    _nombre_documento = "PL"+ "001"+ _numeroOficio;
+                }
+                
+            }
+            
 
-            where = where + where_to;
 
-            string _nombre_documento = "PL" + _id_juicios + _id_abogado + _juicio_referido_titulo_credito + _numero_titulo_credito + _identificacion_clientes + _id_estados_procesales_juicios;
+           //para pruebas
+           //where = where + " AND juicios.id_juicios = 22310";
+           //termina pruebas
+
+           where = where + where_to;
+           
             //where = where + where_to;
 
             //para el citador
@@ -366,13 +379,14 @@ namespace Presentacion
             ObjRep.SetDataSource(dtInforme.Tables[1]);
 
             CultureInfo ci = new CultureInfo("es-EC");
-
-            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("f", ci));
-            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("f", ci));
+            //string fechaparaver = _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci);
+            //int _45gh = 1;
+            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
             ObjRep.SetParameterValue("_citador", nombrecitador); 
              ObjRep.SetParameterValue("_oficio", _numeroOficio);
-            ObjRep.SetParameterValue("_fecha_providencias", _fecha_avoco.ToString("f", ci));
+            ObjRep.SetParameterValue("_fecha_providencias", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_leyendaCitador", leyendaCitador); 
             ObjRep.SetParameterValue("_dirigido", dirigidoA);
 
