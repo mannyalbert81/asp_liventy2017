@@ -12,7 +12,7 @@
   <xs:element name="dtOficios" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtOficios" msprop:Generator_UserDSName="dtOficios">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="impulsores" msprop:Generator_ColumnVarNameInTable="columnimpulsores" msprop:Generator_ColumnPropNameInRow="impulsores" msprop:Generator_ColumnPropNameInTable="impulsoresColumn" msprop:Generator_UserColumnName="impulsores" type="xs:string" minOccurs="0" />
@@ -22,6 +22,7 @@
               <xs:element name="cargo_secretarios" msprop:Generator_ColumnVarNameInTable="columncargo_secretarios" msprop:Generator_ColumnPropNameInRow="cargo_secretarios" msprop:Generator_ColumnPropNameInTable="cargo_secretariosColumn" msprop:Generator_UserColumnName="cargo_secretarios" type="xs:string" minOccurs="0" />
               <xs:element name="sexo_secretarios" msprop:Generator_ColumnVarNameInTable="columnsexo_secretarios" msprop:Generator_ColumnPropNameInRow="sexo_secretarios" msprop:Generator_ColumnPropNameInTable="sexo_secretariosColumn" msprop:Generator_UserColumnName="sexo_secretarios" type="xs:string" minOccurs="0" />
               <xs:element name="cuerpo_oficios" msprop:Generator_ColumnVarNameInTable="columncuerpo_oficios" msprop:Generator_ColumnPropNameInRow="cuerpo_oficios" msprop:Generator_ColumnPropNameInTable="cuerpo_oficiosColumn" msprop:Generator_UserColumnName="cuerpo_oficios" type="xs:string" minOccurs="0" />
+              <xs:element name="imagen_qr" msprop:Generator_ColumnVarNameInTable="columnimagen_qr" msprop:Generator_ColumnPropNameInRow="imagen_qr" msprop:Generator_ColumnPropNameInTable="imagen_qrColumn" msprop:Generator_UserColumnName="imagen_qr" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

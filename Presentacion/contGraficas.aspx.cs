@@ -178,29 +178,7 @@ namespace Presentacion
           
             dt_Reporte1 = AccesoLogica.Select(columnas, tablas, where, grupo, id);
 
-            QRCodeEncoder enconder = new QRCodeEncoder();
-            Bitmap img;
-            System.Drawing.Image QR;
-            int registros = dt_Reporte1.Rows.Count;
-
-            if (registros>0) {
-
-                foreach (DataRow renglon in dt_Reporte1.Rows)
-                {
-                    _numero_titulo_credito = Convert.ToString(renglon["numero_titulo_credito"].ToString());
-
-                     img = enconder.Encode(_numero_titulo_credito);
-                     QR = (System.Drawing.Image)img;
-
-                }
-
-
-
-
-            }
-
            
-
            /*
 
             using (MemoryStream ms= new MemoryStream()){
@@ -213,11 +191,6 @@ namespace Presentacion
 
 
     */
-
-
-
-
-
 
                 dsGraficas.Tables.Add(dt_Reporte1);
             
