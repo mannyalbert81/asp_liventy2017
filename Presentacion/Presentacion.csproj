@@ -163,6 +163,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contAvocoConocimientoSeleccion.aspx" />
     <Content Include="contGraficas.aspx" />
     <Content Include="contGraficasActualizacionMatrizJuicios.aspx" />
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
@@ -393,6 +394,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ParametrosRpt.cs" />
+    <Compile Include="contAvocoConocimientoSeleccion.aspx.cs">
+      <DependentUpon>contAvocoConocimientoSeleccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contAvocoConocimientoSeleccion.aspx.designer.cs">
+      <DependentUpon>contAvocoConocimientoSeleccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contGraficas.aspx.cs">
       <DependentUpon>contGraficas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
