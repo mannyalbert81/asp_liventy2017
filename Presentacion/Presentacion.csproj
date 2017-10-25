@@ -59,6 +59,10 @@
       <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=736440c9b414ea16, processorArchitecture=MSIL">
       <HintPath>..\packages\CodeContracts.Unofficial.1.0.0.0\lib\Net35\Microsoft.Contracts.dll</HintPath>
       <Private>True</Private>
@@ -159,6 +163,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contAvocoConocimientoSeleccion.aspx" />
     <Content Include="contGraficas.aspx" />
     <Content Include="contGraficasActualizacionMatrizJuicios.aspx" />
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
@@ -389,6 +394,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ParametrosRpt.cs" />
+    <Compile Include="contAvocoConocimientoSeleccion.aspx.cs">
+      <DependentUpon>contAvocoConocimientoSeleccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contAvocoConocimientoSeleccion.aspx.designer.cs">
+      <DependentUpon>contAvocoConocimientoSeleccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contGraficas.aspx.cs">
       <DependentUpon>contGraficas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -564,8 +576,8 @@
     <Compile Include="Reporte\rptMatrizRestructuracion.cs">
       <DependentUpon>rptMatrizRestructuracion.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptMatrizJuicios.cs">
       <AutoGen>True</AutoGen>
@@ -576,11 +588,23 @@
     <Compile Include="Reporte\rptHistorialMatrizJuicios.cs">
       <DependentUpon>rptHistorialMatrizJuicios.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Pago_Total%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28Pago_Total%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Reporte\rptProvidenciaLevantamiento2.cs">
-      <DependentUpon>rptProvidenciaLevantamiento2.rpt</DependentUpon>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Avoco_Suspension%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28Avoco_Suspension%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -588,20 +612,26 @@
     <Compile Include="Reporte\rptProvidenciaLevantamiento.cs">
       <DependentUpon>rptProvidenciaLevantamiento.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptProvidenciaLevantamiento2.cs">
+      <DependentUpon>rptProvidenciaLevantamiento2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptOficios.cs">
       <DependentUpon>rptOficios.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptProvidenciaSuspension.cs">
       <AutoGen>True</AutoGen>
@@ -678,13 +708,25 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHistorialMatrizJuicios.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento2.rpt">
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Pago_Total%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptProvidenciaLevantamiento2.cs</LastGenOutput>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28Pago_Total%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Avoco_Suspension%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28Avoco_Suspension%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProvidenciaLevantamiento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaLevantamiento2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

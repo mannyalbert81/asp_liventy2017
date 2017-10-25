@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaSuspension : ReportClass {
+    public class rptProvidenciaLevantamiento1 : ReportClass {
         
-        public rptProvidenciaSuspension() {
+        public rptProvidenciaLevantamiento1() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaSuspension.rpt";
+                return "rptProvidenciaLevantamiento1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaSuspension.rpt";
+                return "Presentacion.Reporte.rptProvidenciaLevantamiento1.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -138,7 +138,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_providencias {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_avoco {
             get {
                 return this.DataDefinition.ParameterFields[5];
             }
@@ -146,7 +146,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__hora_providencias {
+        public CrystalDecisions.Shared.IParameterField Parameter__razon_avoco {
             get {
                 return this.DataDefinition.ParameterFields[6];
             }
@@ -154,7 +154,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__razon_providencias {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_avoco_razones {
             get {
                 return this.DataDefinition.ParameterFields[7];
             }
@@ -162,17 +162,33 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_providencias_razones {
+        public CrystalDecisions.Shared.IParameterField Parameter__citador {
             get {
                 return this.DataDefinition.ParameterFields[8];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__leyendaCitador {
+            get {
+                return this.DataDefinition.ParameterFields[9];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__dirigido {
+            get {
+                return this.DataDefinition.ParameterFields[10];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaSuspension : Component, ICachedReport {
+    public class CachedrptProvidenciaLevantamiento1 : Component, ICachedReport {
         
-        public CachedrptProvidenciaSuspension() {
+        public CachedrptProvidenciaLevantamiento1() {
         }
         
         [Browsable(false)]
@@ -209,7 +225,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaSuspension rpt = new rptProvidenciaSuspension();
+            rptProvidenciaLevantamiento1 rpt = new rptProvidenciaLevantamiento1();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -34,10 +34,6 @@ namespace Presentacion
             string where2 = "";
 
 
-
-
-
-
             if (!String.IsNullOrEmpty(Request.QueryString["id_juicios"]))
             {
 
@@ -61,15 +57,23 @@ namespace Presentacion
             }
 
 
-            string columnas = "asignacion_secretarios_view.impulsores, asignacion_secretarios_view.cargo_impulsores, asignacion_secretarios_view.sexo_impulsores, asignacion_secretarios_view.secretarios, asignacion_secretarios_view.cargo_secretarios, asignacion_secretarios_view.sexo_secretarios, oficios.cuerpo_oficios";
-            string tablas = "public.asignacion_secretarios_view, public.oficios";
-            string where = " oficios.id_usuario_registra_oficios = asignacion_secretarios_view.id_abogado";
+            string columnas = "asignacion_secretarios_view.impulsores, asignacion_secretarios_view.cargo_impulsores,"+
+            " asignacion_secretarios_view.sexo_impulsores, asignacion_secretarios_view.secretarios,"+
+            " asignacion_secretarios_view.cargo_secretarios, asignacion_secretarios_view.sexo_secretarios,"+
+            " oficios.cuerpo_oficios, jui_tc.imagen_qr";
+            string tablas = "public.asignacion_secretarios_view INNER JOIN public.oficios" +
+                    " ON oficios.id_usuario_registra_oficios = asignacion_secretarios_view.id_abogado"+
+                    " INNER JOIN (SELECT jui.id_juicios, tc.imagen_qr"+
+                    " FROM juicios jui INNER JOIN titulo_credito tc"+
+                    " ON jui.id_titulo_credito = tc.id_titulo_credito) jui_tc"+
+                    " ON jui_tc.id_juicios = oficios.id_juicios";
+            string where = " 1=1";
 
             //para pruebas
            //where = where + " AND oficios.id_juicios = 4117";
             //termina pruebas
             String where_to = "";
-            where_to = where + where1 + where2;
+            where_to = where + where1 + where2 + "";
 
             string _nombre_documento = "OFICIO" + _identificador_oficios;
             //where = where + where_to;
@@ -115,10 +119,6 @@ namespace Presentacion
             Response.AddHeader("content-length", byteData.Length.ToString());
 
             Response.BinaryWrite(byteData);
-
- 
-
-
 
         }
 

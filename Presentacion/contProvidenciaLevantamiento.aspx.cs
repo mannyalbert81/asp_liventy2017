@@ -11,6 +11,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MessagingToolkit.QRCode.Codec;
+using System.Drawing;
+using System.IO;
 
 namespace Presentacion
 {
@@ -49,8 +52,6 @@ namespace Presentacion
             string where7 = "";
             string where8 = "";
 
-
-
             String where_to = "";
 
             parametros.juicio_referido_titulo_credito = Request.QueryString["juicio_referido_titulo_credito"];
@@ -73,6 +74,7 @@ namespace Presentacion
             try { parametros.id_secretario = Convert.ToInt32(Request.QueryString["id_secretario"]); } catch (Exception) { parametros.id_secretario = 0; }
             try { parametros.id_ciudad = Convert.ToInt32(Request.QueryString["id_ciudad"]); } catch (Exception) { parametros.id_ciudad = 0; }
             try { parametros.id_rol = Convert.ToInt32(Request.QueryString["id_rol"]); } catch (Exception) { parametros.id_rol = 0; }
+            try { parametros.id_juicios = Convert.ToInt32(Request.QueryString["id_juicios"]); } catch (Exception) { parametros.id_juicios = 0; }
 
             string columnas = "juicios.id_juicios, juicios.juicio_referido_titulo_credito, clientes.identificacion_clientes, " +
                              "clientes.nombres_clientes, clientes.identificacion_garantes, clientes.nombre_garantes, " +
@@ -91,7 +93,7 @@ namespace Presentacion
                              "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, " +
                              "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                              "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
-                             "clientes.sexo_garantes_3";
+                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\"";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
 
@@ -111,6 +113,10 @@ namespace Presentacion
                 if (parametros.id_provincias > 0)
                 {
                     where_to += " AND provincias.id_provincias=" + parametros.id_provincias + "";
+                }
+                if (parametros.id_juicios > 0)
+                {
+                    where_to += " AND juicios.id_juicios=" + parametros.id_juicios + "";
                 }
                 if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
                 {
@@ -266,41 +272,77 @@ namespace Presentacion
             }
             
 
-            if (!String.IsNullOrEmpty(Request.QueryString["fecha_avoco"]))
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_levantamiento"]))
             {
-
-                string fecha = Request.QueryString["fecha_avoco"];
-                string hora = Request.QueryString["hora_avoco"];
+                string fecha = Request.QueryString["fecha_levantamiento"];
+                string hora = Request.QueryString["hora_levantamiento"];
 
                 if (fecha != "0")
                 {
                     _fecha_avoco = Convert.ToDateTime(fecha + " " + hora);
                     _fecha_avoco_razones = Convert.ToDateTime(fecha + " " + hora);
                 }
-
-
-
+                
             }
 
-            if (!String.IsNullOrEmpty(Request.QueryString["razon_avoco"]))
+            if (!String.IsNullOrEmpty(Request.QueryString["razon_levantamiento"]))
             {
 
 
-                if (Request.QueryString["razon_avoco"] != "0")
+                if (Request.QueryString["razon_levantamiento"] != "")
                 {
-                    _razon_avoco = Request.QueryString["razon_avoco"];
+                    _razon_avoco = Request.QueryString["razon_levantamiento"];
                 }
 
             }
-            
-           
+            string _numeroOficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio"] != "")
+                {
+                    _numeroOficio = Request.QueryString["numero_oficio"];
+                }else {
+                    _numeroOficio = "S/N";
+                }
+
+            }
+            string _nombre_documento="";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_archivo_providencias"]))
+            {
+
+
+                if (Request.QueryString["nombre_archivo_providencias"] != "")
+                {
+                    _nombre_documento = Request.QueryString["nombre_archivo_providencias"];
+                }else {
+                    _nombre_documento = "PL"+ "001"+ _numeroOficio;
+                }
+                
+            }
+
+            string _nombre_usuario_saliente = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_usuario_saliente"]))
+            {
+                if (Request.QueryString["nombre_usuario_saliente"] != "")
+                {
+                    _nombre_usuario_saliente = Request.QueryString["nombre_usuario_saliente"];
+                    _nombre_usuario_saliente = _nombre_usuario_saliente.Trim(' ');
+                }
+                else
+                {
+                    _nombre_usuario_saliente = "";
+                }
+
+            }
+
             //para pruebas
-            where = where + " AND juicios.id_juicios = 22310";
+            //where = where + " AND juicios.id_juicios = 22310";
             //termina pruebas
 
-            where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8;
-
-            string _nombre_documento = "PL" + _id_juicios + _id_abogado + _juicio_referido_titulo_credito + _numero_titulo_credito + _identificacion_clientes + _id_estados_procesales_juicios;
+            where = where + where_to + "";
+           
             //where = where + where_to;
 
             //para el citador
@@ -340,25 +382,60 @@ namespace Presentacion
                 nombrecitador = "";
             }
             
-            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+            Datas.dtProvidenciaLevantamiento dtInforme = new Datas.dtProvidenciaLevantamiento();
 
             NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
-            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where);
+            
             daInforme.Fill(dtInforme, "juicios");
             int reg = dtInforme.Tables[1].Rows.Count;
             Reporte.rptProvidenciaLevantamiento ObjRep = new Reporte.rptProvidenciaLevantamiento();
 
+            //inicia parea imagen QR
+
+            /*QRCodeEncoder enconder = new QRCodeEncoder();
+            Bitmap img;
+            System.Drawing.Image QR;
+            string _numero_Tit_cred="";
+            dtInforme.Tables[1].Columns.Add("imagenQR",typeof(byte[]));
+            int contador = 0;
+            foreach (DataRow row in dtInforme.Tables[1].Rows)
+            {
+            contador++;
+                
+                 _numero_Tit_cred = Convert.ToString(row["numero_titulo_credito"]);
+                img = enconder.Encode(_numero_Tit_cred);
+
+                QR = (System.Drawing.Image)img;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+
+                    QR.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] imageBytes = ms.ToArray();
+                    row["imagenQR"] = imageBytes;
+                   
+                }
+               
+            }*/
+            //termina Imagen QR
+           
+          
 
             ObjRep.SetDataSource(dtInforme.Tables[1]);
 
             CultureInfo ci = new CultureInfo("es-EC");
-
-            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("f", ci));
-            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("f", ci));
+            //string fechaparaver = _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci);
+            //int _45gh = 1;
+            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
-            ObjRep.SetParameterValue("_citador", nombrecitador);
+            ObjRep.SetParameterValue("_citador", nombrecitador); 
+             ObjRep.SetParameterValue("_oficio", _numeroOficio);
+            ObjRep.SetParameterValue("_fecha_providencias", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_leyendaCitador", leyendaCitador); 
             ObjRep.SetParameterValue("_dirigido", dirigidoA);
+            ObjRep.SetParameterValue("usuario_saliente", _nombre_usuario_saliente);
 
 
             CrystalReportViewer1.DataBind();
@@ -366,7 +443,7 @@ namespace Presentacion
             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
             ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
             DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-            string pathToFiles = Server.MapPath("~/providencias/");
+            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento/");
 
             objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
             ObjRep.ExportOptions.DestinationOptions = objDiskOpt;

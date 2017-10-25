@@ -264,7 +264,7 @@ namespace Presentacion
                               "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, " +
                               "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                               "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
-                              "clientes.sexo_garantes_3";
+                              "clientes.sexo_garantes_3,titulo_credito.imagen_qr";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
             String where_to = "";
@@ -273,7 +273,7 @@ namespace Presentacion
             //where = where + " AND juicios.id_juicios = 22310";
             //termina pruebas
 
-            where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8 + where9 + where10 + where11 + where12 + where13 + where14 + where15 + where16;
+            where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8 + where9 + where10 + where11 + where12 + where13 + where14 + where15 + where16 +"";
 
             string _nombre_documento = "PA" + _id_juicios + _id_abogado + _juicio_referido_titulo_credito + _numero_titulo_credito + _identificacion_clientes + _id_estados_procesales_juicios;
             //where = where + where_to;
@@ -292,8 +292,8 @@ namespace Presentacion
 
             CultureInfo ci = new CultureInfo("es-EC");
 
-            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("f", ci));
-            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("f", ci));
+            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
 
 
@@ -326,8 +326,7 @@ namespace Presentacion
             Response.AddHeader("content-length", byteData.Length.ToString());
 
             Response.BinaryWrite(byteData);
-
-
+            
 
         }
 
