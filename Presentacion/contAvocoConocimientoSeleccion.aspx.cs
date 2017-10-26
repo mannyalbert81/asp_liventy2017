@@ -446,6 +446,8 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
                         ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+                        ObjRep.SetParameterValue("_numero_liquidacion", _numero_liquidacion);
+                        ObjRep.SetParameterValue("_fecha_auto_pago", _fecha_auto_pago.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
 
 
                         CrystalReportViewer1.DataBind();
