@@ -68,6 +68,9 @@ namespace Presentacion
             parametros.identificacion_garantes_2 = Request.QueryString["identificacion_garantes_2"];
             parametros.identificacion_garantes_3 = Request.QueryString["identificacion_garantes_3"];
 
+            
+            try { parametros.lote_juicios = Convert.ToInt32(Request.QueryString["lote_juicios"]); } catch (Exception) { parametros.lote_juicios = 0; }
+
             try { parametros.id_provincias = Convert.ToInt32(Request.QueryString["id_provincias"]); } catch (Exception) { parametros.id_provincias = 0; }
             try { parametros.id_abogado = Convert.ToInt32(Request.QueryString["id_abogado"]); } catch (Exception) { parametros.id_abogado = 0; }
             try { parametros.id_estados_procesales_juicios = Convert.ToInt32(Request.QueryString["id_estados_procesales_juicios"]); } catch (Exception) { parametros.id_estados_procesales_juicios = 0; }
@@ -163,6 +166,10 @@ namespace Presentacion
                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
                 {
                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                }
+                if (parametros.lote_juicios > 0)
+                {
+                    where_to += " AND juicios.lote_juicios = '" + parametros.lote_juicios + "'";
                 }
 
 

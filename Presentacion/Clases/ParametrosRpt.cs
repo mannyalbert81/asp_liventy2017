@@ -21,7 +21,7 @@ namespace Presentacion.Clases
         public string identificacion_garantes_1 { get; set; }
         public string identificacion_garantes_2 { get; set; }
         public string identificacion_garantes_3 { get; set; }
-
+        public int lote_juicios { get; set; }
 
         public int id_provincias { get; set; }
         public int id_abogado { get; set; }
