@@ -41,6 +41,9 @@ namespace Presentacion
             DateTime _fecha_avoco = DateTime.Now;
             DateTime _fecha_avoco_razones = DateTime.Now;
 
+            DateTime _fecha_razon = DateTime.Now;
+            
+
             string _razon_avoco = "0";
 
             string where1 = "";
@@ -288,6 +291,7 @@ namespace Presentacion
                 {
                     _fecha_avoco = Convert.ToDateTime(fecha + " " + hora);
                     _fecha_avoco_razones = Convert.ToDateTime(fecha + " " + hora);
+                    _fecha_razon = Convert.ToDateTime(fecha);
                 }
                 
             }
@@ -435,11 +439,13 @@ namespace Presentacion
             //string fechaparaver = _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci);
             //int _45gh = 1;
             ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
-            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
             ObjRep.SetParameterValue("_citador", nombrecitador); 
              ObjRep.SetParameterValue("_oficio", _numeroOficio);
             ObjRep.SetParameterValue("_fecha_providencias", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
             ObjRep.SetParameterValue("_leyendaCitador", leyendaCitador); 
             ObjRep.SetParameterValue("_dirigido", dirigidoA);
             ObjRep.SetParameterValue("usuario_saliente", _nombre_usuario_saliente);
