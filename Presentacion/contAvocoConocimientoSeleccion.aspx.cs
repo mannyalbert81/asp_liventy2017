@@ -524,6 +524,53 @@ namespace Presentacion
                         Response.BinaryWrite(byteData);
                     }
 
+                    if (_tipo_avoco == 4)
+                    {
+                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                        NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                        daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                        daInforme.Fill(dtInforme, "juicios");
+                        int reg = dtInforme.Tables[1].Rows.Count;
+                        Reporte.rptProvidenciaAvocoConocimiento ObjRep = new Reporte.rptProvidenciaAvocoConocimiento();
+
+
+                        ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                        CultureInfo ci = new CultureInfo("es-EC");
+
+                        ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                        //ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
+                        //ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+
+
+                        CrystalReportViewer1.DataBind();
+
+                        ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/Avoco_Suspension/");
+
+                        objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                        ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                        ObjRep.Export();
+
+                        dtInforme.Dispose();
+                        daInforme.Dispose();
+
+                        CrystalReportViewer1.Dispose();
+                        ObjRep.Close();
+                        ObjRep.Dispose();
+
+
+
+                        byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", byteData.Length.ToString());
+                        Response.BinaryWrite(byteData);
+                    }
 
                 }
 
