@@ -169,6 +169,7 @@
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
     <Content Include="contHistorialJuicios.aspx" />
     <Content Include="contMatrizRestructuracion.aspx" />
+    <Content Include="contPortadaJuicio.aspx" />
     <Content Include="contTitulosFomento.aspx" />
     <Content Include="contOficios.aspx" />
     <Content Include="contProvidenciaLevantamiento.aspx" />
@@ -331,6 +332,17 @@
     <Content Include="Datas\dtOficios.xss">
       <DependentUpon>dtOficios.xsd</DependentUpon>
     </Content>
+    <Content Include="Datas\dtPortadaJuicio.xsc">
+      <DependentUpon>dtPortadaJuicio.xsd</DependentUpon>
+    </Content>
+    <None Include="Datas\dtPortadaJuicio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtPortadaJuicio.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datas\dtPortadaJuicio.xss">
+      <DependentUpon>dtPortadaJuicio.xsd</DependentUpon>
+    </Content>
     <None Include="Datas\dtProvidenciaLevantamiento.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -436,6 +448,13 @@
     <Compile Include="contMatrizRestructuracion.aspx.designer.cs">
       <DependentUpon>contMatrizRestructuracion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="contPortadaJuicio.aspx.cs">
+      <DependentUpon>contPortadaJuicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contPortadaJuicio.aspx.designer.cs">
+      <DependentUpon>contPortadaJuicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contTitulosFomento.aspx.cs">
       <DependentUpon>contTitulosFomento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -528,6 +547,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtOficios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datas\dtPortadaJuicio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtPortadaJuicio.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datas\dtProvidenciaLevantamiento.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -605,6 +629,12 @@
     </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reporte\rptPortadaJuicio.cs">
+      <DependentUpon>rptPortadaJuicio.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -719,6 +749,10 @@
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptPortadaJuicio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPortadaJuicio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
