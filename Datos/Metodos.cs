@@ -27,6 +27,7 @@ namespace Datos
             catch (Exception ex)
             {
                 throw ex;
+
             }
 
             return data;
