@@ -79,188 +79,196 @@ namespace Presentacion
                              "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, " +
                              "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                              "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
-                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\"";
-            string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
-            string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND juicios.id_estados_procesales_juicios != 8 ";
+                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\" , usuarios.secretaria";
+            string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad ,public.usuarios";
+            string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND juicios.id_estados_procesales_juicios != 8 AND usuarios.id_usuarios = asignacion_secretarios_view.id_abogado";
 
 
-            if (parametros.id_rol == 3)
+            /* if (parametros.id_rol == 3)
+             {
+
+
+                 if (parametros.id_estados_procesales_juicios > 0)
+                 {
+                     where_to += " AND estados_procesales_juicios.id_estados_procesales_juicios=" + parametros.id_estados_procesales_juicios + "";
+                 }
+                 if (parametros.id_abogado > 0)
+                 {
+                     where_to += " AND asignacion_secretarios_view.id_abogado=" + parametros.id_abogado + "";
+                 }
+                 if (parametros.id_provincias > 0)
+                 {
+                     where_to += " AND provincias.id_provincias=" + parametros.id_provincias + "";
+                 }
+                 if (parametros.id_juicios > 0)
+                 {
+                     where_to += " AND juicios.id_juicios=" + parametros.id_juicios + "";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
+                 {
+                     where_to += " AND juicios.juicio_referido_titulo_credito = '" + parametros.juicio_referido_titulo_credito + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.numero_titulo_credito))
+                 {
+                     where_to += " AND titulo_credito.numero_titulo_credito = '" + parametros.numero_titulo_credito + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes))
+                 {
+                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
+                 }
+
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes_1))
+                 {
+                     where_to += " AND clientes.identificacion_clientes_1 = '" + parametros.identificacion_clientes_1 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes_2))
+                 {
+                     where_to += " AND clientes.identificacion_clientes_2 = '" + parametros.identificacion_clientes_2 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes_3))
+                 {
+                     where_to += " AND clientes.identificacion_clientes_3 = '" + parametros.identificacion_clientes_3 + "'";
+                 }
+
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes))
+                 {
+                     where_to += " AND clientes.identificacion_garantes = '" + parametros.identificacion_garantes + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes_1))
+                 {
+                     where_to += " AND clientes.identificacion_garantes_1 = '" + parametros.identificacion_garantes_1 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes_2))
+                 {
+                     where_to += " AND clientes.identificacion_garantes_2 = '" + parametros.identificacion_garantes_2 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes_3))
+                 {
+                     where_to += " AND clientes.identificacion_garantes_3 = '" + parametros.identificacion_garantes_3 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                 {
+                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                 }
+                 if (parametros.lote_juicios > 0)
+                 {
+                     where_to += " AND juicios.lote_juicios = '" + parametros.lote_juicios + "'";
+                 }
+
+
+             }
+
+             if (parametros.id_rol == 5)
+             {
+                 if (parametros.id_estados_procesales_juicios > 0)
+                 {
+                     where_to += " AND estados_procesales_juicios.id_estados_procesales_juicios=" + parametros.id_estados_procesales_juicios + "";
+                 }
+                 if (parametros.id_abogado > 0)
+                 {
+                     where_to += " AND asignacion_secretarios_view.id_abogado=" + parametros.id_abogado + "";
+                 }
+                 if (parametros.id_secretario > 0)
+                 {
+                     where_to += " AND asignacion_secretarios_view.id_secretario=" + parametros.id_secretario + "";
+                 }
+                 if (parametros.id_provincias > 0)
+                 {
+                     where_to += " AND provincias.id_provincias=" + parametros.id_provincias + "";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
+                 {
+                     where_to += " AND juicios.juicio_referido_titulo_credito = '" + parametros.juicio_referido_titulo_credito + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.numero_titulo_credito))
+                 {
+                     where_to += " AND titulo_credito.numero_titulo_credito = '" + parametros.numero_titulo_credito + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes))
+                 {
+                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes_1))
+                 {
+                     where_to += " AND clientes.identificacion_clientes_1 = '" + parametros.identificacion_clientes_1 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes_2))
+                 {
+                     where_to += " AND clientes.identificacion_clientes_2 = '" + parametros.identificacion_clientes_2 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes_3))
+                 {
+                     where_to += " AND clientes.identificacion_clientes_3 = '" + parametros.identificacion_clientes_3 + "'";
+                 }
+
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes))
+                 {
+                     where_to += " AND clientes.identificacion_garantes = '" + parametros.identificacion_garantes + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes_1))
+                 {
+                     where_to += " AND clientes.identificacion_garantes_1 = '" + parametros.identificacion_garantes_1 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes_2))
+                 {
+                     where_to += " AND clientes.identificacion_garantes_2 = '" + parametros.identificacion_garantes_2 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_garantes_3))
+                 {
+                     where_to += " AND clientes.identificacion_garantes_3 = '" + parametros.identificacion_garantes_3 + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                 {
+                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                 }
+
+
+
+
+
+             }
+             if (parametros.id_rol == 23)
+             {
+                 if (parametros.id_ciudad > 0)
+                 {
+                     where_to += " AND ciudad.id_ciudad=" + parametros.id_ciudad + "";
+                 }
+                 if (parametros.id_abogado > 0)
+                 {
+                     where_to += " AND asignacion_secretarios_view.id_abogado=" + parametros.id_abogado + "";
+                 }
+                 if (parametros.id_secretario > 0)
+                 {
+                     where_to += " AND asignacion_secretarios_view.id_secretario=" + parametros.id_secretario + "";
+                 }
+
+                 if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
+                 {
+                     where_to += " AND juicios.juicio_referido_titulo_credito = '" + parametros.juicio_referido_titulo_credito + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.numero_titulo_credito))
+                 {
+                     where_to += " AND titulo_credito.numero_titulo_credito = '" + parametros.numero_titulo_credito + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.identificacion_clientes))
+                 {
+                     where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
+                 }
+                 if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                 {
+                     where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                 }
+
+             }
+             */
+
+            if (parametros.id_juicios > 0)
             {
-
-
-                if (parametros.id_estados_procesales_juicios > 0)
-                {
-                    where_to += " AND estados_procesales_juicios.id_estados_procesales_juicios=" + parametros.id_estados_procesales_juicios + "";
-                }
-                if (parametros.id_abogado > 0)
-                {
-                    where_to += " AND asignacion_secretarios_view.id_abogado=" + parametros.id_abogado + "";
-                }
-                if (parametros.id_provincias > 0)
-                {
-                    where_to += " AND provincias.id_provincias=" + parametros.id_provincias + "";
-                }
-                if (parametros.id_juicios > 0)
-                {
-                    where_to += " AND juicios.id_juicios=" + parametros.id_juicios + "";
-                }
-                if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
-                {
-                    where_to += " AND juicios.juicio_referido_titulo_credito = '" + parametros.juicio_referido_titulo_credito + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.numero_titulo_credito))
-                {
-                    where_to += " AND titulo_credito.numero_titulo_credito = '" + parametros.numero_titulo_credito + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes))
-                {
-                    where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
-                }
-               
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_1))
-                {
-                    where_to += " AND clientes.identificacion_clientes_1 = '" + parametros.identificacion_clientes_1 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_2))
-                {
-                    where_to += " AND clientes.identificacion_clientes_2 = '" + parametros.identificacion_clientes_2 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_3))
-                {
-                    where_to += " AND clientes.identificacion_clientes_3 = '" + parametros.identificacion_clientes_3 + "'";
-                }
-
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes))
-                {
-                    where_to += " AND clientes.identificacion_garantes = '" + parametros.identificacion_garantes + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_1))
-                {
-                    where_to += " AND clientes.identificacion_garantes_1 = '" + parametros.identificacion_garantes_1 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_2))
-                {
-                    where_to += " AND clientes.identificacion_garantes_2 = '" + parametros.identificacion_garantes_2 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_3))
-                {
-                    where_to += " AND clientes.identificacion_garantes_3 = '" + parametros.identificacion_garantes_3 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
-                {
-                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
-                }
-                if (parametros.lote_juicios > 0)
-                {
-                    where_to += " AND juicios.lote_juicios = '" + parametros.lote_juicios + "'";
-                }
-
-
+                where_to += " AND juicios.id_juicios=" + parametros.id_juicios + "";
+            }else {
+                where_to += " AND juicios.id_juicios=0";
             }
 
-            if (parametros.id_rol == 5)
-            {
-                if (parametros.id_estados_procesales_juicios > 0)
-                {
-                    where_to += " AND estados_procesales_juicios.id_estados_procesales_juicios=" + parametros.id_estados_procesales_juicios + "";
-                }
-                if (parametros.id_abogado > 0)
-                {
-                    where_to += " AND asignacion_secretarios_view.id_abogado=" + parametros.id_abogado + "";
-                }
-                if (parametros.id_secretario > 0)
-                {
-                    where_to += " AND asignacion_secretarios_view.id_secretario=" + parametros.id_secretario + "";
-                }
-                if (parametros.id_provincias > 0)
-                {
-                    where_to += " AND provincias.id_provincias=" + parametros.id_provincias + "";
-                }
-                if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
-                {
-                    where_to += " AND juicios.juicio_referido_titulo_credito = '" + parametros.juicio_referido_titulo_credito + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.numero_titulo_credito))
-                {
-                    where_to += " AND titulo_credito.numero_titulo_credito = '" + parametros.numero_titulo_credito + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes))
-                {
-                    where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_1))
-                {
-                    where_to += " AND clientes.identificacion_clientes_1 = '" + parametros.identificacion_clientes_1 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_2))
-                {
-                    where_to += " AND clientes.identificacion_clientes_2 = '" + parametros.identificacion_clientes_2 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes_3))
-                {
-                    where_to += " AND clientes.identificacion_clientes_3 = '" + parametros.identificacion_clientes_3 + "'";
-                }
-
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes))
-                {
-                    where_to += " AND clientes.identificacion_garantes = '" + parametros.identificacion_garantes + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_1))
-                {
-                    where_to += " AND clientes.identificacion_garantes_1 = '" + parametros.identificacion_garantes_1 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_2))
-                {
-                    where_to += " AND clientes.identificacion_garantes_2 = '" + parametros.identificacion_garantes_2 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_garantes_3))
-                {
-                    where_to += " AND clientes.identificacion_garantes_3 = '" + parametros.identificacion_garantes_3 + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
-                {
-                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
-                }
-
-
-
-
-
-            }
-            if (parametros.id_rol == 23)
-            {
-                if (parametros.id_ciudad > 0)
-                {
-                    where_to += " AND ciudad.id_ciudad=" + parametros.id_ciudad + "";
-                }
-                if (parametros.id_abogado > 0)
-                {
-                    where_to += " AND asignacion_secretarios_view.id_abogado=" + parametros.id_abogado + "";
-                }
-                if (parametros.id_secretario > 0)
-                {
-                    where_to += " AND asignacion_secretarios_view.id_secretario=" + parametros.id_secretario + "";
-                }
-
-                if (!String.IsNullOrEmpty(parametros.juicio_referido_titulo_credito))
-                {
-                    where_to += " AND juicios.juicio_referido_titulo_credito = '" + parametros.juicio_referido_titulo_credito + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.numero_titulo_credito))
-                {
-                    where_to += " AND titulo_credito.numero_titulo_credito = '" + parametros.numero_titulo_credito + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.identificacion_clientes))
-                {
-                    where_to += " AND clientes.identificacion_clientes = '" + parametros.identificacion_clientes + "'";
-                }
-                if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
-                {
-                    where_to += " AND  DATE(juicios.fecha_ultima_providencia) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
-                }
-
-            }
-            
 
             if (!String.IsNullOrEmpty(Request.QueryString["fecha_levantamiento"]))
             {
@@ -333,18 +341,11 @@ namespace Presentacion
 
             }
 
-            //para pruebas
-           // where = where + " AND juicios.id_juicios = 22310";
-            //termina pruebas
+            // para pruebas
+            // where = where + " AND juicios.id_juicios = 22310";
+            // termina pruebas
 
             where = where + where_to + "";
-           
-            //where = where + where_to;
-
-            //para el citador
-
-         
-            
             
             Datas.dtPortadaJuicio dtInforme = new Datas.dtPortadaJuicio();
 
@@ -355,17 +356,12 @@ namespace Presentacion
             int reg = dtInforme.Tables[1].Rows.Count;
             Reporte.rptPortadaJuicio ObjRep = new Reporte.rptPortadaJuicio();
 
-           
-
             ObjRep.SetDataSource(dtInforme.Tables[1]);
 
             CultureInfo ci = new CultureInfo("es-EC");
             //string fechaparaver = _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci);
-            //int _45gh = 1;
-            ObjRep.SetParameterValue("_fecha", _fecha.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
-            //ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha", _fecha.ToString("dd \"-\" MMMM \"-\" yyyy", ci));
             
-
             CrystalReportViewer1.DataBind();
 
             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
