@@ -349,7 +349,7 @@ namespace Presentacion
             }
 
             //para pruebas
-            //where = where + " AND juicios.id_juicios = 22310";
+            //where = where + " AND juicios.id_juicios = 3933";
             //termina pruebas
 
             where = where + where_to + "";

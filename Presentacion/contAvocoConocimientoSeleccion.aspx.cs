@@ -356,7 +356,7 @@ namespace Presentacion
             String where_to = "";
 
             //para pruebas
-            where = where + " AND juicios.id_juicios = 3933";
+            //where = where + " AND juicios.id_juicios = 3933";
             //termina pruebas
 
             where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8 + where9 + where10 + where11 + where12 + where13 + where14 + where15 + where16 + "";
