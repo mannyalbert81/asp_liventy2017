@@ -48,6 +48,7 @@ namespace Presentacion
 
             DateTime _fecha_avoco = DateTime.Now;
             DateTime _fecha_avoco_razones = DateTime.Now;
+            DateTime _fecha_razon = DateTime.Now;
 
             string _razon_avoco = "0";
 
@@ -218,6 +219,7 @@ namespace Presentacion
                 {
                     _fecha_avoco = Convert.ToDateTime(fecha + " " + hora);
                     _fecha_avoco_razones = Convert.ToDateTime(fecha + " " + hora);
+                    _fecha_razon = Convert.ToDateTime(fecha);
                 }
 
 
@@ -388,7 +390,7 @@ namespace Presentacion
                         CultureInfo ci = new CultureInfo("es-EC");
 
                         ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
-                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
                         ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
@@ -403,7 +405,7 @@ namespace Presentacion
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                         DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/Pago_Total/");
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/");
 
                         objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
                         ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
@@ -442,7 +444,7 @@ namespace Presentacion
                         CultureInfo ci = new CultureInfo("es-EC");
 
                         ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
-                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
                         ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
@@ -455,7 +457,7 @@ namespace Presentacion
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                         DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/Proceso_Coactivo/");
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/");
 
                         objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
                         ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
@@ -492,10 +494,11 @@ namespace Presentacion
                         CultureInfo ci = new CultureInfo("es-EC");
 
                         ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
-                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
                         ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+                        ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
 
 
                         CrystalReportViewer1.DataBind();
@@ -503,7 +506,7 @@ namespace Presentacion
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                         DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/Avoco_Suspension/");
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/");
 
                         objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
                         ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
@@ -540,7 +543,7 @@ namespace Presentacion
                         CultureInfo ci = new CultureInfo("es-EC");
 
                         ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
-                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         //ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
                         //ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
@@ -551,7 +554,7 @@ namespace Presentacion
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                         DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/Avoco_Suspension/");
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/");
 
                         objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
                         ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
@@ -590,7 +593,7 @@ namespace Presentacion
                         CultureInfo ci = new CultureInfo("es-EC");
 
                         ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
-                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                        
 
@@ -599,7 +602,7 @@ namespace Presentacion
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                         DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/Avoco_Leyes/");
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento");
 
                         objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
                         ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
