@@ -57,8 +57,10 @@ namespace Presentacion.Clases
         public string levantamiento_medida { get; set; }
         public string archivado_restructuracion { get; set; }
 
+        public string numero_carton_jucios { get; set; }
 
-        
+
+
 
 
     }
