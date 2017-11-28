@@ -615,6 +615,12 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Avoco%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28Avoco%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28leyes%29.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento%28leyes%29.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -630,8 +636,8 @@
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Avoco_Suspension%29.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento%28Avoco_Suspension%29.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento%28Proceso_Coactivo%29.rpt</DependentUpon>
@@ -743,6 +749,10 @@
     <EmbeddedResource Include="Reporte\rptHistorialMatrizJuicios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHistorialMatrizJuicios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Avoco%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28Avoco%29.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28leyes%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

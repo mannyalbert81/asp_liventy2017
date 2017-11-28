@@ -52,6 +52,8 @@ namespace Presentacion
 
             string _razon_avoco = "0";
 
+            
+
             string where1 = "";
             string where2 = "";
             string where3 = "";
@@ -263,6 +265,44 @@ namespace Presentacion
                 }
 
             }
+
+
+
+            string _tipo_credito = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_credito"]))
+            {
+
+
+                if (Request.QueryString["tipo_credito"] != "")
+                {
+                    _tipo_credito = Request.QueryString["tipo_credito"];
+                }
+                else {
+                    _tipo_credito = "Ninguno";
+                }
+
+            }
+
+
+
+            string _reemplazar = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["reemplazar"]))
+            {
+
+
+                if (Request.QueryString["reemplazar"] != "")
+                {
+                    _reemplazar = Request.QueryString["reemplazar"];
+                }
+                else {
+                    _reemplazar = "0";
+                }
+
+            }
+
+
+
+            
 
 
             string _nombre_secretario_anterior = "";
@@ -624,6 +664,69 @@ namespace Presentacion
 
 
                     }
+
+                    if (_tipo_avoco == 6)
+                    {
+
+                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                        NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                        daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                        daInforme.Fill(dtInforme, "juicios");
+                        int reg = dtInforme.Tables[1].Rows.Count;
+                        Reporte.rptProvidenciaAvocoConocimientoAvoco ObjRep = new Reporte.rptProvidenciaAvocoConocimientoAvoco();
+
+
+                        ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                        CultureInfo ci = new CultureInfo("es-EC");
+
+                        ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                        ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
+                        ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+                        ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_tipo_credito", _tipo_credito);
+                        ObjRep.SetParameterValue("_reemplazar", _reemplazar);
+
+                        
+
+
+
+
+
+
+                        CrystalReportViewer1.DataBind();
+
+                        ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                        string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/");
+
+                        objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                        ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                        ObjRep.Export();
+
+                        dtInforme.Dispose();
+                        daInforme.Dispose();
+
+                        CrystalReportViewer1.Dispose();
+                        ObjRep.Close();
+                        ObjRep.Dispose();
+
+
+
+                        byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", byteData.Length.ToString());
+                        Response.BinaryWrite(byteData);
+
+
+
+                    }
+
+
 
                 }
 

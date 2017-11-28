@@ -337,6 +337,10 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columncomprarado_fomento;
             
+            private global::System.Data.DataColumn columnid_origen_juicio;
+            
+            private global::System.Data.DataColumn columnnombre_origen_juicio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -604,6 +608,22 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_origen_juicioColumn {
+                get {
+                    return this.columnid_origen_juicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombre_origen_juicioColumn {
+                get {
+                    return this.columnnombre_origen_juicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -668,7 +688,9 @@ namespace Presentacion.Datas {
                         string secretarios, 
                         int id_ciudad, 
                         string nombre_ciudad, 
-                        bool comprarado_fomento) {
+                        bool comprarado_fomento, 
+                        int id_origen_juicio, 
+                        string nombre_origen_juicio) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         orden,
@@ -699,7 +721,9 @@ namespace Presentacion.Datas {
                         secretarios,
                         id_ciudad,
                         nombre_ciudad,
-                        comprarado_fomento};
+                        comprarado_fomento,
+                        id_origen_juicio,
+                        nombre_origen_juicio};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -751,6 +775,8 @@ namespace Presentacion.Datas {
                 this.columnid_ciudad = base.Columns["id_ciudad"];
                 this.columnnombre_ciudad = base.Columns["nombre_ciudad"];
                 this.columncomprarado_fomento = base.Columns["comprarado_fomento"];
+                this.columnid_origen_juicio = base.Columns["id_origen_juicio"];
+                this.columnnombre_origen_juicio = base.Columns["nombre_origen_juicio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -814,6 +840,10 @@ namespace Presentacion.Datas {
                 base.Columns.Add(this.columnnombre_ciudad);
                 this.columncomprarado_fomento = new global::System.Data.DataColumn("comprarado_fomento", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncomprarado_fomento);
+                this.columnid_origen_juicio = new global::System.Data.DataColumn("id_origen_juicio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_origen_juicio);
+                this.columnnombre_origen_juicio = new global::System.Data.DataColumn("nombre_origen_juicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_origen_juicio);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1429,6 +1459,39 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_origen_juicio {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.id_origen_juicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_origen_juicio\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.id_origen_juicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_origen_juicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.nombre_origen_juicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_origen_juicio\' de la tabla \'DataTable1\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.nombre_origen_juicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsordenNull() {
                 return this.IsNull(this.tableDataTable1.ordenColumn);
             }
@@ -1773,6 +1836,30 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcomprarado_fomentoNull() {
                 this[this.tableDataTable1.comprarado_fomentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_origen_juicioNull() {
+                return this.IsNull(this.tableDataTable1.id_origen_juicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_origen_juicioNull() {
+                this[this.tableDataTable1.id_origen_juicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnombre_origen_juicioNull() {
+                return this.IsNull(this.tableDataTable1.nombre_origen_juicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnombre_origen_juicioNull() {
+                this[this.tableDataTable1.nombre_origen_juicioColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -32,6 +32,8 @@ namespace Presentacion.Clases
         public int id_ciudad { get; set; }
         public int id_rol { get; set; }
 
+        public int id_origen_juicio { get; set; }
+
         public string cuerpo_oficios { get; set; }
         public string ruta_oficios { get; set; }
         public string nombre_archivo_oficios { get; set; }
@@ -54,6 +56,9 @@ namespace Presentacion.Clases
         public int id_tipo_restructuracion { get; set; }
         public string levantamiento_medida { get; set; }
         public string archivado_restructuracion { get; set; }
+
+
+        
 
 
     }

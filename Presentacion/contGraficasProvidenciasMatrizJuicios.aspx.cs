@@ -48,9 +48,9 @@ namespace Presentacion
 
 
 
-            string columnas = "COUNT(id_juicios) as total, asignacion_secretarios_view.impulsores";
-            string tablas = " public.juicios, public.estados_procesales_juicios, public.clientes, public.provincias, public.titulo_credito, public.asignacion_secretarios_view, public.ciudad";
-            string where = " estados_procesales_juicios.id_estados_procesales_juicios = juicios.id_estados_procesales_juicios AND clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad";
+            string columnas = "COUNT(id_providencias) as total, asignacion_secretarios_view.impulsores";
+            string tablas = " public.juicios, public.estados_procesales_juicios, public.clientes, public.provincias, public.titulo_credito, public.asignacion_secretarios_view, public.ciudad, public.providencias";
+            string where = " estados_procesales_juicios.id_estados_procesales_juicios = juicios.id_estados_procesales_juicios AND clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND providencias.id_titulo_credito= titulo_credito.id_titulo_credito";
             string grupo = "asignacion_secretarios_view.impulsores";
             string id = "asignacion_secretarios_view.impulsores";
 
