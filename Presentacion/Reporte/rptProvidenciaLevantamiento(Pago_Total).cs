@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaAvocoConocimientoNuevos_Procesos : ReportClass {
+    public class rptProvidenciaLevantamientoPago_Total : ReportClass {
         
-        public rptProvidenciaAvocoConocimientoNuevos_Procesos() {
+        public rptProvidenciaLevantamientoPago_Total() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaAvocoConocimiento(Nuevos_Procesos).rpt";
+                return "rptProvidenciaLevantamiento(Pago_Total).rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Nuevos_Procesos).rpt";
+                return "Presentacion.Reporte.rptProvidenciaLevantamiento(Pago_Total).rpt";
             }
             set {
                 // Do nothing
@@ -82,7 +82,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,17 +98,9 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[7];
+                return this.ReportDefinition.Sections[6];
             }
         }
         
@@ -178,7 +170,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_impulsor_anterior {
+        public CrystalDecisions.Shared.IParameterField Parameter__citador {
             get {
                 return this.DataDefinition.ParameterFields[8];
             }
@@ -186,7 +178,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_secretario_anterior {
+        public CrystalDecisions.Shared.IParameterField Parameter__leyendaCitador {
             get {
                 return this.DataDefinition.ParameterFields[9];
             }
@@ -194,7 +186,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_razon {
+        public CrystalDecisions.Shared.IParameterField Parameter__dirigido {
             get {
                 return this.DataDefinition.ParameterFields[10];
             }
@@ -202,7 +194,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__reemplazar {
+        public CrystalDecisions.Shared.IParameterField Parameter__oficio {
             get {
                 return this.DataDefinition.ParameterFields[11];
             }
@@ -210,17 +202,33 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_acto {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_providencias {
             get {
                 return this.DataDefinition.ParameterFields[12];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_usuario_saliente {
+            get {
+                return this.DataDefinition.ParameterFields[13];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_razon {
+            get {
+                return this.DataDefinition.ParameterFields[14];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaAvocoConocimientoNuevos_Procesos : Component, ICachedReport {
+    public class CachedrptProvidenciaLevantamientoPago_Total : Component, ICachedReport {
         
-        public CachedrptProvidenciaAvocoConocimientoNuevos_Procesos() {
+        public CachedrptProvidenciaLevantamientoPago_Total() {
         }
         
         [Browsable(false)]
@@ -257,7 +265,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaAvocoConocimientoNuevos_Procesos rpt = new rptProvidenciaAvocoConocimientoNuevos_Procesos();
+            rptProvidenciaLevantamientoPago_Total rpt = new rptProvidenciaLevantamientoPago_Total();
             rpt.Site = this.Site;
             return rpt;
         }
