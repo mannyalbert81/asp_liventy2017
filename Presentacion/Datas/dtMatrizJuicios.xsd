@@ -12,7 +12,7 @@
   <xs:element name="dtProvidenciaSuspension2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtProvidenciaSuspension2" msprop:Generator_UserDSName="dtProvidenciaSuspension2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="orden" msprop:Generator_ColumnVarNameInTable="columnorden" msprop:Generator_ColumnPropNameInRow="orden" msprop:Generator_ColumnPropNameInTable="ordenColumn" msprop:Generator_UserColumnName="orden" type="xs:string" minOccurs="0" />
@@ -46,6 +46,7 @@
               <xs:element name="comprarado_fomento" msprop:Generator_ColumnVarNameInTable="columncomprarado_fomento" msprop:Generator_ColumnPropNameInRow="comprarado_fomento" msprop:Generator_ColumnPropNameInTable="comprarado_fomentoColumn" msprop:Generator_UserColumnName="comprarado_fomento" type="xs:boolean" minOccurs="0" />
               <xs:element name="id_origen_juicio" msprop:Generator_ColumnVarNameInTable="columnid_origen_juicio" msprop:Generator_ColumnPropNameInRow="id_origen_juicio" msprop:Generator_ColumnPropNameInTable="id_origen_juicioColumn" msprop:Generator_UserColumnName="id_origen_juicio" type="xs:int" minOccurs="0" />
               <xs:element name="nombre_origen_juicio" msprop:Generator_ColumnVarNameInTable="columnnombre_origen_juicio" msprop:Generator_ColumnPropNameInRow="nombre_origen_juicio" msprop:Generator_ColumnPropNameInTable="nombre_origen_juicioColumn" msprop:Generator_UserColumnName="nombre_origen_juicio" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_carton_jucios" msprop:Generator_ColumnVarNameInTable="columnnumero_carton_jucios" msprop:Generator_ColumnPropNameInRow="numero_carton_jucios" msprop:Generator_ColumnPropNameInTable="numero_carton_juciosColumn" msprop:Generator_UserColumnName="numero_carton_jucios" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaAvocoConocimientoPago_Total : ReportClass {
+    public class rptProvidenciaAvocoConocimientoNuevos_Procesos : ReportClass {
         
-        public rptProvidenciaAvocoConocimientoPago_Total() {
+        public rptProvidenciaAvocoConocimientoNuevos_Procesos() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaAvocoConocimiento(Pago_Total).rpt";
+                return "rptProvidenciaAvocoConocimiento(Nuevos_Procesos).rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Pago_Total).rpt";
+                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Nuevos_Procesos).rpt";
             }
             set {
                 // Do nothing
@@ -194,7 +194,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_liquidacion {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_razon {
             get {
                 return this.DataDefinition.ParameterFields[10];
             }
@@ -202,7 +202,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_auto_pago {
+        public CrystalDecisions.Shared.IParameterField Parameter__reemplazar {
             get {
                 return this.DataDefinition.ParameterFields[11];
             }
@@ -210,49 +210,17 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_razon {
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_acto {
             get {
                 return this.DataDefinition.ParameterFields[12];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio {
-            get {
-                return this.DataDefinition.ParameterFields[13];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio {
-            get {
-                return this.DataDefinition.ParameterFields[14];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_solicitud {
-            get {
-                return this.DataDefinition.ParameterFields[15];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_solicitud {
-            get {
-                return this.DataDefinition.ParameterFields[16];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaAvocoConocimientoPago_Total : Component, ICachedReport {
+    public class CachedrptProvidenciaAvocoConocimientoNuevos_Procesos : Component, ICachedReport {
         
-        public CachedrptProvidenciaAvocoConocimientoPago_Total() {
+        public CachedrptProvidenciaAvocoConocimientoNuevos_Procesos() {
         }
         
         [Browsable(false)]
@@ -289,7 +257,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaAvocoConocimientoPago_Total rpt = new rptProvidenciaAvocoConocimientoPago_Total();
+            rptProvidenciaAvocoConocimientoNuevos_Procesos rpt = new rptProvidenciaAvocoConocimientoNuevos_Procesos();
             rpt.Site = this.Site;
             return rpt;
         }

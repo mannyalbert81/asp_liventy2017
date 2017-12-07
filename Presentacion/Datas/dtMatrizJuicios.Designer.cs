@@ -341,6 +341,8 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columnnombre_origen_juicio;
             
+            private global::System.Data.DataColumn columnnumero_carton_jucios;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -624,6 +626,14 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numero_carton_juciosColumn {
+                get {
+                    return this.columnnumero_carton_jucios;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -690,7 +700,8 @@ namespace Presentacion.Datas {
                         string nombre_ciudad, 
                         bool comprarado_fomento, 
                         int id_origen_juicio, 
-                        string nombre_origen_juicio) {
+                        string nombre_origen_juicio, 
+                        string numero_carton_jucios) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         orden,
@@ -723,7 +734,8 @@ namespace Presentacion.Datas {
                         nombre_ciudad,
                         comprarado_fomento,
                         id_origen_juicio,
-                        nombre_origen_juicio};
+                        nombre_origen_juicio,
+                        numero_carton_jucios};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -777,6 +789,7 @@ namespace Presentacion.Datas {
                 this.columncomprarado_fomento = base.Columns["comprarado_fomento"];
                 this.columnid_origen_juicio = base.Columns["id_origen_juicio"];
                 this.columnnombre_origen_juicio = base.Columns["nombre_origen_juicio"];
+                this.columnnumero_carton_jucios = base.Columns["numero_carton_jucios"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -844,6 +857,8 @@ namespace Presentacion.Datas {
                 base.Columns.Add(this.columnid_origen_juicio);
                 this.columnnombre_origen_juicio = new global::System.Data.DataColumn("nombre_origen_juicio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_origen_juicio);
+                this.columnnumero_carton_jucios = new global::System.Data.DataColumn("numero_carton_jucios", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_carton_jucios);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1492,6 +1507,23 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string numero_carton_jucios {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.numero_carton_juciosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_carton_jucios\' de la tabla \'DataTable1\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.numero_carton_juciosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsordenNull() {
                 return this.IsNull(this.tableDataTable1.ordenColumn);
             }
@@ -1860,6 +1892,18 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setnombre_origen_juicioNull() {
                 this[this.tableDataTable1.nombre_origen_juicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnumero_carton_juciosNull() {
+                return this.IsNull(this.tableDataTable1.numero_carton_juciosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnumero_carton_juciosNull() {
+                this[this.tableDataTable1.numero_carton_juciosColumn] = global::System.Convert.DBNull;
             }
         }
         

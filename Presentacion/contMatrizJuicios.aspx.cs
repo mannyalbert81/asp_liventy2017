@@ -52,11 +52,11 @@ namespace Presentacion
 
             try { parametros.id_origen_juicio = Convert.ToInt32(Request.QueryString["id_origen_juicio"]); } catch (Exception) { parametros.id_origen_juicio = 0; }
 
+            parametros.numero_carton_jucios = Request.QueryString["numero_carton_jucios"];
 
-
-            string columnas = "juicios.orden, juicios.regional, juicios.juicio_referido_titulo_credito, juicios.year_juicios, clientes.id_clientes, clientes.identificacion_clientes, clientes.nombres_clientes, clientes.nombre_garantes, provincias.id_provincias, provincias.nombre_provincias, titulo_credito.id_titulo_credito, titulo_credito.numero_titulo_credito, juicios.fecha_emision_juicios, juicios.cuantia_inicial, juicios.riesgo_actual, estados_procesales_juicios.id_estados_procesales_juicios, estados_procesales_juicios.nombre_estados_procesales_juicios, juicios.descripcion_estado_procesal, juicios.fecha_ultima_providencia, juicios.estrategia_seguir, juicios.observaciones, asignacion_secretarios_view.id_abogado, asignacion_secretarios_view.impulsores, asignacion_secretarios_view.id_secretario, asignacion_secretarios_view.secretarios, ciudad.id_ciudad, ciudad.nombre_ciudad, juicios.comprarado_fomento, juicios.id_origen_juicio, origen_juicio.nombre_origen_juicio";
-            string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad, public.origen_juicio";
-            string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND juicios.id_origen_juicio= origen_juicio.id_origen_juicio";
+            string columnas = "juicios.orden, juicios.regional, juicios.juicio_referido_titulo_credito, juicios.year_juicios, clientes.id_clientes, clientes.identificacion_clientes, clientes.nombres_clientes, clientes.nombre_garantes, provincias.id_provincias, provincias.nombre_provincias, titulo_credito.id_titulo_credito, titulo_credito.numero_titulo_credito, juicios.fecha_emision_juicios, juicios.cuantia_inicial, juicios.riesgo_actual, estados_procesales_juicios.id_estados_procesales_juicios, estados_procesales_juicios.nombre_estados_procesales_juicios, juicios.descripcion_estado_procesal, juicios.fecha_ultima_providencia, juicios.estrategia_seguir, juicios.observaciones, asignacion_secretarios_view.id_abogado, asignacion_secretarios_view.impulsores, asignacion_secretarios_view.id_secretario, asignacion_secretarios_view.secretarios, ciudad.id_ciudad, ciudad.nombre_ciudad, juicios.comprarado_fomento, juicios.id_origen_juicio, origen_juicio.nombre_origen_juicio, carton_juicuis.numero_carton_jucios";
+            string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad, public.origen_juicio, public.carton_juicuis";
+            string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND juicios.id_origen_juicio= origen_juicio.id_origen_juicio AND juicios.id_carton_juicios=carton_juicuis.id_carton_juicios";
             //string order_by = "juicios.numero_juicios";
 
             String where_to = "";
@@ -127,7 +127,10 @@ namespace Presentacion
                 {
                     where_to += " AND juicios.id_origen_juicio=" + parametros.id_origen_juicio + "";
                 }
-
+                if (!String.IsNullOrEmpty(parametros.numero_carton_jucios))
+                {
+                    where_to += " AND carton_juicuis.numero_carton_jucios like '" + parametros.numero_carton_jucios + "'";
+                }
             }
 
             if (parametros.id_rol == 5)
@@ -198,7 +201,10 @@ namespace Presentacion
                 {
                     where_to += " AND juicios.id_origen_juicio=" + parametros.id_origen_juicio + "";
                 }
-
+                if (!String.IsNullOrEmpty(parametros.numero_carton_jucios))
+                {
+                    where_to += " AND carton_juicuis.numero_carton_jucios like '" + parametros.numero_carton_jucios + "'";
+                }
             }
             if (parametros.id_rol == 23)
             {
@@ -240,6 +246,10 @@ namespace Presentacion
                 if (parametros.id_origen_juicio > 0)
                 {
                     where_to += " AND juicios.id_origen_juicio=" + parametros.id_origen_juicio + "";
+                }
+                if (!String.IsNullOrEmpty(parametros.numero_carton_jucios))
+                {
+                    where_to += " AND carton_juicuis.numero_carton_jucios like '" + parametros.numero_carton_jucios + "'";
                 }
             }
 

@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaAvocoConocimientoPago_Total : ReportClass {
+    public class rptProvidenciaLevantamientoEmbargoDiscapacidad : ReportClass {
         
-        public rptProvidenciaAvocoConocimientoPago_Total() {
+        public rptProvidenciaLevantamientoEmbargoDiscapacidad() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaAvocoConocimiento(Pago_Total).rpt";
+                return "rptProvidenciaLevantamientoEmbargo(Discapacidad).rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Pago_Total).rpt";
+                return "Presentacion.Reporte.rptProvidenciaLevantamientoEmbargo(Discapacidad).rpt";
             }
             set {
                 // Do nothing
@@ -114,7 +114,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nombre_juez {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_avoco {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -122,7 +122,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nombre_secretario {
+        public CrystalDecisions.Shared.IParameterField Parameter__razon_avoco {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -130,7 +130,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nombre_impulsor {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_avoco_razones {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -138,7 +138,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cargo_secretario {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_razon {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -146,7 +146,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cargo_abogado {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_medida_cuatelar_discapacidad {
             get {
                 return this.DataDefinition.ParameterFields[4];
             }
@@ -154,7 +154,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_avoco {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_medida_cuatelar_discapacidad {
             get {
                 return this.DataDefinition.ParameterFields[5];
             }
@@ -162,7 +162,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__razon_avoco {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_liquidacion_medida_cuatelar_discapacidad {
             get {
                 return this.DataDefinition.ParameterFields[6];
             }
@@ -170,7 +170,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_avoco_razones {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_liquidacion_medida_cuatelar_discapacidad {
             get {
                 return this.DataDefinition.ParameterFields[7];
             }
@@ -178,7 +178,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_impulsor_anterior {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_solicitud_discapacidad {
             get {
                 return this.DataDefinition.ParameterFields[8];
             }
@@ -186,7 +186,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_secretario_anterior {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_solicitud_discapacidad {
             get {
                 return this.DataDefinition.ParameterFields[9];
             }
@@ -194,65 +194,17 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_liquidacion {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_discapacitado {
             get {
                 return this.DataDefinition.ParameterFields[10];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_auto_pago {
-            get {
-                return this.DataDefinition.ParameterFields[11];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_razon {
-            get {
-                return this.DataDefinition.ParameterFields[12];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio {
-            get {
-                return this.DataDefinition.ParameterFields[13];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio {
-            get {
-                return this.DataDefinition.ParameterFields[14];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_solicitud {
-            get {
-                return this.DataDefinition.ParameterFields[15];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_solicitud {
-            get {
-                return this.DataDefinition.ParameterFields[16];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaAvocoConocimientoPago_Total : Component, ICachedReport {
+    public class CachedrptProvidenciaLevantamientoEmbargoDiscapacidad : Component, ICachedReport {
         
-        public CachedrptProvidenciaAvocoConocimientoPago_Total() {
+        public CachedrptProvidenciaLevantamientoEmbargoDiscapacidad() {
         }
         
         [Browsable(false)]
@@ -289,7 +241,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaAvocoConocimientoPago_Total rpt = new rptProvidenciaAvocoConocimientoPago_Total();
+            rptProvidenciaLevantamientoEmbargoDiscapacidad rpt = new rptProvidenciaLevantamientoEmbargoDiscapacidad();
             rpt.Site = this.Site;
             return rpt;
         }
