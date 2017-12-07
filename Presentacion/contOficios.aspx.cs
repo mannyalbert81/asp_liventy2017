@@ -57,6 +57,22 @@ namespace Presentacion
             }
 
 
+            string _nombre_documento = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_archivo_oficios"]))
+            {
+
+
+                if (Request.QueryString["nombre_archivo_oficios"] != "")
+                {
+                    _nombre_documento = Request.QueryString["nombre_archivo_oficios"];
+                }
+                else {
+                    _nombre_documento = "Oficios" + "001";
+                }
+
+            }
+
+
             string columnas = "asignacion_secretarios_view.impulsores, asignacion_secretarios_view.cargo_impulsores,"+
             " asignacion_secretarios_view.sexo_impulsores, asignacion_secretarios_view.secretarios,"+
             " asignacion_secretarios_view.cargo_secretarios, asignacion_secretarios_view.sexo_secretarios,"+
@@ -75,8 +91,7 @@ namespace Presentacion
             String where_to = "";
             where_to = where + where1 + where2 + "";
 
-            string _nombre_documento = "OFICIO" + _identificador_oficios;
-            //where = where + where_to;
+             //where = where + where_to;
 
 
             Datas.dtOficios dtInforme = new Datas.dtOficios();
@@ -95,7 +110,7 @@ namespace Presentacion
             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
             ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
             DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-            string pathToFiles = Server.MapPath("~/providencias/");
+            string pathToFiles = Server.MapPath("~/Documentos/Oficios/");
 
             objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
             ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
