@@ -370,7 +370,119 @@ namespace Presentacion
             }
 
 
+            string _numero_oficio_medida_cuatelar_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_medida_cuatelar_discapacidad"]))
+            {
 
+
+                if (Request.QueryString["numero_oficio_medida_cuatelar_discapacidad"] != "")
+                {
+                    _numero_oficio_medida_cuatelar_discapacidad = Request.QueryString["numero_oficio_medida_cuatelar_discapacidad"];
+                }
+                else {
+                    _numero_oficio_medida_cuatelar_discapacidad = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_oficio_medida_cuatelar_discapacidad = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficio_medida_cuatelar_discapacidad"]))
+            {
+
+                string fecha_medida_cuatelar_discapacidad = Request.QueryString["fecha_oficio_medida_cuatelar_discapacidad"];
+
+                if (fecha_medida_cuatelar_discapacidad != "0")
+                {
+                    _fecha_oficio_medida_cuatelar_discapacidad = Convert.ToDateTime(fecha_medida_cuatelar_discapacidad);
+
+                }
+
+
+
+            }
+
+
+            string _numero_liquidacion_medida_cuatelar_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_liquidacion_medida_cuatelar_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["numero_liquidacion_medida_cuatelar_discapacidad"] != "")
+                {
+                    _numero_liquidacion_medida_cuatelar_discapacidad = Request.QueryString["numero_liquidacion_medida_cuatelar_discapacidad"];
+                }
+                else {
+                    _numero_liquidacion_medida_cuatelar_discapacidad = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_liquidacion_medida_cuatelar_discapacidad = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_liquidacion_medida_cuatelar_discapacidad"]))
+            {
+
+                string fecha_liquidacion_medida_cuatelar_discapacidad = Request.QueryString["fecha_liquidacion_medida_cuatelar_discapacidad"];
+
+                if (fecha_liquidacion_medida_cuatelar_discapacidad != "0")
+                {
+                    _fecha_liquidacion_medida_cuatelar_discapacidad = Convert.ToDateTime(fecha_liquidacion_medida_cuatelar_discapacidad);
+
+                }
+
+
+
+            }
+
+
+            string _numero_solicitud_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_solicitud_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["numero_solicitud_discapacidad"] != "")
+                {
+                    _numero_solicitud_discapacidad = Request.QueryString["numero_solicitud_discapacidad"];
+                }
+                else {
+                    _numero_solicitud_discapacidad = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_solicitud_discapacidad = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_solicitud_discapacidad"]))
+            {
+
+                string fecha_solicitud_discapacidad = Request.QueryString["fecha_solicitud_discapacidad"];
+
+                if (fecha_solicitud_discapacidad != "0")
+                {
+                    _fecha_solicitud_discapacidad = Convert.ToDateTime(fecha_solicitud_discapacidad);
+
+                }
+
+
+
+            }
+
+            string _nombre_discapacitado = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_discapacitado"]))
+            {
+
+
+                if (Request.QueryString["nombre_discapacitado"] != "")
+                {
+                    _nombre_discapacitado = Request.QueryString["nombre_discapacitado"];
+                }
+                else {
+                    _nombre_discapacitado = "S/N";
+                }
+
+            }
+            
 
 
 
@@ -1237,6 +1349,71 @@ namespace Presentacion
 
 
                     }
+
+
+
+
+                    if (_tipo_avoco == 10)
+                    {
+
+
+                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                        NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                        daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                        daInforme.Fill(dtInforme, "juicios");
+                        int reg = dtInforme.Tables[1].Rows.Count;
+                        Reporte.rptProvidenciaLevantamientoEmbargoDiscapacidad ObjRep = new Reporte.rptProvidenciaLevantamientoEmbargoDiscapacidad();
+
+
+                        ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                        CultureInfo ci = new CultureInfo("es-EC");
+
+                        ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                        ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+
+                        ObjRep.SetParameterValue("_numero_oficio_medida_cuatelar_discapacidad", _numero_oficio_medida_cuatelar_discapacidad);
+                        ObjRep.SetParameterValue("_fecha_oficio_medida_cuatelar_discapacidad", _fecha_oficio_medida_cuatelar_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_numero_liquidacion_medida_cuatelar_discapacidad", _numero_liquidacion_medida_cuatelar_discapacidad);
+                        ObjRep.SetParameterValue("_fecha_liquidacion_medida_cuatelar_discapacidad", _fecha_liquidacion_medida_cuatelar_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_numero_solicitud_discapacidad", _numero_solicitud_discapacidad);
+                        ObjRep.SetParameterValue("_fecha_solicitud_discapacidad", _fecha_solicitud_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_discapacitado", _nombre_discapacitado);
+
+                        
+                        CrystalReportViewer1.DataBind();
+
+                        ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                        string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento_Medida_Cautelar_Discapacidad/");
+
+                        objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                        ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                        ObjRep.Export();
+
+                        dtInforme.Dispose();
+                        daInforme.Dispose();
+
+                        CrystalReportViewer1.Dispose();
+                        ObjRep.Close();
+                        ObjRep.Dispose();
+
+
+
+                        byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", byteData.Length.ToString());
+                        Response.BinaryWrite(byteData);
+
+
+                    }
+
+
 
                 }
 
