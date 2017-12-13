@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaLevantamientoMedidaCautelarFallecimiento : ReportClass {
+    public class rptProvidenciaLevantamientoMedidaCautelarFallecimiento___Copia : ReportClass {
         
-        public rptProvidenciaLevantamientoMedidaCautelarFallecimiento() {
+        public rptProvidenciaLevantamientoMedidaCautelarFallecimiento___Copia() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaLevantamientoMedidaCautelar(Fallecimiento).rpt";
+                return "rptProvidenciaLevantamientoMedidaCautelar(Fallecimiento) - Copia.rpt";
             }
             set {
                 // Do nothing
@@ -41,8 +41,8 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaLevantamientoMedidaCautelar(Fallecimiento).rpt" +
-                    "";
+                return "Presentacion.Reporte.rptProvidenciaLevantamientoMedidaCautelar(Fallecimiento) - C" +
+                    "opia.rpt";
             }
             set {
                 // Do nothing
@@ -211,9 +211,9 @@ namespace Presentacion.Reporte {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaLevantamientoMedidaCautelarFallecimiento : Component, ICachedReport {
+    public class CachedrptProvidenciaLevantamientoMedidaCautelarFallecimiento___Copia : Component, ICachedReport {
         
-        public CachedrptProvidenciaLevantamientoMedidaCautelarFallecimiento() {
+        public CachedrptProvidenciaLevantamientoMedidaCautelarFallecimiento___Copia() {
         }
         
         [Browsable(false)]
@@ -250,7 +250,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaLevantamientoMedidaCautelarFallecimiento rpt = new rptProvidenciaLevantamientoMedidaCautelarFallecimiento();
+            rptProvidenciaLevantamientoMedidaCautelarFallecimiento___Copia rpt = new rptProvidenciaLevantamientoMedidaCautelarFallecimiento___Copia();
             rpt.Site = this.Site;
             return rpt;
         }
