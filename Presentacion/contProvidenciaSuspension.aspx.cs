@@ -213,6 +213,7 @@ namespace Presentacion
                 
             }
 
+            DateTime _fecha_razon = DateTime.Now;
 
 
             if (!String.IsNullOrEmpty(Request.QueryString["fecha_providencias"]))
@@ -225,11 +226,17 @@ namespace Presentacion
                 {
                     _fecha_providencias = Convert.ToDateTime(fecha +" "+hora);
                     _fecha_providencias_razones = Convert.ToDateTime(fecha + " " + hora);
+                    _fecha_razon = Convert.ToDateTime(fecha);
                 }
 
 
 
             }
+
+           
+
+
+
             if (!String.IsNullOrEmpty(Request.QueryString["fecha_desde"]))
             {
                 string fecha_desde = Request.QueryString["fecha_desde"];
@@ -302,8 +309,9 @@ namespace Presentacion
             CultureInfo ci = new CultureInfo("es-EC");
 
             ObjRep.SetParameterValue("_fecha_providencias", _fecha_providencias.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
-            ObjRep.SetParameterValue("_fecha_providencias_razones", _fecha_providencias_razones.AddMinutes(20).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+            ObjRep.SetParameterValue("_fecha_providencias_razones", _fecha_providencias_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_razon_providencias", _razon_providencias);
+            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
 
             //CrystalReportViewer1.DataBind();
 

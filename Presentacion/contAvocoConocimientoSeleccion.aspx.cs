@@ -340,8 +340,6 @@ namespace Presentacion
             string _numero_liquidacion = "";
             if (!String.IsNullOrEmpty(Request.QueryString["numero_liquidacion"]))
             {
-
-
                 if (Request.QueryString["numero_liquidacion"] != "")
                 {
                     _numero_liquidacion = Request.QueryString["numero_liquidacion"];
@@ -349,26 +347,92 @@ namespace Presentacion
                 else {
                     _numero_liquidacion = "S/N";
                 }
-
             }
 
             DateTime _fecha_auto_pago = DateTime.Now;
-            
             if (!String.IsNullOrEmpty(Request.QueryString["fecha_auto_pago"]))
             {
-
                 string fecha1 = Request.QueryString["fecha_auto_pago"];
                
                 if (fecha1 != "0")
                 {
                     _fecha_auto_pago = Convert.ToDateTime(fecha1);
-                  
                 }
-
-
-
             }
 
+
+
+
+            string _nombre_numero_documento_1 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_1"]))
+            {
+                if (Request.QueryString["nombre_numero_documento_1"] != "")
+                {
+                    _nombre_numero_documento_1 = Request.QueryString["nombre_numero_documento_1"];
+                }
+                else {
+                    _nombre_numero_documento_1 = "S/N";
+                }
+            }
+
+            DateTime _fecha_documento_1 = DateTime.Now;
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_documento_1"]))
+            {
+                string fecha_documento_1 = Request.QueryString["fecha_documento_1"];
+
+                if (fecha_documento_1 != "0")
+                {
+                    _fecha_documento_1 = Convert.ToDateTime(fecha_documento_1);
+                }
+            }
+
+            string _nombre_numero_documento_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_2"]))
+            {
+                if (Request.QueryString["nombre_numero_documento_2"] != "")
+                {
+                    _nombre_numero_documento_2 = Request.QueryString["nombre_numero_documento_2"];
+                }
+                else {
+                    _nombre_numero_documento_2 = "S/N";
+                }
+            }
+
+            DateTime _fecha_documento_2 = DateTime.Now;
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_documento_2"]))
+            {
+                string fecha_documento_2 = Request.QueryString["fecha_documento_2"];
+
+                if (fecha_documento_2 != "0")
+                {
+                    _fecha_documento_2 = Convert.ToDateTime(fecha_documento_2);
+                }
+            }
+
+
+
+            string _nombre_numero_documento_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_3"]))
+            {
+                if (Request.QueryString["nombre_numero_documento_3"] != "")
+                {
+                    _nombre_numero_documento_3 = Request.QueryString["nombre_numero_documento_3"];
+                }
+                else {
+                    _nombre_numero_documento_3 = "S/N";
+                }
+            }
+
+            DateTime _fecha_documento_3 = DateTime.Now;
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_documento_3"]))
+            {
+                string fecha_documento_3 = Request.QueryString["fecha_documento_3"];
+
+                if (fecha_documento_3 != "0")
+                {
+                    _fecha_documento_3 = Convert.ToDateTime(fecha_documento_3);
+                }
+            }
 
             string _numero_oficio_medida_cuatelar_discapacidad = "";
             if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_medida_cuatelar_discapacidad"]))
@@ -482,10 +546,131 @@ namespace Presentacion
                 }
 
             }
+
+
+
+            string _numero_oficio_medida_cuatelar_fallecimiento = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_medida_cuatelar_fallecimiento"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio_medida_cuatelar_fallecimiento"] != "")
+                {
+                    _numero_oficio_medida_cuatelar_fallecimiento = Request.QueryString["numero_oficio_medida_cuatelar_fallecimiento"];
+                }
+                else {
+                    _numero_oficio_medida_cuatelar_fallecimiento = "S/N";
+                }
+
+            }
+
+
+            DateTime _fecha_oficio_medida_cuatelar_fallecimiento = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficio_medida_cuatelar_fallecimiento"]))
+            {
+
+                string fecha_oficio_medida_cuatelar_fallecimiento = Request.QueryString["fecha_oficio_medida_cuatelar_fallecimiento"];
+
+                if (fecha_oficio_medida_cuatelar_fallecimiento != "0")
+                {
+                    _fecha_oficio_medida_cuatelar_fallecimiento = Convert.ToDateTime(fecha_oficio_medida_cuatelar_fallecimiento);
+
+                }
+
+            }
+
+
+            string _numero_liquidacion_medida_cuatelar_fallecimiento = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_liquidacion_medida_cuatelar_fallecimiento"]))
+            {
+
+
+                if (Request.QueryString["numero_liquidacion_medida_cuatelar_fallecimiento"] != "")
+                {
+                    _numero_liquidacion_medida_cuatelar_fallecimiento = Request.QueryString["numero_liquidacion_medida_cuatelar_fallecimiento"];
+                }
+                else {
+                    _numero_liquidacion_medida_cuatelar_fallecimiento = "S/N";
+                }
+
+            }
+
+
+            DateTime _fecha_liquidacion_medida_cuatelar_fallecimiento = DateTime.Now;
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_liquidacion_medida_cuatelar_fallecimiento"]))
+            {
+                string fecha_liquidacion_medida_cuatelar_fallecimiento = Request.QueryString["fecha_liquidacion_medida_cuatelar_fallecimiento"];
+
+                if (fecha_liquidacion_medida_cuatelar_fallecimiento != "0")
+                {
+                    _fecha_liquidacion_medida_cuatelar_fallecimiento = Convert.ToDateTime(fecha_liquidacion_medida_cuatelar_fallecimiento);
+                }
+            }
+
+
+            string _numero_solicitud_fallecimiento = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_solicitud_fallecimiento"]))
+            {
+
+
+                if (Request.QueryString["numero_solicitud_fallecimiento"] != "")
+                {
+                    _numero_solicitud_fallecimiento = Request.QueryString["numero_solicitud_fallecimiento"];
+                }
+                else {
+                    _numero_solicitud_fallecimiento = "S/N";
+                }
+
+            }
+
+
+            DateTime _fecha_solicitud_fallecimiento = DateTime.Now;
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_solicitud_fallecimiento"]))
+            {
+                string fecha_solicitud_fallecimiento = Request.QueryString["fecha_solicitud_fallecimiento"];
+
+                if (fecha_solicitud_fallecimiento != "0")
+                {
+                    _fecha_solicitud_fallecimiento = Convert.ToDateTime(fecha_solicitud_fallecimiento);
+                }
+            }
+
+            string _nombre_conyuge_sobreviviente = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_conyuge_sobreviviente"]))
+            {
+
+
+                if (Request.QueryString["nombre_conyuge_sobreviviente"] != "")
+                {
+                    _nombre_conyuge_sobreviviente = Request.QueryString["nombre_conyuge_sobreviviente"];
+                }
+                else {
+                    _nombre_conyuge_sobreviviente = "S/N";
+                }
+
+            }
+
+
+
+            string _correo_conyuge_sobreviviente = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["correo_conyuge_sobreviviente"]))
+            {
+
+
+                if (Request.QueryString["correo_conyuge_sobreviviente"] != "")
+                {
+                    _correo_conyuge_sobreviviente = Request.QueryString["correo_conyuge_sobreviviente"];
+                }
+                else {
+                    _correo_conyuge_sobreviviente = "S/N";
+                }
+
+            }
+
+
             
-
-
-
+            
             string _numero_oficio = "";
             if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio"]))
             {
@@ -520,9 +705,7 @@ namespace Presentacion
 
 
 
-
-
-
+            
 
             string _numero_oficio_restructuracion = "";
             if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_restructuracion"]))
@@ -868,6 +1051,12 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_numero_solicitud", _numero_solicitud);
                         ObjRep.SetParameterValue("_fecha_solicitud", _fecha_solicitud.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
 
+                        ObjRep.SetParameterValue("_nombre_numero_documento_1", _nombre_numero_documento_1);
+                        ObjRep.SetParameterValue("_fecha_documento_1", _fecha_documento_1.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_numero_documento_2", _nombre_numero_documento_2);
+                        ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
+                        ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
 
 
 
@@ -1413,6 +1602,69 @@ namespace Presentacion
 
                     }
 
+
+
+
+                    if (_tipo_avoco == 11)
+                    {
+
+
+                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                        NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                        daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                        daInforme.Fill(dtInforme, "juicios");
+                        int reg = dtInforme.Tables[1].Rows.Count;
+                        Reporte.rptProvidenciaLevantamientoMedidaCautelarFallecimiento ObjRep = new Reporte.rptProvidenciaLevantamientoMedidaCautelarFallecimiento();
+
+
+                        ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                        CultureInfo ci = new CultureInfo("es-EC");
+
+                        ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                        ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+
+                        ObjRep.SetParameterValue("_numero_oficio_medida_cuatelar_fallecimiento", _numero_oficio_medida_cuatelar_fallecimiento);
+                        ObjRep.SetParameterValue("_fecha_oficio_medida_cuatelar_fallecimiento", _fecha_oficio_medida_cuatelar_fallecimiento.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_numero_liquidacion_medida_cuatelar_fallecimiento", _numero_liquidacion_medida_cuatelar_fallecimiento);
+                        ObjRep.SetParameterValue("_fecha_liquidacion_medida_cuatelar_fallecimiento", _fecha_liquidacion_medida_cuatelar_fallecimiento.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_numero_solicitud_fallecimiento", _numero_solicitud_fallecimiento);
+                        ObjRep.SetParameterValue("_fecha_solicitud_fallecimiento", _fecha_solicitud_fallecimiento.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_conyuge_sobreviviente", _nombre_conyuge_sobreviviente);
+                        ObjRep.SetParameterValue("_correo_conyuge_sobreviviente", _correo_conyuge_sobreviviente);
+
+
+                        CrystalReportViewer1.DataBind();
+
+                        ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                        string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento_Medida_Cautelar_Fallecimiento/");
+
+                        objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                        ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                        ObjRep.Export();
+
+                        dtInforme.Dispose();
+                        daInforme.Dispose();
+
+                        CrystalReportViewer1.Dispose();
+                        ObjRep.Close();
+                        ObjRep.Dispose();
+
+
+
+                        byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", byteData.Length.ToString());
+                        Response.BinaryWrite(byteData);
+
+
+                    }
 
 
                 }
