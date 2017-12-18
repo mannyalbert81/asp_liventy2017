@@ -59,8 +59,10 @@ namespace Presentacion.Clases
 
         public string numero_carton_jucios { get; set; }
 
-
-
+        public string documento { get; set; }
+        public string tipo_documento { get; set; }
+        public string firma { get; set; }
+      
 
 
     }

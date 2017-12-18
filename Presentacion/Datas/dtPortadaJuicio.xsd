@@ -12,7 +12,7 @@
   <xs:element name="dtPortadaJuicio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtPortadaJuicio" msprop:Generator_UserDSName="dtPortadaJuicio">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_juicios" msprop:Generator_ColumnVarNameInTable="columnid_juicios" msprop:Generator_ColumnPropNameInRow="id_juicios" msprop:Generator_ColumnPropNameInTable="id_juiciosColumn" msprop:Generator_UserColumnName="id_juicios" type="xs:string" minOccurs="0" />
@@ -68,6 +68,7 @@
               <xs:element name="sexo_garantes_3" msprop:Generator_ColumnVarNameInTable="columnsexo_garantes_3" msprop:Generator_ColumnPropNameInRow="sexo_garantes_3" msprop:Generator_ColumnPropNameInTable="sexo_garantes_3Column" msprop:Generator_UserColumnName="sexo_garantes_3" type="xs:string" minOccurs="0" />
               <xs:element name="imagenQR" msprop:Generator_ColumnVarNameInTable="columnimagenQR" msprop:Generator_ColumnPropNameInRow="imagenQR" msprop:Generator_ColumnPropNameInTable="imagenQRColumn" msprop:Generator_UserColumnName="imagenQR" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="secretaria" msprop:Generator_ColumnVarNameInTable="columnsecretaria" msprop:Generator_ColumnPropNameInRow="secretaria" msprop:Generator_ColumnPropNameInTable="secretariaColumn" msprop:Generator_UserColumnName="secretaria" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_origen_juicio" msprop:Generator_ColumnVarNameInTable="columnnombre_origen_juicio" msprop:Generator_ColumnPropNameInRow="nombre_origen_juicio" msprop:Generator_ColumnPropNameInTable="nombre_origen_juicioColumn" msprop:Generator_UserColumnName="nombre_origen_juicio" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

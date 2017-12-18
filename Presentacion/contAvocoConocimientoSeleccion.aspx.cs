@@ -361,9 +361,21 @@ namespace Presentacion
             }
 
 
+            
+            string _tipo_lev = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_lev"]))
+            {
+                if (Request.QueryString["tipo_lev"] != "")
+                {
+                    _tipo_lev = Request.QueryString["tipo_lev"];
+                }
+                else {
+                    _tipo_lev = "S/N";
+                }
+            }
 
 
-            string _nombre_numero_documento_1 = "";
+            string _nombre_numero_documento_1 = "S/N";
             if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_1"]))
             {
                 if (Request.QueryString["nombre_numero_documento_1"] != "")
@@ -386,7 +398,7 @@ namespace Presentacion
                 }
             }
 
-            string _nombre_numero_documento_2 = "";
+            string _nombre_numero_documento_2 = "S/N";
             if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_2"]))
             {
                 if (Request.QueryString["nombre_numero_documento_2"] != "")
@@ -411,7 +423,7 @@ namespace Presentacion
 
 
 
-            string _nombre_numero_documento_3 = "";
+            string _nombre_numero_documento_3 = "S/N";
             if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_3"]))
             {
                 if (Request.QueryString["nombre_numero_documento_3"] != "")
@@ -1437,9 +1449,17 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_numero_solicitud_restructuracion", _numero_solicitud_restructuracion);
                         ObjRep.SetParameterValue("_fecha_solicitud_restructuracion", _fecha_solicitud_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                         ObjRep.SetParameterValue("_acta_validacion_restructuracion", _acta_validacion_restructuracion);
+                        ObjRep.SetParameterValue("_tipo_lev", _tipo_lev);
+
+                        ObjRep.SetParameterValue("_nombre_numero_documento_1", _nombre_numero_documento_1);
+                        ObjRep.SetParameterValue("_fecha_documento_1", _fecha_documento_1.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_numero_documento_2", _nombre_numero_documento_2);
+                        ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
+                        ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
 
 
-                        
+
 
 
 
