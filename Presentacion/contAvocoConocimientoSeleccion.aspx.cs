@@ -835,6 +835,18 @@ namespace Presentacion
 
             }
 
+            
+            string _referencia = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia"]))
+            {
+                if (Request.QueryString["referencia"] != "")
+                {
+                    _referencia = Request.QueryString["referencia"];
+                }
+                else {
+                    _referencia = "S/N";
+                }
+            }
 
 
             string _tipo_cuenta = "";
@@ -1664,6 +1676,79 @@ namespace Presentacion
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                         DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
                         string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento_Medida_Cautelar_Fallecimiento/");
+
+                        objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                        ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                        ObjRep.Export();
+
+                        dtInforme.Dispose();
+                        daInforme.Dispose();
+
+                        CrystalReportViewer1.Dispose();
+                        ObjRep.Close();
+                        ObjRep.Dispose();
+
+
+
+                        byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", byteData.Length.ToString());
+                        Response.BinaryWrite(byteData);
+
+
+                    }
+
+
+
+                    if (_tipo_avoco == 13)
+                    {
+
+
+                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                        NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                        daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                        daInforme.Fill(dtInforme, "juicios");
+                        int reg = dtInforme.Tables[1].Rows.Count;
+                        Reporte.rptProvidenciaAvocoConocimientoRestructuracion_Referencia_Entidades ObjRep = new Reporte.rptProvidenciaAvocoConocimientoRestructuracion_Referencia_Entidades();
+
+
+                        ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                        CultureInfo ci = new CultureInfo("es-EC");
+
+                        ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                        ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                        ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_numero_oficio_restructuracion", _numero_oficio_restructuracion);
+                        ObjRep.SetParameterValue("_fecha_oficio_restructuracion", _fecha_oficio_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_numero_solicitud_restructuracion", _numero_solicitud_restructuracion);
+                        ObjRep.SetParameterValue("_fecha_solicitud_restructuracion", _fecha_solicitud_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_acta_validacion_restructuracion", _acta_validacion_restructuracion);
+                        ObjRep.SetParameterValue("_tipo_lev", _tipo_lev);
+
+                        ObjRep.SetParameterValue("_nombre_numero_documento_1", _nombre_numero_documento_1);
+                        ObjRep.SetParameterValue("_fecha_documento_1", _fecha_documento_1.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_numero_documento_2", _nombre_numero_documento_2);
+                        ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
+                        ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_referencia", _referencia);
+
+
+                        
+
+
+
+
+
+                        CrystalReportViewer1.DataBind();
+
+                        ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                        string pathToFiles = Server.MapPath("~/Documentos/Providencias_Restructuracion/");
 
                         objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
                         ObjRep.ExportOptions.DestinationOptions = objDiskOpt;

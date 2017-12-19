@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="contAvocoConocimientoSeleccion.aspx" />
+    <Content Include="contDocumentosGenerados.aspx" />
     <Content Include="contGraficas.aspx" />
     <Content Include="contGraficasActualizacionMatrizJuicios.aspx" />
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
@@ -246,6 +247,17 @@
     </Content>
     <Content Include="Datas\dtGraficas.xsc">
       <DependentUpon>dtGraficas.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datas\dtDocumentosGenerados.xsc">
+      <DependentUpon>dtDocumentosGenerados.xsd</DependentUpon>
+    </Content>
+    <None Include="Datas\dtDocumentosGenerados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtDocumentosGenerados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Datas\dtDocumentosGenerados.xss">
+      <DependentUpon>dtDocumentosGenerados.xsd</DependentUpon>
     </Content>
     <None Include="Datas\dtGraficas.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -413,6 +425,13 @@
     <Compile Include="contAvocoConocimientoSeleccion.aspx.designer.cs">
       <DependentUpon>contAvocoConocimientoSeleccion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="contDocumentosGenerados.aspx.cs">
+      <DependentUpon>contDocumentosGenerados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contDocumentosGenerados.aspx.designer.cs">
+      <DependentUpon>contDocumentosGenerados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contGraficas.aspx.cs">
       <DependentUpon>contGraficas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -504,6 +523,11 @@
     <Compile Include="contProvidenciaSuspension.aspx.designer.cs">
       <DependentUpon>contProvidenciaSuspension.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Datas\dtDocumentosGenerados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtDocumentosGenerados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datas\dtGraficas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -566,6 +590,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtTitulosFomento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptDocumentosGenerado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDocumentosGenerado.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptGraficas.cs">
       <AutoGen>True</AutoGen>
@@ -651,8 +681,8 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29 - Copia.cs">
-      <DependentUpon>rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29 - Copia.rpt</DependentUpon>
+    <Compile Include="Reporte\rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29.cs">
+      <DependentUpon>rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
@@ -754,6 +784,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reporte\rptDocumentosGenerado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDocumentosGenerado.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptGraficas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptGraficas.cs</LastGenOutput>
@@ -810,9 +844,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProvidenciaAvocoConocimiento%28Embargo%29.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29 - Copia.rpt">
+    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29 - Copia.cs</LastGenOutput>
+      <LastGenOutput>rptProvidenciaLevantamientoMedidaCautelar%28Fallecimiento%29.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaSuspension.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
