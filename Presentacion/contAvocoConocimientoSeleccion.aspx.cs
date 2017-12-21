@@ -1081,6 +1081,7 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                         ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
                         ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                        ObjRep.SetParameterValue("_referencia", _referencia);
 
 
 
