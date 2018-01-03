@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsignaLote", "AsignaLote\AsignaLote.csproj", "{2A7DD849-D3D5-4242-BEE5-500A6F25823D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescargaFTP", "DescargaFTP\DescargaFTP.csproj", "{C39FB507-5F93-430B-8AB5-D3076623EBF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2A7DD849-D3D5-4242-BEE5-500A6F25823D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A7DD849-D3D5-4242-BEE5-500A6F25823D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A7DD849-D3D5-4242-BEE5-500A6F25823D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39FB507-5F93-430B-8AB5-D3076623EBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39FB507-5F93-430B-8AB5-D3076623EBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39FB507-5F93-430B-8AB5-D3076623EBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39FB507-5F93-430B-8AB5-D3076623EBF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
