@@ -2349,9 +2349,23 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
                             ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_referencia", _referencia);
+
                             ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
                             ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
                             ObjRep.SetParameterValue("_asunto", _asunto);
+
+
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_asunto_2", _asunto_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_asunto_3", _asunto_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_asunto_4", _asunto_4);
+
+
 
 
                             CrystalReportViewer1.DataBind();
