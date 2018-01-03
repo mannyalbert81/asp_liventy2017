@@ -99,7 +99,8 @@ namespace Presentacion
                              "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, " +
                              "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                              "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
-                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\"";
+                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\", " +
+                             "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios";
 
@@ -348,15 +349,65 @@ namespace Presentacion
 
             }
 
-            //para pruebas
-            //where = where + " AND juicios.id_juicios = 3933";
-            //termina pruebas
+
+
+            string _identificador_oficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio"]))
+            {
+                if (Request.QueryString["identificador_oficio"] != "")
+                {
+                    _identificador_oficio = Request.QueryString["identificador_oficio"];
+                }
+                else {
+                    _identificador_oficio = "S/N";
+                }
+            }
+
+
+            string _entidad_va_oficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio"]))
+            {
+                if (Request.QueryString["entidad_va_oficio"] != "")
+                {
+                    _entidad_va_oficio = Request.QueryString["entidad_va_oficio"];
+                }
+                else {
+                    _entidad_va_oficio = "S/N";
+                }
+            }
+
+
+            string _asunto = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto"]))
+            {
+                if (Request.QueryString["asunto"] != "")
+                {
+                    _asunto = Request.QueryString["asunto"];
+                }
+                else {
+                    _asunto = "S/N";
+                }
+            }
+
+            string _generar_oficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["generar_oficio"]))
+            {
+                if (Request.QueryString["generar_oficio"] != "")
+                {
+                    _generar_oficio = Request.QueryString["generar_oficio"];
+                }
+                else {
+                    _generar_oficio = "S/N";
+                }
+            }
+
+
+
+
 
             where = where + where_to + "";
            
-            //where = where + where_to;
-
-            //para el citador
+           
 
             string columnascit = " u.id_usuarios,u.nombre_usuarios,r.id_rol,u.cargo_usuarios,u.sexo";
             string tablascit = " public.usuarios u INNER JOIN public.rol r ON u.id_rol = r.id_rol";
@@ -392,7 +443,83 @@ namespace Presentacion
             {
                 nombrecitador = "";
             }
-            
+
+
+
+
+
+
+            if (_generar_oficio == "Si")
+            {
+
+
+
+                Datas.dtProvidenciaLevantamiento dtInforme = new Datas.dtProvidenciaLevantamiento();
+
+                NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                daInforme = AccesoLogica.Select_reporte(columnas, tablas, where);
+
+                daInforme.Fill(dtInforme, "juicios");
+                int reg = dtInforme.Tables[1].Rows.Count;
+                Reporte.rptProvidenciaLevantamiento_ConOficio ObjRep = new Reporte.rptProvidenciaLevantamiento_ConOficio();
+
+              
+
+                ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                CultureInfo ci = new CultureInfo("es-EC");
+                ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
+                ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                ObjRep.SetParameterValue("_citador", nombrecitador);
+                ObjRep.SetParameterValue("_oficio", _numeroOficio);
+                ObjRep.SetParameterValue("_fecha_providencias", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+                ObjRep.SetParameterValue("_leyendaCitador", leyendaCitador);
+                ObjRep.SetParameterValue("_dirigido", dirigidoA);
+                ObjRep.SetParameterValue("usuario_saliente", _nombre_usuario_saliente);
+                ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                ObjRep.SetParameterValue("_asunto", _asunto);
+
+                CrystalReportViewer1.DataBind();
+
+                ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento/");
+
+                objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                ObjRep.Export();
+
+                dtInforme.Dispose();
+                daInforme.Dispose();
+
+                CrystalReportViewer1.Dispose();
+
+                ObjRep.Close();
+
+                ObjRep.Dispose();
+
+
+
+                byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+
+                Response.ContentType = "application/pdf";
+
+                Response.AddHeader("content-length", byteData.Length.ToString());
+
+                Response.BinaryWrite(byteData);
+
+
+
+            }
+            else
+            {
+
+
             Datas.dtProvidenciaLevantamiento dtInforme = new Datas.dtProvidenciaLevantamiento();
 
             NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
@@ -436,9 +563,7 @@ namespace Presentacion
             ObjRep.SetDataSource(dtInforme.Tables[1]);
 
             CultureInfo ci = new CultureInfo("es-EC");
-            //string fechaparaver = _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci);
-            //int _45gh = 1;
-            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
+             ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy \"a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
             ObjRep.SetParameterValue("_citador", nombrecitador); 
@@ -480,7 +605,7 @@ namespace Presentacion
             Response.AddHeader("content-length", byteData.Length.ToString());
 
             Response.BinaryWrite(byteData);
-            
+            }
         }
     }
 }

@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaAvocoConocimientoEmbargo : ReportClass {
+    public class rptProvidenciaAvocoConocimientoEmbargo_ConOficio : ReportClass {
         
-        public rptProvidenciaAvocoConocimientoEmbargo() {
+        public rptProvidenciaAvocoConocimientoEmbargo_ConOficio() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaAvocoConocimiento(Embargo).rpt";
+                return "rptProvidenciaAvocoConocimiento(Embargo_ConOficio).rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Embargo).rpt";
+                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Embargo_ConOficio).rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,9 +98,25 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
             get {
                 return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[8];
             }
         }
         
@@ -218,7 +234,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__entidad_va_oficio {
             get {
                 return this.DataDefinition.ParameterFields[14];
             }
@@ -226,7 +242,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__asunto {
             get {
                 return this.DataDefinition.ParameterFields[15];
             }
@@ -234,7 +250,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__identificador_oficio {
             get {
                 return this.DataDefinition.ParameterFields[16];
             }
@@ -242,7 +258,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_2 {
             get {
                 return this.DataDefinition.ParameterFields[17];
             }
@@ -250,7 +266,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_3 {
             get {
                 return this.DataDefinition.ParameterFields[18];
             }
@@ -258,7 +274,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_4 {
             get {
                 return this.DataDefinition.ParameterFields[19];
             }
@@ -266,7 +282,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_embargo_cuenta_5 {
             get {
                 return this.DataDefinition.ParameterFields[20];
             }
@@ -274,7 +290,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_2 {
             get {
                 return this.DataDefinition.ParameterFields[21];
             }
@@ -282,7 +298,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_3 {
             get {
                 return this.DataDefinition.ParameterFields[22];
             }
@@ -290,7 +306,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_4 {
             get {
                 return this.DataDefinition.ParameterFields[23];
             }
@@ -298,7 +314,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_embargo_cuenta_5 {
             get {
                 return this.DataDefinition.ParameterFields[24];
             }
@@ -306,7 +322,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_2 {
             get {
                 return this.DataDefinition.ParameterFields[25];
             }
@@ -314,7 +330,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_3 {
             get {
                 return this.DataDefinition.ParameterFields[26];
             }
@@ -322,7 +338,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_4 {
             get {
                 return this.DataDefinition.ParameterFields[27];
             }
@@ -330,7 +346,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cuenta_5 {
             get {
                 return this.DataDefinition.ParameterFields[28];
             }
@@ -338,7 +354,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_2 {
             get {
                 return this.DataDefinition.ParameterFields[29];
             }
@@ -346,7 +362,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_3 {
             get {
                 return this.DataDefinition.ParameterFields[30];
             }
@@ -354,7 +370,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_4 {
             get {
                 return this.DataDefinition.ParameterFields[31];
             }
@@ -362,7 +378,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__numero_cuenta_5 {
             get {
                 return this.DataDefinition.ParameterFields[32];
             }
@@ -370,7 +386,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_2 {
             get {
                 return this.DataDefinition.ParameterFields[33];
             }
@@ -378,7 +394,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_3 {
             get {
                 return this.DataDefinition.ParameterFields[34];
             }
@@ -386,7 +402,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_4 {
             get {
                 return this.DataDefinition.ParameterFields[35];
             }
@@ -394,7 +410,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_banco_5 {
             get {
                 return this.DataDefinition.ParameterFields[36];
             }
@@ -402,7 +418,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_2 {
             get {
                 return this.DataDefinition.ParameterFields[37];
             }
@@ -410,7 +426,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_3 {
             get {
                 return this.DataDefinition.ParameterFields[38];
             }
@@ -418,7 +434,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_4 {
             get {
                 return this.DataDefinition.ParameterFields[39];
             }
@@ -426,7 +442,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__monto_retenido_5 {
             get {
                 return this.DataDefinition.ParameterFields[40];
             }
@@ -434,7 +450,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_2 {
             get {
                 return this.DataDefinition.ParameterFields[41];
             }
@@ -442,7 +458,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_3 {
             get {
                 return this.DataDefinition.ParameterFields[42];
             }
@@ -450,7 +466,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_4 {
             get {
                 return this.DataDefinition.ParameterFields[43];
             }
@@ -458,7 +474,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_titular_cuenta_5 {
             get {
                 return this.DataDefinition.ParameterFields[44];
             }
@@ -466,7 +482,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_2 {
             get {
                 return this.DataDefinition.ParameterFields[45];
             }
@@ -474,7 +490,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_3 {
             get {
                 return this.DataDefinition.ParameterFields[46];
             }
@@ -482,7 +498,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_4 {
             get {
                 return this.DataDefinition.ParameterFields[47];
             }
@@ -490,7 +506,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_titular_cuenta_5 {
             get {
                 return this.DataDefinition.ParameterFields[48];
             }
@@ -498,7 +514,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_2 {
             get {
                 return this.DataDefinition.ParameterFields[49];
             }
@@ -506,7 +522,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_3 {
             get {
                 return this.DataDefinition.ParameterFields[50];
             }
@@ -514,7 +530,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_4 {
             get {
                 return this.DataDefinition.ParameterFields[51];
             }
@@ -522,7 +538,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__depositario_judicial_5 {
             get {
                 return this.DataDefinition.ParameterFields[52];
             }
@@ -530,17 +546,41 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_2 {
             get {
                 return this.DataDefinition.ParameterFields[53];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_3 {
+            get {
+                return this.DataDefinition.ParameterFields[54];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_4 {
+            get {
+                return this.DataDefinition.ParameterFields[55];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__identificacion_depositario_judicial_5 {
+            get {
+                return this.DataDefinition.ParameterFields[56];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaAvocoConocimientoEmbargo : Component, ICachedReport {
+    public class CachedrptProvidenciaAvocoConocimientoEmbargo_ConOficio : Component, ICachedReport {
         
-        public CachedrptProvidenciaAvocoConocimientoEmbargo() {
+        public CachedrptProvidenciaAvocoConocimientoEmbargo_ConOficio() {
         }
         
         [Browsable(false)]
@@ -577,7 +617,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaAvocoConocimientoEmbargo rpt = new rptProvidenciaAvocoConocimientoEmbargo();
+            rptProvidenciaAvocoConocimientoEmbargo_ConOficio rpt = new rptProvidenciaAvocoConocimientoEmbargo_ConOficio();
             rpt.Site = this.Site;
             return rpt;
         }

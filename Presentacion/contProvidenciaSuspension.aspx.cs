@@ -265,6 +265,59 @@ namespace Presentacion
 
 
 
+
+            string _identificador_oficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio"]))
+            {
+                if (Request.QueryString["identificador_oficio"] != "")
+                {
+                    _identificador_oficio = Request.QueryString["identificador_oficio"];
+                }
+                else {
+                    _identificador_oficio = "S/N";
+                }
+            }
+
+
+            string _entidad_va_oficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio"]))
+            {
+                if (Request.QueryString["entidad_va_oficio"] != "")
+                {
+                    _entidad_va_oficio = Request.QueryString["entidad_va_oficio"];
+                }
+                else {
+                    _entidad_va_oficio = "S/N";
+                }
+            }
+
+
+            string _asunto = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto"]))
+            {
+                if (Request.QueryString["asunto"] != "")
+                {
+                    _asunto = Request.QueryString["asunto"];
+                }
+                else {
+                    _asunto = "S/N";
+                }
+            }
+
+            string _generar_oficio = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["generar_oficio"]))
+            {
+                if (Request.QueryString["generar_oficio"] != "")
+                {
+                    _generar_oficio = Request.QueryString["generar_oficio"];
+                }
+                else {
+                    _generar_oficio = "S/N";
+                }
+            }
+
+
+
             string columnas = "juicios.id_juicios, juicios.juicio_referido_titulo_credito, clientes.identificacion_clientes, "+
                               "clientes.nombres_clientes, clientes.identificacion_garantes, clientes.nombre_garantes, "+
                               "provincias.nombre_provincias, titulo_credito.numero_titulo_credito, juicios.fecha_emision_juicios, "+
@@ -274,7 +327,7 @@ namespace Presentacion
                               "juicios.numero_juicios, asignacion_secretarios_view.cargo_secretarios, "+
                               "asignacion_secretarios_view.cargo_impulsores, asignacion_secretarios_view.sexo_secretarios, "+
                               "asignacion_secretarios_view.sexo_impulsores , clientes.identificacion_clientes_1, "+
-                              " clientes.nombre_clientes_1, clientes.identificacion_clientes_2, nombre_clientes_2, "+
+                              " clientes.nombre_clientes_1, clientes.identificacion_clientes_2, nombre_clientes_2, " +
                               "identificacion_clientes_3, clientes.nombre_clientes_3, identificacion_garantes_1, "+
                               "nombre_garantes_1, clientes.identificacion_garantes_2, nombre_garantes_2, "+
                               "identificacion_garantes_3, clientes.nombre_garantes_3, correo_clientes, correo_clientes_1, "+
@@ -282,7 +335,8 @@ namespace Presentacion
                               "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, "+
                               "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3,"+
                               "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2,"+
-                              "clientes.sexo_garantes_3,titulo_credito.imagen_qr";
+                              "clientes.sexo_garantes_3,titulo_credito.imagen_qr, " +
+                                "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
 
@@ -291,9 +345,73 @@ namespace Presentacion
             //termina pruebas
             String where_to = "";
             where_to = where + where1 + where2 + where3 + where4 + where5 + where6 + where7 + where8 + where9 + where10 + where11 + where12 + where13 + where14 + where15 + where16 + "";
-            
+
             //string _nombre_documento = "PS"+_id_juicios + _id_abogado + _juicio_referido_titulo_credito + _numero_titulo_credito + _identificacion_clientes + _id_estados_procesales_juicios;
             //where = where + where_to;
+
+
+            if (_generar_oficio == "Si")
+            {
+
+
+
+
+                Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                daInforme.Fill(dtInforme, "juicios");
+                int reg = dtInforme.Tables[1].Rows.Count;
+                Reporte.rptProvidenciaSuspension_ConOficio ObjRep = new Reporte.rptProvidenciaSuspension_ConOficio();
+
+
+                ObjRep.SetDataSource(dtInforme.Tables[1]);
+                CultureInfo ci = new CultureInfo("es-EC");
+
+                ObjRep.SetParameterValue("_fecha_providencias", _fecha_providencias.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                ObjRep.SetParameterValue("_fecha_providencias_razones", _fecha_providencias_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                ObjRep.SetParameterValue("_razon_providencias", _razon_providencias);
+                ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                ObjRep.SetParameterValue("_asunto", _asunto);
+               
+
+                ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                string pathToFiles = Server.MapPath("~/Documentos/Providencias_Suspension/");
+
+                objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                ObjRep.Export();
+
+                dtInforme.Dispose();
+                daInforme.Dispose();
+
+                CrystalReportViewer1.Dispose();
+
+                ObjRep.Close();
+
+                ObjRep.Dispose();
+
+
+
+                byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+
+                Response.ContentType = "application/pdf";
+
+                Response.AddHeader("content-length", byteData.Length.ToString());
+
+                Response.BinaryWrite(byteData);
+
+
+
+
+            }
+            else {
+
+            
 
 
             Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
@@ -343,7 +461,7 @@ namespace Presentacion
 
             Response.BinaryWrite(byteData);
 
-            
+            }
 
         }
 

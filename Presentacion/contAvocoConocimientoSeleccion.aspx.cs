@@ -945,7 +945,574 @@ namespace Presentacion
                     _identificacion_depositario_judicial = "S/N";
                 }
             }
-            
+
+
+
+
+
+
+
+
+            string _numero_oficio_embargo_cuenta_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_embargo_cuenta_2"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio_embargo_cuenta_2"] != "")
+                {
+                    _numero_oficio_embargo_cuenta_2 = Request.QueryString["numero_oficio_embargo_cuenta_2"];
+                }
+                else {
+                    _numero_oficio_embargo_cuenta_2 = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_oficio_embargo_cuenta_2 = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficio_embargo_cuenta_2"]))
+            {
+
+                string fecha_emb_cuen_2 = Request.QueryString["fecha_oficio_embargo_cuenta_2"];
+
+                if (fecha_emb_cuen_2 != "0")
+                {
+                    _fecha_oficio_embargo_cuenta_2 = Convert.ToDateTime(fecha_emb_cuen_2);
+
+                }
+
+
+
+            }
+
+
+
+            string _tipo_cuenta_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_cuenta_2"]))
+            {
+                if (Request.QueryString["tipo_cuenta_2"] != "")
+                {
+                    _tipo_cuenta_2 = Request.QueryString["tipo_cuenta_2"];
+                }
+                else {
+                    _tipo_cuenta_2 = "S/N";
+                }
+            }
+
+            string _numero_cuenta_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_cuenta_2"]))
+            {
+                if (Request.QueryString["numero_cuenta_2"] != "")
+                {
+                    _numero_cuenta_2 = Request.QueryString["numero_cuenta_2"];
+                }
+                else {
+                    _numero_cuenta_2 = "S/N";
+                }
+            }
+
+            string _nombre_banco_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_banco_2"]))
+            {
+                if (Request.QueryString["nombre_banco_2"] != "")
+                {
+                    _nombre_banco_2 = Request.QueryString["nombre_banco_2"];
+                }
+                else {
+                    _nombre_banco_2 = "S/N";
+                }
+            }
+
+            string _monto_retenido_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["monto_retenido_2"]))
+            {
+                if (Request.QueryString["monto_retenido_2"] != "")
+                {
+                    _monto_retenido_2 = Request.QueryString["monto_retenido_2"];
+                }
+                else {
+                    _monto_retenido_2 = "S/N";
+                }
+            }
+
+            string _nombre_titular_cuenta_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_titular_cuenta_2"]))
+            {
+                if (Request.QueryString["nombre_titular_cuenta_2"] != "")
+                {
+                    _nombre_titular_cuenta_2 = Request.QueryString["nombre_titular_cuenta_2"];
+                }
+                else {
+                    _nombre_titular_cuenta_2 = "S/N";
+                }
+            }
+
+            string _identificacion_titular_cuenta_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_titular_cuenta_2"]))
+            {
+                if (Request.QueryString["identificacion_titular_cuenta_2"] != "")
+                {
+                    _identificacion_titular_cuenta_2 = Request.QueryString["identificacion_titular_cuenta_2"];
+                }
+                else {
+                    _identificacion_titular_cuenta_2 = "S/N";
+                }
+            }
+
+
+            string _depositario_judicial_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["depositario_judicial_2"]))
+            {
+                if (Request.QueryString["depositario_judicial_2"] != "")
+                {
+                    _depositario_judicial_2 = Request.QueryString["depositario_judicial_2"];
+                }
+                else {
+                    _depositario_judicial_2 = "S/N";
+                }
+            }
+
+            string _identificacion_depositario_judicial_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_depositario_judicial_2"]))
+            {
+                if (Request.QueryString["identificacion_depositario_judicial_2"] != "")
+                {
+                    _identificacion_depositario_judicial_2 = Request.QueryString["identificacion_depositario_judicial_2"];
+                }
+                else {
+                    _identificacion_depositario_judicial_2 = "S/N";
+                }
+            }
+
+
+
+
+
+
+
+
+            string _numero_oficio_embargo_cuenta_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_embargo_cuenta_3"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio_embargo_cuenta_3"] != "")
+                {
+                    _numero_oficio_embargo_cuenta_3 = Request.QueryString["numero_oficio_embargo_cuenta_3"];
+                }
+                else {
+                    _numero_oficio_embargo_cuenta_3 = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_oficio_embargo_cuenta_3 = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficio_embargo_cuenta_3"]))
+            {
+
+                string fecha_emb_cuen_3 = Request.QueryString["fecha_oficio_embargo_cuenta_3"];
+
+                if (fecha_emb_cuen_3 != "0")
+                {
+                    _fecha_oficio_embargo_cuenta_3 = Convert.ToDateTime(fecha_emb_cuen_3);
+
+                }
+
+
+
+            }
+
+
+
+            string _tipo_cuenta_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_cuenta_3"]))
+            {
+                if (Request.QueryString["tipo_cuenta_3"] != "")
+                {
+                    _tipo_cuenta_3 = Request.QueryString["tipo_cuenta_3"];
+                }
+                else {
+                    _tipo_cuenta_3 = "S/N";
+                }
+            }
+
+            string _numero_cuenta_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_cuenta_3"]))
+            {
+                if (Request.QueryString["numero_cuenta_3"] != "")
+                {
+                    _numero_cuenta_3 = Request.QueryString["numero_cuenta_3"];
+                }
+                else {
+                    _numero_cuenta_3 = "S/N";
+                }
+            }
+
+            string _nombre_banco_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_banco_3"]))
+            {
+                if (Request.QueryString["nombre_banco_3"] != "")
+                {
+                    _nombre_banco_3 = Request.QueryString["nombre_banco_3"];
+                }
+                else {
+                    _nombre_banco_3 = "S/N";
+                }
+            }
+
+            string _monto_retenido_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["monto_retenido_3"]))
+            {
+                if (Request.QueryString["monto_retenido_3"] != "")
+                {
+                    _monto_retenido_3 = Request.QueryString["monto_retenido_3"];
+                }
+                else {
+                    _monto_retenido_3 = "S/N";
+                }
+            }
+
+            string _nombre_titular_cuenta_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_titular_cuenta_3"]))
+            {
+                if (Request.QueryString["nombre_titular_cuenta_3"] != "")
+                {
+                    _nombre_titular_cuenta_3 = Request.QueryString["nombre_titular_cuenta_3"];
+                }
+                else {
+                    _nombre_titular_cuenta_3 = "S/N";
+                }
+            }
+
+            string _identificacion_titular_cuenta_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_titular_cuenta_3"]))
+            {
+                if (Request.QueryString["identificacion_titular_cuenta_3"] != "")
+                {
+                    _identificacion_titular_cuenta_3 = Request.QueryString["identificacion_titular_cuenta_3"];
+                }
+                else {
+                    _identificacion_titular_cuenta_3 = "S/N";
+                }
+            }
+
+
+            string _depositario_judicial_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["depositario_judicial_3"]))
+            {
+                if (Request.QueryString["depositario_judicial_3"] != "")
+                {
+                    _depositario_judicial_3 = Request.QueryString["depositario_judicial_3"];
+                }
+                else {
+                    _depositario_judicial_3 = "S/N";
+                }
+            }
+
+            string _identificacion_depositario_judicial_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_depositario_judicial_3"]))
+            {
+                if (Request.QueryString["identificacion_depositario_judicial_3"] != "")
+                {
+                    _identificacion_depositario_judicial_3 = Request.QueryString["identificacion_depositario_judicial_3"];
+                }
+                else {
+                    _identificacion_depositario_judicial_3 = "S/N";
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            string _numero_oficio_embargo_cuenta_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_embargo_cuenta_4"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio_embargo_cuenta_4"] != "")
+                {
+                    _numero_oficio_embargo_cuenta_4 = Request.QueryString["numero_oficio_embargo_cuenta_4"];
+                }
+                else {
+                    _numero_oficio_embargo_cuenta_4 = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_oficio_embargo_cuenta_4 = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficio_embargo_cuenta_4"]))
+            {
+
+                string fecha_emb_cuen_4 = Request.QueryString["fecha_oficio_embargo_cuenta_4"];
+
+                if (fecha_emb_cuen_4 != "0")
+                {
+                    _fecha_oficio_embargo_cuenta_4 = Convert.ToDateTime(fecha_emb_cuen_4);
+
+                }
+
+
+
+            }
+
+
+
+            string _tipo_cuenta_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_cuenta_4"]))
+            {
+                if (Request.QueryString["tipo_cuenta_4"] != "")
+                {
+                    _tipo_cuenta_4 = Request.QueryString["tipo_cuenta_4"];
+                }
+                else {
+                    _tipo_cuenta_4 = "S/N";
+                }
+            }
+
+            string _numero_cuenta_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_cuenta_4"]))
+            {
+                if (Request.QueryString["numero_cuenta_4"] != "")
+                {
+                    _numero_cuenta_4 = Request.QueryString["numero_cuenta_4"];
+                }
+                else {
+                    _numero_cuenta_4 = "S/N";
+                }
+            }
+
+            string _nombre_banco_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_banco_4"]))
+            {
+                if (Request.QueryString["nombre_banco_4"] != "")
+                {
+                    _nombre_banco_4 = Request.QueryString["nombre_banco_4"];
+                }
+                else {
+                    _nombre_banco_4 = "S/N";
+                }
+            }
+
+            string _monto_retenido_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["monto_retenido_4"]))
+            {
+                if (Request.QueryString["monto_retenido_4"] != "")
+                {
+                    _monto_retenido_4 = Request.QueryString["monto_retenido_4"];
+                }
+                else {
+                    _monto_retenido_4 = "S/N";
+                }
+            }
+
+            string _nombre_titular_cuenta_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_titular_cuenta_4"]))
+            {
+                if (Request.QueryString["nombre_titular_cuenta_4"] != "")
+                {
+                    _nombre_titular_cuenta_4 = Request.QueryString["nombre_titular_cuenta_4"];
+                }
+                else {
+                    _nombre_titular_cuenta_4 = "S/N";
+                }
+            }
+
+            string _identificacion_titular_cuenta_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_titular_cuenta_4"]))
+            {
+                if (Request.QueryString["identificacion_titular_cuenta_4"] != "")
+                {
+                    _identificacion_titular_cuenta_4 = Request.QueryString["identificacion_titular_cuenta_4"];
+                }
+                else {
+                    _identificacion_titular_cuenta_4 = "S/N";
+                }
+            }
+
+
+            string _depositario_judicial_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["depositario_judicial_4"]))
+            {
+                if (Request.QueryString["depositario_judicial_4"] != "")
+                {
+                    _depositario_judicial_4 = Request.QueryString["depositario_judicial_4"];
+                }
+                else {
+                    _depositario_judicial_4 = "S/N";
+                }
+            }
+
+            string _identificacion_depositario_judicial_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_depositario_judicial_4"]))
+            {
+                if (Request.QueryString["identificacion_depositario_judicial_4"] != "")
+                {
+                    _identificacion_depositario_judicial_4 = Request.QueryString["identificacion_depositario_judicial_4"];
+                }
+                else {
+                    _identificacion_depositario_judicial_4 = "S/N";
+                }
+            }
+
+
+
+
+
+
+
+
+            string _numero_oficio_embargo_cuenta_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_oficio_embargo_cuenta_5"]))
+            {
+
+
+                if (Request.QueryString["numero_oficio_embargo_cuenta_5"] != "")
+                {
+                    _numero_oficio_embargo_cuenta_5 = Request.QueryString["numero_oficio_embargo_cuenta_5"];
+                }
+                else {
+                    _numero_oficio_embargo_cuenta_5 = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_oficio_embargo_cuenta_5 = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficio_embargo_cuenta_5"]))
+            {
+
+                string fecha_emb_cuen_5 = Request.QueryString["fecha_oficio_embargo_cuenta_5"];
+
+                if (fecha_emb_cuen_5 != "0")
+                {
+                    _fecha_oficio_embargo_cuenta_5 = Convert.ToDateTime(fecha_emb_cuen_5);
+
+                }
+
+
+
+            }
+
+
+
+            string _tipo_cuenta_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_cuenta_5"]))
+            {
+                if (Request.QueryString["tipo_cuenta_5"] != "")
+                {
+                    _tipo_cuenta_5 = Request.QueryString["tipo_cuenta_5"];
+                }
+                else {
+                    _tipo_cuenta_5 = "S/N";
+                }
+            }
+
+            string _numero_cuenta_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_cuenta_5"]))
+            {
+                if (Request.QueryString["numero_cuenta_5"] != "")
+                {
+                    _numero_cuenta_5 = Request.QueryString["numero_cuenta_5"];
+                }
+                else {
+                    _numero_cuenta_5 = "S/N";
+                }
+            }
+
+            string _nombre_banco_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_banco_5"]))
+            {
+                if (Request.QueryString["nombre_banco_5"] != "")
+                {
+                    _nombre_banco_5 = Request.QueryString["nombre_banco_5"];
+                }
+                else {
+                    _nombre_banco_5 = "S/N";
+                }
+            }
+
+            string _monto_retenido_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["monto_retenido_5"]))
+            {
+                if (Request.QueryString["monto_retenido_5"] != "")
+                {
+                    _monto_retenido_5 = Request.QueryString["monto_retenido_5"];
+                }
+                else {
+                    _monto_retenido_5 = "S/N";
+                }
+            }
+
+            string _nombre_titular_cuenta_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_titular_cuenta_5"]))
+            {
+                if (Request.QueryString["nombre_titular_cuenta_5"] != "")
+                {
+                    _nombre_titular_cuenta_5 = Request.QueryString["nombre_titular_cuenta_5"];
+                }
+                else {
+                    _nombre_titular_cuenta_5 = "S/N";
+                }
+            }
+
+            string _identificacion_titular_cuenta_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_titular_cuenta_5"]))
+            {
+                if (Request.QueryString["identificacion_titular_cuenta_5"] != "")
+                {
+                    _identificacion_titular_cuenta_5 = Request.QueryString["identificacion_titular_cuenta_5"];
+                }
+                else {
+                    _identificacion_titular_cuenta_5 = "S/N";
+                }
+            }
+
+
+            string _depositario_judicial_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["depositario_judicial_5"]))
+            {
+                if (Request.QueryString["depositario_judicial_5"] != "")
+                {
+                    _depositario_judicial_5 = Request.QueryString["depositario_judicial_5"];
+                }
+                else {
+                    _depositario_judicial_5 = "S/N";
+                }
+            }
+
+            string _identificacion_depositario_judicial_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificacion_depositario_judicial_5"]))
+            {
+                if (Request.QueryString["identificacion_depositario_judicial_5"] != "")
+                {
+                    _identificacion_depositario_judicial_5 = Request.QueryString["identificacion_depositario_judicial_5"];
+                }
+                else {
+                    _identificacion_depositario_judicial_5 = "S/N";
+                }
+            }
+
+
+
+
+
+
+
+
+
+
 
             string _numero_solicitud = "S/N";
             if (!String.IsNullOrEmpty(Request.QueryString["numero_solicitud"]))
@@ -1059,7 +1626,7 @@ namespace Presentacion
                               "provincias.nombre_provincias, titulo_credito.numero_titulo_credito, juicios.fecha_emision_juicios, " +
                               "juicios.cuantia_inicial, juicios.fecha_ultima_providencia, asignacion_secretarios_view.id_abogado, " +
                               "asignacion_secretarios_view.impulsores, asignacion_secretarios_view.id_secretario, " +
-                              "asignacion_secretarios_view.secretarios, ciudad.id_ciudad, ciudad.nombre_ciudad , " +
+                              "asignacion_secretarios_view.secretarios, ciudad.id_ciudad, ciudad.nombre_ciudad, " +
                               "juicios.numero_juicios, asignacion_secretarios_view.cargo_secretarios, " +
                               "asignacion_secretarios_view.cargo_impulsores, asignacion_secretarios_view.sexo_secretarios, " +
                               "asignacion_secretarios_view.sexo_impulsores , clientes.identificacion_clientes_1, " +
@@ -1071,7 +1638,8 @@ namespace Presentacion
                               "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, " +
                               "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                               "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
-                              "clientes.sexo_garantes_3,titulo_credito.imagen_qr";
+                              "clientes.sexo_garantes_3,titulo_credito.imagen_qr, " +
+                              "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
             String where_to = "";
@@ -1093,10 +1661,81 @@ namespace Presentacion
 
                     if (_tipo_avoco == 1)
                     {
+                        if (_generar_oficio == "Si")
+                        {
 
+
+
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoPago_Total_ConOficio ObjRep = new Reporte.rptProvidenciaAvocoConocimientoPago_Total_ConOficio();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
+                            ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+                            ObjRep.SetParameterValue("_numero_liquidacion", _numero_liquidacion);
+                            ObjRep.SetParameterValue("_fecha_auto_pago", _fecha_auto_pago.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+
+                            ObjRep.SetParameterValue("_numero_oficio", _numero_oficio);
+                            ObjRep.SetParameterValue("_fecha_oficio", _fecha_oficio.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+                            ObjRep.SetParameterValue("_numero_solicitud", _numero_solicitud);
+                            ObjRep.SetParameterValue("_fecha_solicitud", _fecha_solicitud.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+                            ObjRep.SetParameterValue("_nombre_numero_documento_1", _nombre_numero_documento_1);
+                            ObjRep.SetParameterValue("_fecha_documento_1", _fecha_documento_1.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_numero_documento_2", _nombre_numero_documento_2);
+                            ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
+                            ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+                            
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Pago_Total/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+                        }
+                        else{
 
                         Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
-
                         NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
                         daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
                         daInforme.Fill(dtInforme, "juicios");
@@ -1160,7 +1799,7 @@ namespace Presentacion
                         Response.AddHeader("content-length", byteData.Length.ToString());
                         Response.BinaryWrite(byteData);
 
-
+                        }
                     }
 
 
@@ -1288,6 +1927,10 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         //ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
                         //ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+
+
+
+
 
 
                         CrystalReportViewer1.DataBind();
@@ -1430,8 +2073,64 @@ namespace Presentacion
                     if (_tipo_avoco == 7)
                     {
 
-                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                        if (_generar_oficio == "Si")
+                        {
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoNuevos_Procesos_ConOficio ObjRep = new Reporte.rptProvidenciaAvocoConocimientoNuevos_Procesos_ConOficio();
 
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_nombre_impulsor_anterior", _nombre_impulsor_anterior);
+                            ObjRep.SetParameterValue("_nombre_secretario_anterior", _nombre_secretario_anterior);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_reemplazar", _reemplazar);
+                            ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+
+
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Avoco_Conocimiento/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+
+                        }
+                        else { 
+
+                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
                         NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
                         daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
                         daInforme.Fill(dtInforme, "juicios");
@@ -1480,7 +2179,7 @@ namespace Presentacion
                         Response.AddHeader("content-length", byteData.Length.ToString());
                         Response.BinaryWrite(byteData);
 
-
+                        }
 
                     }
 
@@ -1625,9 +2324,132 @@ namespace Presentacion
 
                     if (_tipo_avoco == 9)
                     {
+                        if (_generar_oficio == "Si")
+                        {
 
 
-                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoEmbargo_ConOficio ObjRep = new Reporte.rptProvidenciaAvocoConocimientoEmbargo_ConOficio();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta", _numero_oficio_embargo_cuenta);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta", _fecha_oficio_embargo_cuenta.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta", _tipo_cuenta);
+                            ObjRep.SetParameterValue("_numero_cuenta", _numero_cuenta);
+                            ObjRep.SetParameterValue("_nombre_banco", _nombre_banco);
+                            ObjRep.SetParameterValue("_monto_retenido", _monto_retenido);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta", _nombre_titular_cuenta);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta", _identificacion_titular_cuenta);
+                            ObjRep.SetParameterValue("_depositario_judicial", _depositario_judicial);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial", _identificacion_depositario_judicial);
+
+
+
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_2", _numero_oficio_embargo_cuenta_2);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_2", _fecha_oficio_embargo_cuenta_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_2", _tipo_cuenta_2);
+                            ObjRep.SetParameterValue("_numero_cuenta_2", _numero_cuenta_2);
+                            ObjRep.SetParameterValue("_nombre_banco_2", _nombre_banco_2);
+                            ObjRep.SetParameterValue("_monto_retenido_2", _monto_retenido_2);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_2", _nombre_titular_cuenta_2);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_2", _identificacion_titular_cuenta_2);
+                            ObjRep.SetParameterValue("_depositario_judicial_2", _depositario_judicial_2);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_2", _identificacion_depositario_judicial_2);
+
+
+
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_3", _numero_oficio_embargo_cuenta_3);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_3", _fecha_oficio_embargo_cuenta_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_3", _tipo_cuenta_3);
+                            ObjRep.SetParameterValue("_numero_cuenta_3", _numero_cuenta_3);
+                            ObjRep.SetParameterValue("_nombre_banco_3", _nombre_banco_3);
+                            ObjRep.SetParameterValue("_monto_retenido_3", _monto_retenido_3);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_3", _nombre_titular_cuenta_3);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_3", _identificacion_titular_cuenta_3);
+                            ObjRep.SetParameterValue("_depositario_judicial_3", _depositario_judicial_3);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_3", _identificacion_depositario_judicial_3);
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_4", _numero_oficio_embargo_cuenta_4);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_4", _fecha_oficio_embargo_cuenta_4.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_4", _tipo_cuenta_4);
+                            ObjRep.SetParameterValue("_numero_cuenta_4", _numero_cuenta_4);
+                            ObjRep.SetParameterValue("_nombre_banco_4", _nombre_banco_4);
+                            ObjRep.SetParameterValue("_monto_retenido_4", _monto_retenido_4);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_4", _nombre_titular_cuenta_4);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_4", _identificacion_titular_cuenta_4);
+                            ObjRep.SetParameterValue("_depositario_judicial_4", _depositario_judicial_4);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_4", _identificacion_depositario_judicial_4);
+
+
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_5", _numero_oficio_embargo_cuenta_5);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_5", _fecha_oficio_embargo_cuenta_5.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_5", _tipo_cuenta_5);
+                            ObjRep.SetParameterValue("_numero_cuenta_5", _numero_cuenta_5);
+                            ObjRep.SetParameterValue("_nombre_banco_5", _nombre_banco_5);
+                            ObjRep.SetParameterValue("_monto_retenido_5", _monto_retenido_5);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_5", _nombre_titular_cuenta_5);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_5", _identificacion_titular_cuenta_5);
+                            ObjRep.SetParameterValue("_depositario_judicial_5", _depositario_judicial_5);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_5", _identificacion_depositario_judicial_5);
+
+
+
+
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Embargo_Cuenta_Bancaria/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+
+                        }
+                        else { 
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
 
                         NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
                         daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
@@ -1657,9 +2479,68 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_depositario_judicial", _depositario_judicial);
 
                         ObjRep.SetParameterValue("_identificacion_depositario_judicial", _identificacion_depositario_judicial);
-                        
 
-                        CrystalReportViewer1.DataBind();
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_2", _numero_oficio_embargo_cuenta_2);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_2", _fecha_oficio_embargo_cuenta_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_2", _tipo_cuenta_2);
+                            ObjRep.SetParameterValue("_numero_cuenta_2", _numero_cuenta_2);
+                            ObjRep.SetParameterValue("_nombre_banco_2", _nombre_banco_2);
+                            ObjRep.SetParameterValue("_monto_retenido_2", _monto_retenido_2);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_2", _nombre_titular_cuenta_2);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_2", _identificacion_titular_cuenta_2);
+                            ObjRep.SetParameterValue("_depositario_judicial_2", _depositario_judicial_2);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_2", _identificacion_depositario_judicial_2);
+
+
+
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_3", _numero_oficio_embargo_cuenta_3);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_3", _fecha_oficio_embargo_cuenta_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_3", _tipo_cuenta_3);
+                            ObjRep.SetParameterValue("_numero_cuenta_3", _numero_cuenta_3);
+                            ObjRep.SetParameterValue("_nombre_banco_3", _nombre_banco_3);
+                            ObjRep.SetParameterValue("_monto_retenido_3", _monto_retenido_3);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_3", _nombre_titular_cuenta_3);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_3", _identificacion_titular_cuenta_3);
+                            ObjRep.SetParameterValue("_depositario_judicial_3", _depositario_judicial_3);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_3", _identificacion_depositario_judicial_3);
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_4", _numero_oficio_embargo_cuenta_4);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_4", _fecha_oficio_embargo_cuenta_4.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_4", _tipo_cuenta_4);
+                            ObjRep.SetParameterValue("_numero_cuenta_4", _numero_cuenta_4);
+                            ObjRep.SetParameterValue("_nombre_banco_4", _nombre_banco_4);
+                            ObjRep.SetParameterValue("_monto_retenido_4", _monto_retenido_4);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_4", _nombre_titular_cuenta_4);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_4", _identificacion_titular_cuenta_4);
+                            ObjRep.SetParameterValue("_depositario_judicial_4", _depositario_judicial_4);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_4", _identificacion_depositario_judicial_4);
+
+
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_embargo_cuenta_5", _numero_oficio_embargo_cuenta_5);
+                            ObjRep.SetParameterValue("_fecha_oficio_embargo_cuenta_5", _fecha_oficio_embargo_cuenta_5.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_tipo_cuenta_5", _tipo_cuenta_5);
+                            ObjRep.SetParameterValue("_numero_cuenta_5", _numero_cuenta_5);
+                            ObjRep.SetParameterValue("_nombre_banco_5", _nombre_banco_5);
+                            ObjRep.SetParameterValue("_monto_retenido_5", _monto_retenido_5);
+                            ObjRep.SetParameterValue("_nombre_titular_cuenta_5", _nombre_titular_cuenta_5);
+                            ObjRep.SetParameterValue("_identificacion_titular_cuenta_5", _identificacion_titular_cuenta_5);
+                            ObjRep.SetParameterValue("_depositario_judicial_5", _depositario_judicial_5);
+                            ObjRep.SetParameterValue("_identificacion_depositario_judicial_5", _identificacion_depositario_judicial_5);
+
+
+
+
+
+
+
+                            CrystalReportViewer1.DataBind();
 
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
@@ -1683,7 +2564,7 @@ namespace Presentacion
                         Response.ContentType = "application/pdf";
                         Response.AddHeader("content-length", byteData.Length.ToString());
                         Response.BinaryWrite(byteData);
-
+                        }
 
                     }
 
@@ -1692,9 +2573,71 @@ namespace Presentacion
 
                     if (_tipo_avoco == 10)
                     {
+                        if (_generar_oficio == "Si")
+                        {
 
 
-                        Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaLevantamientoEmbargoDiscapacidad_ConOficio ObjRep = new Reporte.rptProvidenciaLevantamientoEmbargoDiscapacidad_ConOficio();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_medida_cuatelar_discapacidad", _numero_oficio_medida_cuatelar_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_oficio_medida_cuatelar_discapacidad", _fecha_oficio_medida_cuatelar_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_liquidacion_medida_cuatelar_discapacidad", _numero_liquidacion_medida_cuatelar_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_liquidacion_medida_cuatelar_discapacidad", _fecha_liquidacion_medida_cuatelar_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_solicitud_discapacidad", _numero_solicitud_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_solicitud_discapacidad", _fecha_solicitud_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_discapacitado", _nombre_discapacitado);
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento_Medida_Cautelar_Discapacidad/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+
+                        }
+                        else { 
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
 
                         NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
                         daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
@@ -1746,7 +2689,7 @@ namespace Presentacion
                         Response.ContentType = "application/pdf";
                         Response.AddHeader("content-length", byteData.Length.ToString());
                         Response.BinaryWrite(byteData);
-
+                        }
 
                     }
 
@@ -1755,7 +2698,70 @@ namespace Presentacion
 
                     if (_tipo_avoco == 11)
                     {
+                        if (_generar_oficio == "Si")
+                        {
 
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaLevantamientoMedidaCautelarFallecimiento_ConOficio ObjRep = new Reporte.rptProvidenciaLevantamientoMedidaCautelarFallecimiento_ConOficio();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+
+                            ObjRep.SetParameterValue("_numero_oficio_medida_cuatelar_fallecimiento", _numero_oficio_medida_cuatelar_fallecimiento);
+                            ObjRep.SetParameterValue("_fecha_oficio_medida_cuatelar_fallecimiento", _fecha_oficio_medida_cuatelar_fallecimiento.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_liquidacion_medida_cuatelar_fallecimiento", _numero_liquidacion_medida_cuatelar_fallecimiento);
+                            ObjRep.SetParameterValue("_fecha_liquidacion_medida_cuatelar_fallecimiento", _fecha_liquidacion_medida_cuatelar_fallecimiento.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_solicitud_fallecimiento", _numero_solicitud_fallecimiento);
+                            ObjRep.SetParameterValue("_fecha_solicitud_fallecimiento", _fecha_solicitud_fallecimiento.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_conyuge_sobreviviente", _nombre_conyuge_sobreviviente);
+                            ObjRep.SetParameterValue("_correo_conyuge_sobreviviente", _correo_conyuge_sobreviviente);
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Levantamiento_Medida_Cautelar_Fallecimiento/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+
+
+                        }
+                        else { 
 
                         Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
 
@@ -1811,7 +2817,7 @@ namespace Presentacion
                         Response.AddHeader("content-length", byteData.Length.ToString());
                         Response.BinaryWrite(byteData);
 
-
+                        }
                     }
 
 
