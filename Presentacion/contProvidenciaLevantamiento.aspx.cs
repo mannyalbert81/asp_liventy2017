@@ -350,7 +350,6 @@ namespace Presentacion
             }
 
 
-
             string _identificador_oficio = "";
             if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio"]))
             {
@@ -358,10 +357,52 @@ namespace Presentacion
                 {
                     _identificador_oficio = Request.QueryString["identificador_oficio"];
                 }
-                else {
+                else
+                {
                     _identificador_oficio = "S/N";
                 }
             }
+
+
+
+            string _identificador_oficio_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_2"]))
+            {
+                if (Request.QueryString["identificador_oficio_2"] != "")
+                {
+                    _identificador_oficio_2 = Request.QueryString["identificador_oficio_2"];
+                }
+                else
+                {
+                    _identificador_oficio_2 = "S/N";
+                }
+            }
+            string _identificador_oficio_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_3"]))
+            {
+                if (Request.QueryString["identificador_oficio_3"] != "")
+                {
+                    _identificador_oficio_3 = Request.QueryString["identificador_oficio_3"];
+                }
+                else
+                {
+                    _identificador_oficio_3 = "S/N";
+                }
+            }
+            string _identificador_oficio_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_4"]))
+            {
+                if (Request.QueryString["identificador_oficio_4"] != "")
+                {
+                    _identificador_oficio_4 = Request.QueryString["identificador_oficio_4"];
+                }
+                else
+                {
+                    _identificador_oficio_4 = "S/N";
+                }
+            }
+
+
 
 
             string _entidad_va_oficio = "";
@@ -371,8 +412,48 @@ namespace Presentacion
                 {
                     _entidad_va_oficio = Request.QueryString["entidad_va_oficio"];
                 }
-                else {
+                else
+                {
                     _entidad_va_oficio = "S/N";
+                }
+            }
+
+            string _entidad_va_oficio_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_2"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_2"] != "")
+                {
+                    _entidad_va_oficio_2 = Request.QueryString["entidad_va_oficio_2"];
+                }
+                else
+                {
+                    _entidad_va_oficio_2 = "S/N";
+                }
+            }
+
+            string _entidad_va_oficio_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_3"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_3"] != "")
+                {
+                    _entidad_va_oficio_3 = Request.QueryString["entidad_va_oficio_3"];
+                }
+                else
+                {
+                    _entidad_va_oficio_3 = "S/N";
+                }
+            }
+
+            string _entidad_va_oficio_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_4"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_4"] != "")
+                {
+                    _entidad_va_oficio_4 = Request.QueryString["entidad_va_oficio_4"];
+                }
+                else
+                {
+                    _entidad_va_oficio_4 = "S/N";
                 }
             }
 
@@ -384,10 +465,54 @@ namespace Presentacion
                 {
                     _asunto = Request.QueryString["asunto"];
                 }
-                else {
+                else
+                {
                     _asunto = "S/N";
                 }
             }
+
+
+            string _asunto_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_2"]))
+            {
+                if (Request.QueryString["asunto_2"] != "")
+                {
+                    _asunto_2 = Request.QueryString["asunto_2"];
+                }
+                else
+                {
+                    _asunto_2 = "S/N";
+                }
+            }
+
+
+            string _asunto_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_3"]))
+            {
+                if (Request.QueryString["asunto_3"] != "")
+                {
+                    _asunto_3 = Request.QueryString["asunto_3"];
+                }
+                else
+                {
+                    _asunto_3 = "S/N";
+                }
+            }
+
+            string _asunto_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_4"]))
+            {
+                if (Request.QueryString["asunto_4"] != "")
+                {
+                    _asunto_4 = Request.QueryString["asunto_4"];
+                }
+                else
+                {
+                    _asunto_4 = "S/N";
+                }
+            }
+
+
 
             string _generar_oficio = "";
             if (!String.IsNullOrEmpty(Request.QueryString["generar_oficio"]))
@@ -482,6 +607,18 @@ namespace Presentacion
                 ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
                 ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
                 ObjRep.SetParameterValue("_asunto", _asunto);
+
+                ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                ObjRep.SetParameterValue("_asunto_2", _asunto_2);
+
+                ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                ObjRep.SetParameterValue("_asunto_3", _asunto_3);
+
+                ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                ObjRep.SetParameterValue("_asunto_4", _asunto_4);
 
                 CrystalReportViewer1.DataBind();
 
