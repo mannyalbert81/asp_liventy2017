@@ -1829,7 +1829,18 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
                             ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
                             ObjRep.SetParameterValue("_asunto", _asunto);
-                            
+
+
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_asunto_2", _asunto_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_asunto_3", _asunto_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_asunto_4", _asunto_4);
+
 
                             CrystalReportViewer1.DataBind();
 
@@ -2565,6 +2576,18 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
                             ObjRep.SetParameterValue("_asunto", _asunto);
 
+
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_asunto_2", _asunto_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_asunto_3", _asunto_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_asunto_4", _asunto_4);
+
+
                             CrystalReportViewer1.DataBind();
 
                             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -2753,6 +2776,17 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
                             ObjRep.SetParameterValue("_asunto", _asunto);
 
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_asunto_2", _asunto_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_asunto_3", _asunto_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_asunto_4", _asunto_4);
+
+
                             CrystalReportViewer1.DataBind();
 
                             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -2877,6 +2911,17 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
                             ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
                             ObjRep.SetParameterValue("_asunto", _asunto);
+
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_asunto_2", _asunto_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_asunto_3", _asunto_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_asunto_4", _asunto_4);
+
 
                             CrystalReportViewer1.DataBind();
 
