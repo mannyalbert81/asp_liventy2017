@@ -401,7 +401,54 @@ namespace Presentacion
                     _identificador_oficio_4 = "S/N";
                 }
             }
-
+            string _identificador_oficio_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_5"]))
+            {
+                if (Request.QueryString["identificador_oficio_5"] != "")
+                {
+                    _identificador_oficio_5 = Request.QueryString["identificador_oficio_5"];
+                }
+                else
+                {
+                    _identificador_oficio_5 = "S/N";
+                }
+            }
+            string _identificador_oficio_6 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_6"]))
+            {
+                if (Request.QueryString["identificador_oficio_6"] != "")
+                {
+                    _identificador_oficio_6 = Request.QueryString["identificador_oficio_6"];
+                }
+                else
+                {
+                    _identificador_oficio_6 = "S/N";
+                }
+            }
+            string _identificador_oficio_7 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_7"]))
+            {
+                if (Request.QueryString["identificador_oficio_7"] != "")
+                {
+                    _identificador_oficio_7 = Request.QueryString["identificador_oficio_7"];
+                }
+                else
+                {
+                    _identificador_oficio_7 = "S/N";
+                }
+            }
+            string _identificador_oficio_8 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["identificador_oficio_8"]))
+            {
+                if (Request.QueryString["identificador_oficio_8"] != "")
+                {
+                    _identificador_oficio_8 = Request.QueryString["identificador_oficio_8"];
+                }
+                else
+                {
+                    _identificador_oficio_8 = "S/N";
+                }
+            }
 
 
 
@@ -454,6 +501,54 @@ namespace Presentacion
                 else
                 {
                     _entidad_va_oficio_4 = "S/N";
+                }
+            }
+            string _entidad_va_oficio_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_5"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_5"] != "")
+                {
+                    _entidad_va_oficio_5 = Request.QueryString["entidad_va_oficio_5"];
+                }
+                else
+                {
+                    _entidad_va_oficio_5 = "S/N";
+                }
+            }
+            string _entidad_va_oficio_6 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_6"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_5"] != "")
+                {
+                    _entidad_va_oficio_6 = Request.QueryString["entidad_va_oficio_6"];
+                }
+                else
+                {
+                    _entidad_va_oficio_6 = "S/N";
+                }
+            }
+            string _entidad_va_oficio_7 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_7"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_7"] != "")
+                {
+                    _entidad_va_oficio_7 = Request.QueryString["entidad_va_oficio_7"];
+                }
+                else
+                {
+                    _entidad_va_oficio_7 = "S/N";
+                }
+            }
+            string _entidad_va_oficio_8 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["entidad_va_oficio_8"]))
+            {
+                if (Request.QueryString["entidad_va_oficio_8"] != "")
+                {
+                    _entidad_va_oficio_8 = Request.QueryString["entidad_va_oficio_8"];
+                }
+                else
+                {
+                    _entidad_va_oficio_8 = "S/N";
                 }
             }
 
@@ -511,6 +606,154 @@ namespace Presentacion
                     _asunto_4 = "S/N";
                 }
             }
+            string _asunto_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_5"]))
+            {
+                if (Request.QueryString["asunto_5"] != "")
+                {
+                    _asunto_5 = Request.QueryString["asunto_5"];
+                }
+                else
+                {
+                    _asunto_5 = "S/N";
+                }
+            }
+            string _asunto_6 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_6"]))
+            {
+                if (Request.QueryString["asunto_6"] != "")
+                {
+                    _asunto_6 = Request.QueryString["asunto_6"];
+                }
+                else
+                {
+                    _asunto_6 = "S/N";
+                }
+            }
+            string _asunto_7 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_7"]))
+            {
+                if (Request.QueryString["asunto_7"] != "")
+                {
+                    _asunto_7 = Request.QueryString["asunto_7"];
+                }
+                else
+                {
+                    _asunto_7 = "S/N";
+                }
+            }
+            string _asunto_8 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["asunto_8"]))
+            {
+                if (Request.QueryString["asunto_8"] != "")
+                {
+                    _asunto_8 = Request.QueryString["asunto_8"];
+                }
+                else
+                {
+                    _asunto_8 = "S/N";
+                }
+            }
+            string _referencia_oficios_tipo_lev = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev"] != "")
+                {
+                    _referencia_oficios_tipo_lev = Request.QueryString["referencia_oficios_tipo_lev"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev = "S/N";
+                }
+            }
+
+
+            string _referencia_oficios_tipo_lev_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_2"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_2"] != "")
+                {
+                    _referencia_oficios_tipo_lev_2 = Request.QueryString["referencia_oficios_tipo_lev_2"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_2 = "S/N";
+                }
+            }
+
+            string _referencia_oficios_tipo_lev_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_3"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_3"] != "")
+                {
+                    _referencia_oficios_tipo_lev_3 = Request.QueryString["referencia_oficios_tipo_lev_3"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_3 = "S/N";
+                }
+            }
+            string _referencia_oficios_tipo_lev_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_4"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_4"] != "")
+                {
+                    _referencia_oficios_tipo_lev_4 = Request.QueryString["referencia_oficios_tipo_lev_4"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_4 = "S/N";
+                }
+            }
+            string _referencia_oficios_tipo_lev_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_5"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_5"] != "")
+                {
+                    _referencia_oficios_tipo_lev_5 = Request.QueryString["referencia_oficios_tipo_lev_5"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_5 = "S/N";
+                }
+            }
+            string _referencia_oficios_tipo_lev_6 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_6"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_6"] != "")
+                {
+                    _referencia_oficios_tipo_lev_6 = Request.QueryString["referencia_oficios_tipo_lev_6"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_6 = "S/N";
+                }
+            }
+            string _referencia_oficios_tipo_lev_7 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_7"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_7"] != "")
+                {
+                    _referencia_oficios_tipo_lev_7 = Request.QueryString["referencia_oficios_tipo_lev_7"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_7 = "S/N";
+                }
+            }
+            string _referencia_oficios_tipo_lev_8 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["referencia_oficios_tipo_lev_8"]))
+            {
+                if (Request.QueryString["referencia_oficios_tipo_lev_8"] != "")
+                {
+                    _referencia_oficios_tipo_lev_8 = Request.QueryString["referencia_oficios_tipo_lev_8"];
+                }
+                else
+                {
+                    _referencia_oficios_tipo_lev_8 = "S/N";
+                }
+            }
+
 
 
 
@@ -610,15 +853,34 @@ namespace Presentacion
 
                 ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
                 ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
-                ObjRep.SetParameterValue("_asunto_2", _asunto_2);
-
+            
                 ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
                 ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
-                ObjRep.SetParameterValue("_asunto_3", _asunto_3);
-
+            
                 ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
                 ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
-                ObjRep.SetParameterValue("_asunto_4", _asunto_4);
+            
+                ObjRep.SetParameterValue("_identificador_oficio_5", _identificador_oficio_5);
+                ObjRep.SetParameterValue("_entidad_va_oficio_5", _entidad_va_oficio_5);
+            
+                ObjRep.SetParameterValue("_identificador_oficio_6", _identificador_oficio_6);
+                ObjRep.SetParameterValue("_entidad_va_oficio_6", _entidad_va_oficio_6);
+            
+                ObjRep.SetParameterValue("_identificador_oficio_7", _identificador_oficio_7);
+                ObjRep.SetParameterValue("_entidad_va_oficio_7", _entidad_va_oficio_7);
+            
+                ObjRep.SetParameterValue("_identificador_oficio_8", _identificador_oficio_8);
+                ObjRep.SetParameterValue("_entidad_va_oficio_8", _entidad_va_oficio_8);
+            
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev", _referencia_oficios_tipo_lev);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_2", _referencia_oficios_tipo_lev_2);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_3", _referencia_oficios_tipo_lev_3);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_4", _referencia_oficios_tipo_lev_4);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_5", _referencia_oficios_tipo_lev_5);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
+                ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+
 
                 CrystalReportViewer1.DataBind();
 
