@@ -65,7 +65,7 @@ namespace Presentacion
                     case "AC":
 
                          columnas = "ju.regional,tc.id_titulo_credito,ju.id_juicios,tc.numero_titulo_credito, ju.numero_juicios, cl.identificacion_clientes, cl.nombres_clientes, asv.id_abogado, asv.impulsores, asv.id_secretario, asv.secretarios, ju.cuantia_inicial,ep.nombre_estados_procesales_juicios, ac.firmado_secretario, ac.id_avoco_conocimiento AS \"id_documento\" , ac.nombre_documento AS \"nombre_doc\", ac.ruta_documento AS \"ruta_doc\" ,ju.fecha_emision_juicios,ju.fecha_ultima_providencia ,ju.descripcion_estado_procesal, ac.modificado, ac.creado AS \"fecha_creado\" ";
-                         where= "1=1 AND asv.id_secretario=" + parametros.id_secretario + "";
+                         where= "1=1 AND ac.eliminado_documento='false' AND asv.id_secretario=" + parametros.id_secretario + "";
 
                         if (parametros.tipo_documento == "ALL")
                         {
@@ -84,6 +84,21 @@ namespace Presentacion
                         else if (parametros.tipo_documento == "7") {
 
                             tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = ju.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN avoco_conocimiento ac  ON ac.id_juicios = ju.id_juicios AND ac.tipo_avoco = 7";
+
+                            if (!String.IsNullOrEmpty(parametros.firma))
+                            {
+                                where_to += " AND ac.firmado_secretario='" + parametros.firma + "'";
+                            }
+                            if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                            {
+                                where_to += " AND  DATE(ac.creado) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                            }
+                        }
+
+                        else if (parametros.tipo_documento == "12")
+                        {
+
+                            tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = ju.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN avoco_conocimiento ac  ON ac.id_juicios = ju.id_juicios AND ac.tipo_avoco = 12";
 
                             if (!String.IsNullOrEmpty(parametros.firma))
                             {
@@ -125,7 +140,7 @@ namespace Presentacion
                     case "PR":
 
                         columnas = " ju.regional, tc.id_titulo_credito, ju.id_juicios, tc.numero_titulo_credito, ju.numero_juicios, cl.identificacion_clientes, cl.nombres_clientes, asv.id_abogado, asv.impulsores, asv.id_secretario, asv.secretarios, pr.id_providencias AS \"id_documento\", pr.firmado_secretario, pr.nombre_archivo_providencias AS \"nombre_doc\", pr.ruta_providencias AS \"ruta_doc\",ju.fecha_emision_juicios,ju.cuantia_inicial, ep.nombre_estados_procesales_juicios, ju.descripcion_estado_procesal, pr.modificado, ju.fecha_ultima_providencia, pr.creado AS \"fecha_creado\"";
-                        where = "1=1 AND asv.id_secretario='" + parametros.id_secretario + "'";
+                        where = "1=1 AND pr.eliminado_documento='false' AND asv.id_secretario='" + parametros.id_secretario + "'";
 
                         if (parametros.tipo_documento == "ALL")
                         {
@@ -186,10 +201,43 @@ namespace Presentacion
                             }
                         }
 
+                        else if (parametros.tipo_documento == "PCPAVOC")
+                        {
+
+                            tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = tc.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN providencias pr  ON pr.id_juicios = ju.id_juicios INNER JOIN tipo_providencias tpr ON tpr.id_tipo_providencias = pr.id_tipo_providencias  AND pr.id_tipo_providencias = 9";
+
+
+                            if (!String.IsNullOrEmpty(parametros.firma))
+                            {
+                                where_to += " AND pr.firmado_secretario='" + parametros.firma + "'";
+                            }
+                            if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                            {
+                                where_to += " AND  DATE(pr.creado) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                            }
+                        }
+
                         else if (parametros.tipo_documento == "PRES")
                         {
 
                             tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = tc.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN providencias pr  ON pr.id_juicios = ju.id_juicios INNER JOIN tipo_providencias tpr ON tpr.id_tipo_providencias = pr.id_tipo_providencias  AND pr.id_tipo_providencias = 4";
+
+
+                            if (!String.IsNullOrEmpty(parametros.firma))
+                            {
+                                where_to += " AND pr.firmado_secretario='" + parametros.firma + "'";
+                            }
+                            if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                            {
+                                where_to += " AND  DATE(pr.creado) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                            }
+                        }
+
+
+                        else if (parametros.tipo_documento == "PRESAVOC")
+                        {
+
+                            tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = tc.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN providencias pr  ON pr.id_juicios = ju.id_juicios INNER JOIN tipo_providencias tpr ON tpr.id_tipo_providencias = pr.id_tipo_providencias  AND pr.id_tipo_providencias = 8";
 
 
                             if (!String.IsNullOrEmpty(parametros.firma))
@@ -332,7 +380,7 @@ namespace Presentacion
                     case "AC":
 
                         columnas = "ju.regional,tc.id_titulo_credito,ju.id_juicios,tc.numero_titulo_credito, ju.numero_juicios, cl.identificacion_clientes, cl.nombres_clientes, asv.id_abogado, asv.impulsores, asv.id_secretario, asv.secretarios, ju.cuantia_inicial,ep.nombre_estados_procesales_juicios, ac.firmado_secretario, ac.id_avoco_conocimiento AS \"id_documento\" , ac.nombre_documento AS \"nombre_doc\", ac.ruta_documento AS \"ruta_doc\" ,ju.fecha_emision_juicios,ju.fecha_ultima_providencia ,ju.descripcion_estado_procesal, ac.modificado, ac.creado AS \"fecha_creado\" ";
-                        where = "1=1 AND asv.id_abogado=" + parametros.id_abogado + "";
+                        where = "1=1 AND ac.eliminado_documento='false' AND asv.id_abogado=" + parametros.id_abogado + "";
 
                         if (parametros.tipo_documento == "ALL")
                         {
@@ -352,6 +400,22 @@ namespace Presentacion
                         {
 
                             tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = ju.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN avoco_conocimiento ac  ON ac.id_juicios = ju.id_juicios AND ac.tipo_avoco = 7";
+
+                            if (!String.IsNullOrEmpty(parametros.firma))
+                            {
+                                where_to += " AND ac.firmado_secretario='" + parametros.firma + "'";
+                            }
+                            if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                            {
+                                where_to += " AND  DATE(ac.creado) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                            }
+                        }
+
+
+                        else if (parametros.tipo_documento == "12")
+                        {
+
+                            tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = ju.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN avoco_conocimiento ac  ON ac.id_juicios = ju.id_juicios AND ac.tipo_avoco = 12";
 
                             if (!String.IsNullOrEmpty(parametros.firma))
                             {
@@ -393,7 +457,7 @@ namespace Presentacion
                     case "PR":
 
                         columnas = " ju.regional, tc.id_titulo_credito, ju.id_juicios, tc.numero_titulo_credito, ju.numero_juicios, cl.identificacion_clientes, cl.nombres_clientes, asv.id_abogado, asv.impulsores, asv.id_secretario, asv.secretarios, pr.id_providencias AS \"id_documento\", pr.firmado_secretario, pr.nombre_archivo_providencias AS \"nombre_doc\", pr.ruta_providencias AS \"ruta_doc\",ju.fecha_emision_juicios,ju.cuantia_inicial, ep.nombre_estados_procesales_juicios, ju.descripcion_estado_procesal, pr.modificado, ju.fecha_ultima_providencia, pr.creado AS \"fecha_creado\"";
-                        where = "1=1 AND asv.id_abogado=" + parametros.id_abogado + "";
+                        where = "1=1 AND pr.eliminado_documento='false' AND asv.id_abogado=" + parametros.id_abogado + "";
 
                         if (parametros.tipo_documento == "ALL")
                         {
@@ -454,10 +518,43 @@ namespace Presentacion
                             }
                         }
 
+
+                        else if (parametros.tipo_documento == "PCPAVOC")
+                        {
+
+                            tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = tc.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN providencias pr  ON pr.id_juicios = ju.id_juicios INNER JOIN tipo_providencias tpr ON tpr.id_tipo_providencias = pr.id_tipo_providencias  AND pr.id_tipo_providencias = 9";
+
+
+                            if (!String.IsNullOrEmpty(parametros.firma))
+                            {
+                                where_to += " AND pr.firmado_secretario='" + parametros.firma + "'";
+                            }
+                            if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                            {
+                                where_to += " AND  DATE(pr.creado) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                            }
+                        }
+
                         else if (parametros.tipo_documento == "PRES")
                         {
 
                             tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = tc.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN providencias pr  ON pr.id_juicios = ju.id_juicios INNER JOIN tipo_providencias tpr ON tpr.id_tipo_providencias = pr.id_tipo_providencias  AND pr.id_tipo_providencias = 4";
+
+
+                            if (!String.IsNullOrEmpty(parametros.firma))
+                            {
+                                where_to += " AND pr.firmado_secretario='" + parametros.firma + "'";
+                            }
+                            if (!String.IsNullOrEmpty(parametros.fecha_desde) && !String.IsNullOrEmpty(parametros.fecha_hasta))
+                            {
+                                where_to += " AND  DATE(pr.creado) BETWEEN '" + parametros.fecha_desde + "' AND '" + parametros.fecha_hasta + "'";
+                            }
+                        }
+
+                        else if (parametros.tipo_documento == "PRESAVOC")
+                        {
+
+                            tablas = "juicios ju INNER JOIN  titulo_credito tc ON tc.id_titulo_credito = ju.id_titulo_credito INNER JOIN clientes cl ON cl.id_clientes = tc.id_clientes INNER JOIN provincias pv ON pv.id_provincias = cl.id_provincias INNER JOIN estados_procesales_juicios ep ON ep.id_estados_procesales_juicios = ju.id_estados_procesales_juicios INNER JOIN asignacion_secretarios_view asv ON asv.id_abogado = tc.id_usuarios INNER JOIN providencias pr  ON pr.id_juicios = ju.id_juicios INNER JOIN tipo_providencias tpr ON tpr.id_tipo_providencias = pr.id_tipo_providencias  AND pr.id_tipo_providencias = 8";
 
 
                             if (!String.IsNullOrEmpty(parametros.firma))
