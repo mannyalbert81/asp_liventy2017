@@ -374,6 +374,21 @@ namespace Presentacion
                 }
             }
 
+            string _agregar_disposicion = "S/N";
+            if (!String.IsNullOrEmpty(Request.QueryString["agregar_disposicion"]))
+            {
+                if (Request.QueryString["agregar_disposicion"] != "")
+                {
+                    _agregar_disposicion = Request.QueryString["agregar_disposicion"];
+                }
+                else {
+                    _agregar_disposicion = "S/N";
+                }
+            }
+
+            
+
+
 
             string _nombre_numero_documento_1 = "S/N";
             if (!String.IsNullOrEmpty(Request.QueryString["nombre_numero_documento_1"]))
@@ -3773,6 +3788,175 @@ namespace Presentacion
                     }
 
 
+
+
+
+
+
+
+                    if (_tipo_avoco == 15)
+                    {
+
+                        if (_generar_oficio == "Si")
+                        {
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoRestructuracion_AvocoConocimiento_Quito_ConOficio ObjRep = new Reporte.rptProvidenciaAvocoConocimientoRestructuracion_AvocoConocimiento_Quito_ConOficio();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_oficio_restructuracion", _numero_oficio_restructuracion);
+                            ObjRep.SetParameterValue("_fecha_oficio_restructuracion", _fecha_oficio_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_solicitud_restructuracion", _numero_solicitud_restructuracion);
+                            ObjRep.SetParameterValue("_fecha_solicitud_restructuracion", _fecha_solicitud_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_acta_validacion_restructuracion", _acta_validacion_restructuracion);
+                            ObjRep.SetParameterValue("_tipo_lev", _tipo_lev);
+
+                            ObjRep.SetParameterValue("_nombre_numero_documento_1", _nombre_numero_documento_1);
+                            ObjRep.SetParameterValue("_fecha_documento_1", _fecha_documento_1.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_numero_documento_2", _nombre_numero_documento_2);
+                            ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
+                            ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_referencia", _referencia);
+
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+
+
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_identificador_oficio_5", _identificador_oficio_5);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_5", _entidad_va_oficio_5);
+                            ObjRep.SetParameterValue("_identificador_oficio_6", _identificador_oficio_6);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_6", _entidad_va_oficio_6);
+                            ObjRep.SetParameterValue("_identificador_oficio_7", _identificador_oficio_7);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_7", _entidad_va_oficio_7);
+                            ObjRep.SetParameterValue("_identificador_oficio_8", _identificador_oficio_8);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_8", _entidad_va_oficio_8);
+
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev", _referencia_oficios_tipo_lev);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_2", _referencia_oficios_tipo_lev_2);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_3", _referencia_oficios_tipo_lev_3);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_4", _referencia_oficios_tipo_lev_4);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_5", _referencia_oficios_tipo_lev_5);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
+
+
+                            
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Restructuracion/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+
+                        }
+                        else {
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoRestructuracion_AvocoConocimiento_Quito ObjRep = new Reporte.rptProvidenciaAvocoConocimientoRestructuracion_AvocoConocimiento_Quito();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_oficio_restructuracion", _numero_oficio_restructuracion);
+                            ObjRep.SetParameterValue("_fecha_oficio_restructuracion", _fecha_oficio_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_numero_solicitud_restructuracion", _numero_solicitud_restructuracion);
+                            ObjRep.SetParameterValue("_fecha_solicitud_restructuracion", _fecha_solicitud_restructuracion.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_acta_validacion_restructuracion", _acta_validacion_restructuracion);
+                            ObjRep.SetParameterValue("_tipo_lev", _tipo_lev);
+
+                            ObjRep.SetParameterValue("_nombre_numero_documento_1", _nombre_numero_documento_1);
+                            ObjRep.SetParameterValue("_fecha_documento_1", _fecha_documento_1.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_numero_documento_2", _nombre_numero_documento_2);
+                            ObjRep.SetParameterValue("_fecha_documento_2", _fecha_documento_2.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
+                            ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
+
+
+
+
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Restructuracion/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+                        }
+
+
+
+
+                    }
 
 
 

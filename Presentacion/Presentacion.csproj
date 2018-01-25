@@ -711,6 +711,18 @@
       <DependentUpon>rptProvidenciaAvocoConocimiento%28Pago_Total_ConOficio%29.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito_ConOficio%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito_ConOficio%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento%29.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento%29.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -941,6 +953,14 @@
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Pago_Total_ConOficio%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProvidenciaAvocoConocimiento%28Pago_Total_ConOficio%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito_ConOficio%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito_ConOficio%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento_Quito%29.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Restructuracion_AvocoConocimiento%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
