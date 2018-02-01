@@ -175,7 +175,6 @@
     <Content Include="contOficios.aspx" />
     <Content Include="contProvidenciaLevantamiento.aspx" />
     <Content Include="contAvocoConocimiento.aspx" />
-    <Content Include="contJuiciosEstadisticasaspx.aspx" />
     <Content Include="contMatrizJuicios.aspx" />
     <Content Include="Datas\StyleSheet1.css" />
     <Content Include="logonestle2.png" />
@@ -502,13 +501,6 @@
     <Compile Include="contAvocoConocimiento.aspx.designer.cs">
       <DependentUpon>contAvocoConocimiento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="contJuiciosEstadisticasaspx.aspx.cs">
-      <DependentUpon>contJuiciosEstadisticasaspx.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="contJuiciosEstadisticasaspx.aspx.designer.cs">
-      <DependentUpon>contJuiciosEstadisticasaspx.aspx</DependentUpon>
-    </Compile>
     <Compile Include="contMatrizJuicios.aspx.cs">
       <DependentUpon>contMatrizJuicios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -613,18 +605,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptGraficasProvidencias.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reporte\rptJuciosEstadisticas2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptJuciosEstadisticas2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reporte\rptJuiciosEstadisticas.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptJuiciosEstadisticas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\rptMatrizRestructuracion.cs">
@@ -795,12 +775,6 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\rptProvidenciaLevantamiento2.cs">
-      <DependentUpon>rptProvidenciaLevantamiento2.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -889,14 +863,6 @@
     <EmbeddedResource Include="Reporte\rptGraficasProvidencias.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptGraficasProvidencias.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\rptJuciosEstadisticas2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptJuciosEstadisticas2.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\rptJuiciosEstadisticas.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptJuiciosEstadisticas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptMatrizRestructuracion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1009,10 +975,6 @@
     <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptProvidenciaLevantamiento.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\rptProvidenciaLevantamiento2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptProvidenciaLevantamiento2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

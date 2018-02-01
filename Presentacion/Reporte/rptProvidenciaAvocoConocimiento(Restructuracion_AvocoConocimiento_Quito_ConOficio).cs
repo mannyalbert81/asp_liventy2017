@@ -625,6 +625,22 @@ namespace Presentacion.Reporte {
                 return this.DataDefinition.ParameterFields[47];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_1 {
+            get {
+                return this.DataDefinition.ParameterFields[48];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_2 {
+            get {
+                return this.DataDefinition.ParameterFields[49];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]

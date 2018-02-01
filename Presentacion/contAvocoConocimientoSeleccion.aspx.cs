@@ -386,7 +386,30 @@ namespace Presentacion
                 }
             }
 
-            
+            string _agregar_disposicion_1 = "S/N";
+            if (!String.IsNullOrEmpty(Request.QueryString["agregar_disposicion_1"]))
+            {
+                if (Request.QueryString["agregar_disposicion_1"] != "")
+                {
+                    _agregar_disposicion_1 = Request.QueryString["agregar_disposicion_1"];
+                }
+                else {
+                    _agregar_disposicion_1 = "S/N";
+                }
+            }
+
+
+            string _agregar_disposicion_2 = "S/N";
+            if (!String.IsNullOrEmpty(Request.QueryString["agregar_disposicion_2"]))
+            {
+                if (Request.QueryString["agregar_disposicion_2"] != "")
+                {
+                    _agregar_disposicion_2 = Request.QueryString["agregar_disposicion_2"];
+                }
+                else {
+                    _agregar_disposicion_2 = "S/N";
+                }
+            }
 
 
 
@@ -2708,6 +2731,12 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
+
+
+
 
                             CrystalReportViewer1.DataBind();
 
@@ -2768,6 +2797,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
                             ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
 
 
 
@@ -3858,9 +3890,11 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
 
 
-                            
+
 
                             CrystalReportViewer1.DataBind();
 
@@ -3922,6 +3956,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_referencia", _referencia);
                             ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
 
 
 

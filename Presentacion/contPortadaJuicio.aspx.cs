@@ -79,7 +79,8 @@ namespace Presentacion
                              "clientes.direccion_clientes_2, clientes.direccion_clientes_3, clientes.cantidad_clientes, " +
                              "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                              "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
-                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\" , asignacion_secretarios_view.secretaria, origen_juicio.nombre_origen_juicio";
+                             "clientes.sexo_garantes_3,titulo_credito.imagen_qr AS \"imagenQR\" , asignacion_secretarios_view.secretaria, origen_juicio.nombre_origen_juicio, " +
+                              "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad, public.origen_juicio";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios AND juicios.id_origen_juicio= origen_juicio.id_origen_juicio";
 
