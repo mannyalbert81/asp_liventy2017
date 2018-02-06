@@ -170,6 +170,7 @@
     <Content Include="contGraficasProvidenciasMatrizJuicios.aspx" />
     <Content Include="contHistorialJuicios.aspx" />
     <Content Include="contMatrizRestructuracion.aspx" />
+    <Content Include="contOficiosGraficas.aspx" />
     <Content Include="contPortadaJuicio.aspx" />
     <Content Include="contTitulosFomento.aspx" />
     <Content Include="contOficios.aspx" />
@@ -346,6 +347,17 @@
     <Content Include="Datas\dtPortadaJuicio.xsc">
       <DependentUpon>dtPortadaJuicio.xsd</DependentUpon>
     </Content>
+    <Content Include="Datas\dtOficiosGraficas.xsc">
+      <DependentUpon>dtOficiosGraficas.xsd</DependentUpon>
+    </Content>
+    <None Include="Datas\dtOficiosGraficas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtOficiosGraficas.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datas\dtOficiosGraficas.xss">
+      <DependentUpon>dtOficiosGraficas.xsd</DependentUpon>
+    </Content>
     <None Include="Datas\dtPortadaJuicio.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -466,6 +478,13 @@
     <Compile Include="contMatrizRestructuracion.aspx.designer.cs">
       <DependentUpon>contMatrizRestructuracion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="contOficiosGraficas.aspx.cs">
+      <DependentUpon>contOficiosGraficas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contOficiosGraficas.aspx.designer.cs">
+      <DependentUpon>contOficiosGraficas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contPortadaJuicio.aspx.cs">
       <DependentUpon>contPortadaJuicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -563,6 +582,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtOficios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datas\dtOficiosGraficas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtOficiosGraficas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datas\dtPortadaJuicio.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -588,6 +612,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptDocumentosGenerado.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptGraficasOficios.cs">
+      <DependentUpon>rptGraficasOficios.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reporte\rptGraficas.cs">
       <AutoGen>True</AutoGen>
@@ -851,6 +881,10 @@
     <EmbeddedResource Include="Reporte\rptDocumentosGenerado.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDocumentosGenerado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptGraficasOficios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGraficasOficios.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptGraficas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

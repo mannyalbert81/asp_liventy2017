@@ -281,6 +281,26 @@ namespace Presentacion
                 }
 
             }
+
+
+
+
+            string _pie_oficios = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["pie_oficios"]))
+            {
+
+
+                if (Request.QueryString["pie_oficios"] != "")
+                {
+                    _pie_oficios = Request.QueryString["pie_oficios"];
+                }
+                else {
+                    _pie_oficios = "S/N";
+                }
+
+            }
+
+
             
 
             string _tipo_credito = "";
@@ -297,6 +317,24 @@ namespace Presentacion
                 }
 
             }
+
+
+            string _remplaza_impulsor = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["remplaza_impulsor"]))
+            {
+
+
+                if (Request.QueryString["remplaza_impulsor"] != "")
+                {
+                    _remplaza_impulsor = Request.QueryString["remplaza_impulsor"];
+                }
+                else {
+                    _remplaza_impulsor = "S/N";
+                }
+
+            }
+
+            
 
 
 
@@ -2166,7 +2204,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
+                            
 
 
 
@@ -2734,6 +2774,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
                             ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
                             ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
 
 
@@ -3175,6 +3216,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
                             CrystalReportViewer1.DataBind();
 
@@ -3323,6 +3365,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
                             CrystalReportViewer1.DataBind();
 
@@ -3442,7 +3485,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_escrito_presentado_por", _escrito_presentado_por);
                             ObjRep.SetParameterValue("_dispone_1", _dispone_1);
                             ObjRep.SetParameterValue("_dispone_2", _dispone_2);
-
+                            ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                        
 
 
 
@@ -3550,6 +3594,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
                             CrystalReportViewer1.DataBind();
 
@@ -3719,6 +3764,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
 
 
@@ -3892,6 +3938,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
                             ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
                             ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
 
 
