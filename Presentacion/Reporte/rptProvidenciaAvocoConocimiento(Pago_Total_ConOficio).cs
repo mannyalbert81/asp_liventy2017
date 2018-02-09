@@ -639,6 +639,30 @@ namespace Presentacion.Reporte {
                 return this.DataDefinition.ParameterFields[49];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_pago_total {
+            get {
+                return this.DataDefinition.ParameterFields[50];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_1_pago_total {
+            get {
+                return this.DataDefinition.ParameterFields[51];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_2_pago_total {
+            get {
+                return this.DataDefinition.ParameterFields[52];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]

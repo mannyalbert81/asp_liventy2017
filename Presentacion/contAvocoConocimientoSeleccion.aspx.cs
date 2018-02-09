@@ -300,8 +300,33 @@ namespace Presentacion
 
             }
 
-
             
+
+            string _impulsor_saliente_cambio_liquidador = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["impulsor_saliente_cambio_liquidador"]))
+            {
+
+
+                if (Request.QueryString["impulsor_saliente_cambio_liquidador"] != "")
+                {
+                    _impulsor_saliente_cambio_liquidador = Request.QueryString["impulsor_saliente_cambio_liquidador"];
+                }
+                else {
+                    _impulsor_saliente_cambio_liquidador = "S/N";
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
 
             string _tipo_credito = "";
             if (!String.IsNullOrEmpty(Request.QueryString["tipo_credito"]))
@@ -448,6 +473,72 @@ namespace Presentacion
                     _agregar_disposicion_2 = "S/N";
                 }
             }
+
+
+
+
+
+
+            string _agregar_disposicion_pago_total = "S/N";
+            if (!String.IsNullOrEmpty(Request.QueryString["agregar_disposicion_pago_total"]))
+            {
+                if (Request.QueryString["agregar_disposicion_pago_total"] != "")
+                {
+                    _agregar_disposicion_pago_total = Request.QueryString["agregar_disposicion_pago_total"];
+                }
+                else {
+                    _agregar_disposicion_pago_total = "S/N";
+                }
+            }
+
+            string _agregar_disposicion_1_pago_total = "S/N";
+            if (!String.IsNullOrEmpty(Request.QueryString["agregar_disposicion_1_pago_total"]))
+            {
+                if (Request.QueryString["agregar_disposicion_1_pago_total"] != "")
+                {
+                    _agregar_disposicion_1_pago_total = Request.QueryString["agregar_disposicion_1_pago_total"];
+                }
+                else {
+                    _agregar_disposicion_1_pago_total = "S/N";
+                }
+            }
+
+
+            string _agregar_disposicion_2_pago_total = "S/N";
+            if (!String.IsNullOrEmpty(Request.QueryString["agregar_disposicion_2_pago_total"]))
+            {
+                if (Request.QueryString["agregar_disposicion_2_pago_total"] != "")
+                {
+                    _agregar_disposicion_2_pago_total = Request.QueryString["agregar_disposicion_2_pago_total"];
+                }
+                else {
+                    _agregar_disposicion_2_pago_total = "S/N";
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2113,7 +2204,7 @@ namespace Presentacion
                               "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3," +
                               "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2," +
                               "clientes.sexo_garantes_3,titulo_credito.imagen_qr, " +
-                              "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador";
+                              "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador, asignacion_secretarios_view.iniciales_usuarios";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
             String where_to = "";
@@ -2205,8 +2296,11 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
+                            ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
 
-                            
+
 
 
 
@@ -2274,11 +2368,14 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
                         ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                         ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
 
 
 
 
-                        CrystalReportViewer1.DataBind();
+                            CrystalReportViewer1.DataBind();
 
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
@@ -3003,6 +3100,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
                             CrystalReportViewer1.DataBind();
 
@@ -3486,6 +3584,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_dispone_1", _dispone_1);
                             ObjRep.SetParameterValue("_dispone_2", _dispone_2);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                        ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
+
                         
 
 
@@ -3765,6 +3865,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
+                            ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
 
 
 
@@ -3833,6 +3936,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
                             ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
+                            ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
 
 
 

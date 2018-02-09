@@ -387,6 +387,8 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columncargo_liquidador;
             
+            private global::System.Data.DataColumn columniniciales_usuarios;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -854,6 +856,14 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn iniciales_usuariosColumn {
+                get {
+                    return this.columniniciales_usuarios;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -943,7 +953,8 @@ namespace Presentacion.Datas {
                         string sexo_garantes_3, 
                         byte[] imagen_qr, 
                         string liquidador, 
-                        string cargo_liquidador) {
+                        string cargo_liquidador, 
+                        string iniciales_usuarios) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_juicios,
@@ -999,7 +1010,8 @@ namespace Presentacion.Datas {
                         sexo_garantes_3,
                         imagen_qr,
                         liquidador,
-                        cargo_liquidador};
+                        cargo_liquidador,
+                        iniciales_usuarios};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -1076,6 +1088,7 @@ namespace Presentacion.Datas {
                 this.columnimagen_qr = base.Columns["imagen_qr"];
                 this.columnliquidador = base.Columns["liquidador"];
                 this.columncargo_liquidador = base.Columns["cargo_liquidador"];
+                this.columniniciales_usuarios = base.Columns["iniciales_usuarios"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1189,6 +1202,8 @@ namespace Presentacion.Datas {
                 base.Columns.Add(this.columnliquidador);
                 this.columncargo_liquidador = new global::System.Data.DataColumn("cargo_liquidador", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncargo_liquidador);
+                this.columniniciales_usuarios = new global::System.Data.DataColumn("iniciales_usuarios", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniniciales_usuarios);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2210,6 +2225,22 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string iniciales_usuarios {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.iniciales_usuariosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'iniciales_usuarios\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.iniciales_usuariosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isid_juiciosNull() {
                 return this.IsNull(this.tableDataTable1.id_juiciosColumn);
             }
@@ -2854,6 +2885,18 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcargo_liquidadorNull() {
                 this[this.tableDataTable1.cargo_liquidadorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isiniciales_usuariosNull() {
+                return this.IsNull(this.tableDataTable1.iniciales_usuariosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setiniciales_usuariosNull() {
+                this[this.tableDataTable1.iniciales_usuariosColumn] = global::System.Convert.DBNull;
             }
         }
         
