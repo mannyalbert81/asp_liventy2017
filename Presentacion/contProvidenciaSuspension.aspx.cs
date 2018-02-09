@@ -263,6 +263,20 @@ namespace Presentacion
 
             }
 
+            string _pie_oficios = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["pie_oficios"]))
+            {
+
+
+                if (Request.QueryString["pie_oficios"] != "")
+                {
+                    _pie_oficios = Request.QueryString["pie_oficios"];
+                }
+                else {
+                    _pie_oficios = "S/N";
+                }
+
+            }
 
 
 
@@ -699,7 +713,7 @@ namespace Presentacion
                               "clientes.cantidad_garantes,clientes.sexo_clientes, clientes.sexo_clientes_1,clientes.sexo_clientes_3,"+
                               "clientes.sexo_clientes_2,clientes.sexo_garantes, clientes.sexo_garantes_1,clientes.sexo_garantes_2,"+
                               "clientes.sexo_garantes_3,titulo_credito.imagen_qr, " +
-                                "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador";
+                                "asignacion_secretarios_view.liquidador, asignacion_secretarios_view.cargo_liquidador, asignacion_secretarios_view.iniciales_usuarios";
             string tablas = " public.clientes, public.titulo_credito, public.juicios, public.asignacion_secretarios_view, public.estados_procesales_juicios, public.provincias, public.ciudad";
             string where = " clientes.id_clientes = titulo_credito.id_clientes AND clientes.id_provincias = provincias.id_provincias AND titulo_credito.id_titulo_credito = juicios.id_titulo_credito AND asignacion_secretarios_view.id_ciudad = ciudad.id_ciudad AND juicios.id_estados_procesales_juicios = estados_procesales_juicios.id_estados_procesales_juicios AND asignacion_secretarios_view.id_abogado = titulo_credito.id_usuarios ";
 
@@ -762,6 +776,7 @@ namespace Presentacion
                 ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                 ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                 ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
 
                 ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;

@@ -12,7 +12,7 @@
   <xs:element name="dtProvidenciaSuspension" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtProvidenciaSuspension" msprop:Generator_UserDSName="dtProvidenciaSuspension">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_juicios" msprop:Generator_ColumnVarNameInTable="columnid_juicios" msprop:Generator_ColumnPropNameInRow="id_juicios" msprop:Generator_ColumnPropNameInTable="id_juiciosColumn" msprop:Generator_UserColumnName="id_juicios" type="xs:string" minOccurs="0" />
@@ -69,6 +69,7 @@
               <xs:element name="imagen_qr" msprop:Generator_ColumnVarNameInTable="columnimagen_qr" msprop:Generator_ColumnPropNameInRow="imagen_qr" msprop:Generator_ColumnPropNameInTable="imagen_qrColumn" msprop:Generator_UserColumnName="imagen_qr" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="liquidador" msprop:Generator_ColumnVarNameInTable="columnliquidador" msprop:Generator_ColumnPropNameInRow="liquidador" msprop:Generator_ColumnPropNameInTable="liquidadorColumn" msprop:Generator_UserColumnName="liquidador" type="xs:string" minOccurs="0" />
               <xs:element name="cargo_liquidador" msprop:Generator_ColumnVarNameInTable="columncargo_liquidador" msprop:Generator_ColumnPropNameInRow="cargo_liquidador" msprop:Generator_ColumnPropNameInTable="cargo_liquidadorColumn" msprop:Generator_UserColumnName="cargo_liquidador" type="xs:string" minOccurs="0" />
+              <xs:element name="iniciales_usuarios" msprop:Generator_ColumnVarNameInTable="columniniciales_usuarios" msprop:Generator_ColumnPropNameInRow="iniciales_usuarios" msprop:Generator_ColumnPropNameInTable="iniciales_usuariosColumn" msprop:Generator_UserColumnName="iniciales_usuarios" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
