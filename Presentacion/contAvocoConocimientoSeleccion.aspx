@@ -12,8 +12,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <a href="contAvocoConocimientoSeleccion.aspx">contAvocoConocimientoSeleccion.aspx</a>
-        <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" ToolPanelView="None" />
+         <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" ToolPanelView="None" />
     
     </div>
     </form>

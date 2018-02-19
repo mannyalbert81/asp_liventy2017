@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaLevantamientoMedidaCautelarFallecimiento : ReportClass {
+    public class rptProvidenciaAvocoConocimientoRetencion_Fondos : ReportClass {
         
-        public rptProvidenciaLevantamientoMedidaCautelarFallecimiento() {
+        public rptProvidenciaAvocoConocimientoRetencion_Fondos() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaLevantamientoMedidaCautelar(Fallecimiento).rpt";
+                return "rptProvidenciaAvocoConocimiento(Retencion_Fondos).rpt";
             }
             set {
                 // Do nothing
@@ -41,8 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaLevantamientoMedidaCautelar(Fallecimiento).rpt" +
-                    "";
+                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Retencion_Fondos).rpt";
             }
             set {
                 // Do nothing
@@ -147,113 +146,17 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_oficio_medida_cuatelar_fallecimiento {
+        public CrystalDecisions.Shared.IParameterField Parameter__cantidad_retener {
             get {
                 return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_oficio_medida_cuatelar_fallecimiento {
-            get {
-                return this.DataDefinition.ParameterFields[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_liquidacion_medida_cuatelar_fallecimiento {
-            get {
-                return this.DataDefinition.ParameterFields[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_liquidacion_medida_cuatelar_fallecimiento {
-            get {
-                return this.DataDefinition.ParameterFields[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__numero_solicitud_fallecimiento {
-            get {
-                return this.DataDefinition.ParameterFields[8];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__fecha_solicitud_fallecimiento {
-            get {
-                return this.DataDefinition.ParameterFields[9];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_conyuge_sobreviviente {
-            get {
-                return this.DataDefinition.ParameterFields[10];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__correo_conyuge_sobreviviente {
-            get {
-                return this.DataDefinition.ParameterFields[11];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_lev {
-            get {
-                return this.DataDefinition.ParameterFields[12];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion {
-            get {
-                return this.DataDefinition.ParameterFields[13];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_1 {
-            get {
-                return this.DataDefinition.ParameterFields[14];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__agregar_disposicion_2 {
-            get {
-                return this.DataDefinition.ParameterFields[15];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__nombre_canton {
-            get {
-                return this.DataDefinition.ParameterFields[16];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaLevantamientoMedidaCautelarFallecimiento : Component, ICachedReport {
+    public class CachedrptProvidenciaAvocoConocimientoRetencion_Fondos : Component, ICachedReport {
         
-        public CachedrptProvidenciaLevantamientoMedidaCautelarFallecimiento() {
+        public CachedrptProvidenciaAvocoConocimientoRetencion_Fondos() {
         }
         
         [Browsable(false)]
@@ -290,7 +193,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaLevantamientoMedidaCautelarFallecimiento rpt = new rptProvidenciaLevantamientoMedidaCautelarFallecimiento();
+            rptProvidenciaAvocoConocimientoRetencion_Fondos rpt = new rptProvidenciaAvocoConocimientoRetencion_Fondos();
             rpt.Site = this.Site;
             return rpt;
         }
