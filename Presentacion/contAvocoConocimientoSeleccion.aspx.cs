@@ -2008,6 +2008,10 @@ namespace Presentacion
 
 
 
+           
+
+
+
 
             string _asunto = "";
             if (!String.IsNullOrEmpty(Request.QueryString["asunto"]))
@@ -2225,6 +2229,45 @@ namespace Presentacion
 
 
 
+
+
+            DateTime _fecha_oficios = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficios"]))
+            {
+
+                string fecha_OFI_RES = Request.QueryString["fecha_oficios"];
+
+                if (fecha_OFI_RES != "0")
+                {
+                    _fecha_oficios = Convert.ToDateTime(fecha_OFI_RES);
+
+                }
+                else
+                {
+                    _fecha_oficios = _fecha_razon;
+
+                }
+
+
+
+            }
+
+
+            bool _texto_oficios = true;
+            if (!String.IsNullOrEmpty(Request.QueryString["texto_oficios"]))
+            {
+                if (Request.QueryString["texto_oficios"] != "")
+                {
+                    if (Request.QueryString["texto_oficios"] == "NO")
+
+                        _texto_oficios = false;
+                }
+
+            }
+
+
+
             string columnas = "juicios.id_juicios, juicios.juicio_referido_titulo_credito, clientes.identificacion_clientes, " +
                               "clientes.nombres_clientes, clientes.identificacion_garantes, clientes.nombre_garantes, " +
                               "provincias.nombre_provincias, titulo_credito.numero_titulo_credito, juicios.fecha_emision_juicios, " +
@@ -2340,8 +2383,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
 
 
-
-
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
 
 
                             CrystalReportViewer1.DataBind();
@@ -2911,7 +2954,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
                             ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
-                            
+
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
 
 
                             CrystalReportViewer1.DataBind();
@@ -3140,6 +3185,10 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+
+
                             CrystalReportViewer1.DataBind();
 
                             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -3354,6 +3403,10 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+
+
                             CrystalReportViewer1.DataBind();
 
                             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -3509,7 +3562,10 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
                             ObjRep.SetParameterValue("_nombre_canton", _nombre_canton);
 
-                            
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+
+
 
                             CrystalReportViewer1.DataBind();
 
@@ -3747,6 +3803,10 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+
+
                             CrystalReportViewer1.DataBind();
 
                             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -3920,6 +3980,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
 
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
 
 
 
@@ -4099,6 +4161,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
 
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
 
 
 
@@ -4261,6 +4325,10 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                              ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
                             ObjRep.SetParameterValue("_cantidad_retener", _cantidad_retener);
+
+
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
 
 
 
