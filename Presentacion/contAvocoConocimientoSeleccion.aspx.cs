@@ -318,8 +318,26 @@ namespace Presentacion
             }
 
 
+            string _direccion_juzgado = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["direccion_juzgado"]))
+            {
+
+
+                if (Request.QueryString["direccion_juzgado"] != "")
+                {
+                    _direccion_juzgado = Request.QueryString["direccion_juzgado"];
+                }
+                else {
+                    _direccion_juzgado = "S/N";
+                }
+
+            }
+
+
 
             
+
+
 
 
 
@@ -2236,11 +2254,11 @@ namespace Presentacion
             if (!String.IsNullOrEmpty(Request.QueryString["fecha_oficios"]))
             {
 
-                string fecha_OFI_RES = Request.QueryString["fecha_oficios"];
+                string fecha_OFI_RES145 = Request.QueryString["fecha_oficios"];
 
-                if (fecha_OFI_RES != "0")
+                if (fecha_OFI_RES145 != "0")
                 {
-                    _fecha_oficios = Convert.ToDateTime(fecha_OFI_RES);
+                    _fecha_oficios = Convert.ToDateTime(fecha_OFI_RES145);
 
                 }
                 else
@@ -4416,6 +4434,157 @@ namespace Presentacion
                     }
 
 
+
+
+                    if (_tipo_avoco == 17)
+                    {
+
+                        if (_generar_oficio == "Si")
+                        {
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoRetencion_Fondos_AvocoConocimiento_ConOficio ObjRep = new Reporte.rptProvidenciaAvocoConocimientoRetencion_Fondos_AvocoConocimiento_ConOficio();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+
+                            ObjRep.SetParameterValue("_identificador_oficio", _identificador_oficio);
+                            ObjRep.SetParameterValue("_entidad_va_oficio", _entidad_va_oficio);
+                            ObjRep.SetParameterValue("_asunto", _asunto);
+
+
+                            ObjRep.SetParameterValue("_identificador_oficio_2", _identificador_oficio_2);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_2", _entidad_va_oficio_2);
+                            ObjRep.SetParameterValue("_identificador_oficio_3", _identificador_oficio_3);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_3", _entidad_va_oficio_3);
+                            ObjRep.SetParameterValue("_identificador_oficio_4", _identificador_oficio_4);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_4", _entidad_va_oficio_4);
+                            ObjRep.SetParameterValue("_identificador_oficio_5", _identificador_oficio_5);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_5", _entidad_va_oficio_5);
+                            ObjRep.SetParameterValue("_identificador_oficio_6", _identificador_oficio_6);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_6", _entidad_va_oficio_6);
+                            ObjRep.SetParameterValue("_identificador_oficio_7", _identificador_oficio_7);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_7", _entidad_va_oficio_7);
+                            ObjRep.SetParameterValue("_identificador_oficio_8", _identificador_oficio_8);
+                            ObjRep.SetParameterValue("_entidad_va_oficio_8", _entidad_va_oficio_8);
+
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev", _referencia_oficios_tipo_lev);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_2", _referencia_oficios_tipo_lev_2);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_3", _referencia_oficios_tipo_lev_3);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_4", _referencia_oficios_tipo_lev_4);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_5", _referencia_oficios_tipo_lev_5);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
+                            ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
+
+                            ObjRep.SetParameterValue("_cantidad_retener", _cantidad_retener);
+                            ObjRep.SetParameterValue("_direccion_juzgado", _direccion_juzgado);
+                            ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                            ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
+
+
+                            ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+
+
+
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Retencion_Fondos/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+
+
+                        }
+                        else {
+
+                            Datas.dtProvidenciaSuspension dtInforme = new Datas.dtProvidenciaSuspension();
+                            NpgsqlDataAdapter daInforme = new NpgsqlDataAdapter();
+                            daInforme = AccesoLogica.Select_reporte(columnas, tablas, where_to);
+                            daInforme.Fill(dtInforme, "juicios");
+                            int reg = dtInforme.Tables[1].Rows.Count;
+                            Reporte.rptProvidenciaAvocoConocimientoRetencion_Fondos_AvocoConocimiento ObjRep = new Reporte.rptProvidenciaAvocoConocimientoRetencion_Fondos_AvocoConocimiento();
+
+
+                            ObjRep.SetDataSource(dtInforme.Tables[1]);
+
+                            CultureInfo ci = new CultureInfo("es-EC");
+
+                            ObjRep.SetParameterValue("_fecha_avoco", _fecha_avoco.ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
+                            ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
+                            ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_cantidad_retener", _cantidad_retener);
+                            ObjRep.SetParameterValue("_direccion_juzgado", _direccion_juzgado);
+                            ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                            ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
+
+
+
+
+
+                            CrystalReportViewer1.DataBind();
+
+                            ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                            ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
+                            string pathToFiles = Server.MapPath("~/Documentos/Providencias_Retencion_Fondos/");
+
+                            objDiskOpt.DiskFileName = pathToFiles + _nombre_documento + ".pdf";
+                            ObjRep.ExportOptions.DestinationOptions = objDiskOpt;
+                            ObjRep.Export();
+
+                            dtInforme.Dispose();
+                            daInforme.Dispose();
+
+                            CrystalReportViewer1.Dispose();
+                            ObjRep.Close();
+                            ObjRep.Dispose();
+
+
+
+                            byte[] byteData = System.IO.File.ReadAllBytes(objDiskOpt.DiskFileName);
+                            Response.ContentType = "application/pdf";
+                            Response.AddHeader("content-length", byteData.Length.ToString());
+                            Response.BinaryWrite(byteData);
+                        }
+
+
+
+
+                    }
 
 
 

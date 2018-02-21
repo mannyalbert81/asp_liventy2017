@@ -351,6 +351,10 @@ namespace Presentacion
 
 
 
+           
+
+
+
             string _pie_oficios = "";
             if (!String.IsNullOrEmpty(Request.QueryString["pie_oficios"]))
             {
