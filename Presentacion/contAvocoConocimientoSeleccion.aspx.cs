@@ -283,6 +283,24 @@ namespace Presentacion
             }
 
 
+            string _tipo_cartera = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_cartera"]))
+            {
+
+
+                if (Request.QueryString["tipo_cartera"] != "")
+                {
+                    _tipo_cartera = Request.QueryString["tipo_cartera"];
+                }
+                else {
+                    _tipo_cartera = "S/N";
+                }
+
+            }
+
+
+            
+
 
             string _nombre_canton = "";
             if (!String.IsNullOrEmpty(Request.QueryString["nombre_canton"]))
@@ -3997,6 +4015,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
+                            ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                            ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
@@ -4070,6 +4090,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
+                            ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                            ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
 
 
 
@@ -4496,7 +4518,9 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+                            ObjRep.SetParameterValue("_tipo_cartera", _tipo_cartera);
 
+                            
 
 
 
@@ -4550,6 +4574,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia", _referencia);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
+                            ObjRep.SetParameterValue("_tipo_cartera", _tipo_cartera);
 
 
 
