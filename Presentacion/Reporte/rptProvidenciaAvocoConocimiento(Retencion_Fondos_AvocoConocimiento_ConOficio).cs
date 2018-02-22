@@ -529,6 +529,14 @@ namespace Presentacion.Reporte {
                 return this.DataDefinition.ParameterFields[36];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_cartera {
+            get {
+                return this.DataDefinition.ParameterFields[37];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
