@@ -786,6 +786,43 @@ namespace Presentacion
 
             }
 
+
+            
+            string _citado = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["citado"]))
+            {
+
+
+                if (Request.QueryString["citado"] != "")
+                {
+                    _citado = Request.QueryString["citado"];
+                }
+                else {
+                    _citado = "S/N";
+                }
+
+            }
+
+
+            string _disposicion_citar = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["disposicion_citar"]))
+            {
+
+
+                if (Request.QueryString["disposicion_citar"] != "")
+                {
+                    _disposicion_citar = Request.QueryString["disposicion_citar"];
+                }
+                else {
+                    _disposicion_citar = "S/N";
+                }
+
+            }
+
+
+
+
+
             string _nombre_discapacitado = "";
             if (!String.IsNullOrEmpty(Request.QueryString["nombre_discapacitado"]))
             {
@@ -4520,7 +4557,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
                             ObjRep.SetParameterValue("_tipo_cartera", _tipo_cartera);
 
-                            
+                            ObjRep.SetParameterValue("_citado", _citado);
+                            ObjRep.SetParameterValue("_disposicion_citar", _disposicion_citar);
+
 
 
 
@@ -4575,6 +4614,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
                             ObjRep.SetParameterValue("_tipo_cartera", _tipo_cartera);
+                            ObjRep.SetParameterValue("_citado", _citado);
+                            ObjRep.SetParameterValue("_disposicion_citar", _disposicion_citar);
 
 
 
