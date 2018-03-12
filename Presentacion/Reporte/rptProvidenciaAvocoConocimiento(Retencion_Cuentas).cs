@@ -16,14 +16,14 @@ namespace Presentacion.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProvidenciaAvocoConocimientoCambio_Liquidador : ReportClass {
+    public class rptProvidenciaAvocoConocimientoRetencion_Cuentas : ReportClass {
         
-        public rptProvidenciaAvocoConocimientoCambio_Liquidador() {
+        public rptProvidenciaAvocoConocimientoRetencion_Cuentas() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProvidenciaAvocoConocimiento(Cambio_Liquidador).rpt";
+                return "rptProvidenciaAvocoConocimiento(Retencion_Cuentas).rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Presentacion.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Cambio_Liquidador).rpt";
+                return "Presentacion.Reporte.rptProvidenciaAvocoConocimiento(Retencion_Cuentas).rpt";
             }
             set {
                 // Do nothing
@@ -146,65 +146,17 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__tipo_acto {
+        public CrystalDecisions.Shared.IParameterField Parameter__cuenta_retener {
             get {
                 return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__escrito_presentado_por {
-            get {
-                return this.DataDefinition.ParameterFields[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_1 {
-            get {
-                return this.DataDefinition.ParameterFields[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_2 {
-            get {
-                return this.DataDefinition.ParameterFields[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__remplaza_impulsor {
-            get {
-                return this.DataDefinition.ParameterFields[8];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__impulsor_saliente_cambio_liquidador {
-            get {
-                return this.DataDefinition.ParameterFields[9];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_3 {
-            get {
-                return this.DataDefinition.ParameterFields[10];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProvidenciaAvocoConocimientoCambio_Liquidador : Component, ICachedReport {
+    public class CachedrptProvidenciaAvocoConocimientoRetencion_Cuentas : Component, ICachedReport {
         
-        public CachedrptProvidenciaAvocoConocimientoCambio_Liquidador() {
+        public CachedrptProvidenciaAvocoConocimientoRetencion_Cuentas() {
         }
         
         [Browsable(false)]
@@ -241,7 +193,7 @@ namespace Presentacion.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProvidenciaAvocoConocimientoCambio_Liquidador rpt = new rptProvidenciaAvocoConocimientoCambio_Liquidador();
+            rptProvidenciaAvocoConocimientoRetencion_Cuentas rpt = new rptProvidenciaAvocoConocimientoRetencion_Cuentas();
             rpt.Site = this.Site;
             return rpt;
         }
