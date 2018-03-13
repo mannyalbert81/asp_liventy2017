@@ -18,4 +18,3 @@
     </form>
 </body>
 </html>
-<a href="contAvocoConocimientoSeleccion.aspx">contAvocoConocimientoSeleccion.aspx</a>

@@ -4569,8 +4569,6 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
                             ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
-
-
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
 
