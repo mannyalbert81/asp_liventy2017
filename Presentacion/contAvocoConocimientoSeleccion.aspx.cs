@@ -1861,7 +1861,54 @@ namespace Presentacion
                     _dispone_4 = "S/N";
                 }
             }
-
+            string _resolucion_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["resolucion_3"]))
+            {
+                if (Request.QueryString["resolucion_3"] != "")
+                {
+                    _resolucion_3 = Request.QueryString["resolucion_3"];
+                }
+                else
+                {
+                    _resolucion_3 = "S/N";
+                }
+            }
+            string _resolucion_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["resolucion_4"]))
+            {
+                if (Request.QueryString["resolucion_4"] != "")
+                {
+                    _resolucion_4 = Request.QueryString["resolucion_4"];
+                }
+                else
+                {
+                    _resolucion_4 = "S/N";
+                }
+            }
+            string _disponer_2 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["disponer_2"]))
+            {
+                if (Request.QueryString["disponer_2"] != "")
+                {
+                    _disponer_2 = Request.QueryString["disponer_2"];
+                }
+                else
+                {
+                    _disponer_2 = "S/N";
+                }
+            }
+            string _disponer_3 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["disponer_3"]))
+            {
+                if (Request.QueryString["disponer_3"] != "")
+                {
+                    _disponer_3 = Request.QueryString["disponer_3"];
+                }
+                else
+                {
+                    _disponer_3 = "S/N";
+                }
+            }
 
 
             string _numero_solicitud = "S/N";
@@ -2914,6 +2961,12 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_6", _referencia_oficios_tipo_lev_6);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_7", _referencia_oficios_tipo_lev_7);
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
+                            ObjRep.SetParameterValue("_resolucion_3", _resolucion_3);
+                            ObjRep.SetParameterValue("_resolucion_4", _resolucion_4);
+                            ObjRep.SetParameterValue("_disponer_2", _disponer_2);
+                            ObjRep.SetParameterValue("_disponer_3", _disponer_3);
+
+
                             CrystalReportViewer1.DataBind();
 
                             ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -2963,11 +3016,15 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                         ObjRep.SetParameterValue("_reemplazar", _reemplazar);
                         ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
+                        ObjRep.SetParameterValue("_resolucion_3", _resolucion_3);
+                        ObjRep.SetParameterValue("_resolucion_4", _resolucion_4);
+                        ObjRep.SetParameterValue("_disponer_2", _disponer_2);
+                        ObjRep.SetParameterValue("_disponer_3", _disponer_3);
 
-                        
 
 
-                        CrystalReportViewer1.DataBind();
+
+                            CrystalReportViewer1.DataBind();
 
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
