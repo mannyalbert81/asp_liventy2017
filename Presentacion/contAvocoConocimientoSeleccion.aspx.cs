@@ -1849,7 +1849,18 @@ namespace Presentacion
                     _dispone_3 = "S/N";
                 }
             }
-
+            string _dispone_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_4"]))
+            {
+                if (Request.QueryString["dispone_4"] != "")
+                {
+                    _dispone_4 = Request.QueryString["dispone_4"];
+                }
+                else
+                {
+                    _dispone_4 = "S/N";
+                }
+            }
 
 
 
@@ -3790,6 +3801,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_dispone_1", _dispone_1);
                             ObjRep.SetParameterValue("_dispone_2", _dispone_2);
                             ObjRep.SetParameterValue("_dispone_3", _dispone_3);
+                            ObjRep.SetParameterValue("_dispone_4", _dispone_4);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
 
