@@ -147,7 +147,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__cantidad_retener {
+        public CrystalDecisions.Shared.IParameterField Parameter__cantidad_retener_avoco_conocimiento {
             get {
                 return this.DataDefinition.ParameterFields[4];
             }

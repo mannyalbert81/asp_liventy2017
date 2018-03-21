@@ -334,6 +334,26 @@ namespace Presentacion
                 }
 
             }
+
+
+            string _cantidad_retener_avoco_conocimiento = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["cantidad_retener_avoco_conocimiento"]))
+            {
+
+
+                if (Request.QueryString["cantidad_retener_avoco_conocimiento"] != "")
+                {
+                    _cantidad_retener_avoco_conocimiento = Request.QueryString["cantidad_retener_avoco_conocimiento"];
+                }
+                else
+                {
+                    _cantidad_retener_avoco_conocimiento = "S/N";
+                }
+
+            }
+
+
+
             string _cuenta_retener = "";
             if (!String.IsNullOrEmpty(Request.QueryString["cuenta_retener"]))
             {
@@ -4781,8 +4801,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
 
-                            ObjRep.SetParameterValue("_cantidad_retener", _cantidad_retener);
-                            ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
+                            ObjRep.SetParameterValue("_cantidad_retener_avoco_conocimiento", _cantidad_retener_avoco_conocimiento);
                             ObjRep.SetParameterValue("_direccion_juzgado", _direccion_juzgado);
                             ObjRep.SetParameterValue("_referencia", _referencia);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
@@ -4844,8 +4863,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                             ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
-                            ObjRep.SetParameterValue("_cantidad_retener", _cantidad_retener);
-                            ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
+                            ObjRep.SetParameterValue("_cantidad_retener_avoco_conocimiento", _cantidad_retener_avoco_conocimiento);
                             ObjRep.SetParameterValue("_direccion_juzgado", _direccion_juzgado);
                             ObjRep.SetParameterValue("_referencia", _referencia);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
