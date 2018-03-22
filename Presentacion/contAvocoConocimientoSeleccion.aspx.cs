@@ -1881,6 +1881,30 @@ namespace Presentacion
                     _dispone_4 = "S/N";
                 }
             }
+            string _dispone_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_5"]))
+            {
+                if (Request.QueryString["dispone_5"] != "")
+                {
+                    _dispone_5 = Request.QueryString["dispone_5"];
+                }
+                else
+                {
+                    _dispone_5 = "S/N";
+                }
+            }
+            string _dispone_6 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_6"]))
+            {
+                if (Request.QueryString["dispone_6"] != "")
+                {
+                    _dispone_6 = Request.QueryString["dispone_6"];
+                }
+                else
+                {
+                    _dispone_6 = "S/N";
+                }
+            }
             string _resolucion_3 = "";
             if (!String.IsNullOrEmpty(Request.QueryString["resolucion_3"]))
             {
@@ -1905,6 +1929,30 @@ namespace Presentacion
                     _resolucion_4 = "S/N";
                 }
             }
+            string _resolucion_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["resolucion_5"]))
+            {
+                if (Request.QueryString["resolucion_5"] != "")
+                {
+                    _resolucion_5 = Request.QueryString["resolucion_5"];
+                }
+                else
+                {
+                    _resolucion_5 = "S/N";
+                }
+            }
+            string _resolucion_6 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["resolucion_6"]))
+            {
+                if (Request.QueryString["resolucion_6"] != "")
+                {
+                    _resolucion_6 = Request.QueryString["resolucion_6"];
+                }
+                else
+                {
+                    _resolucion_6 = "S/N";
+                }
+            }
             string _disponer_2 = "";
             if (!String.IsNullOrEmpty(Request.QueryString["disponer_2"]))
             {
@@ -1927,6 +1975,30 @@ namespace Presentacion
                 else
                 {
                     _disponer_3 = "S/N";
+                }
+            }
+            string _disponer_4 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["disponer_4"]))
+            {
+                if (Request.QueryString["disponer_4"] != "")
+                {
+                    _disponer_4 = Request.QueryString["disponer_4"];
+                }
+                else
+                {
+                    _disponer_4 = "S/N";
+                }
+            }
+            string _disponer_5 = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["disponer_5"]))
+            {
+                if (Request.QueryString["disponer_5"] != "")
+                {
+                    _disponer_5 = Request.QueryString["disponer_5"];
+                }
+                else
+                {
+                    _disponer_5 = "S/N";
                 }
             }
 
@@ -2983,8 +3055,12 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_resolucion_3", _resolucion_3);
                             ObjRep.SetParameterValue("_resolucion_4", _resolucion_4);
+                            ObjRep.SetParameterValue("_resolucion_5", _resolucion_5);
+                            ObjRep.SetParameterValue("_resolucion_6", _resolucion_6);
                             ObjRep.SetParameterValue("_disponer_2", _disponer_2);
                             ObjRep.SetParameterValue("_disponer_3", _disponer_3);
+                            ObjRep.SetParameterValue("_disponer_4", _disponer_4);
+                            ObjRep.SetParameterValue("_disponer_5", _disponer_5);
 
 
                             CrystalReportViewer1.DataBind();
@@ -3038,8 +3114,12 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
                         ObjRep.SetParameterValue("_resolucion_3", _resolucion_3);
                         ObjRep.SetParameterValue("_resolucion_4", _resolucion_4);
+                        ObjRep.SetParameterValue("_resolucion_5", _resolucion_5);
+                        ObjRep.SetParameterValue("_resolucion_6", _resolucion_6);
                         ObjRep.SetParameterValue("_disponer_2", _disponer_2);
                         ObjRep.SetParameterValue("_disponer_3", _disponer_3);
+                        ObjRep.SetParameterValue("_disponer_4", _disponer_4);
+                        ObjRep.SetParameterValue("_disponer_5", _disponer_5);
 
 
 
@@ -3879,7 +3959,9 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_dispone_2", _dispone_2);
                             ObjRep.SetParameterValue("_dispone_3", _dispone_3);
                             ObjRep.SetParameterValue("_dispone_4", _dispone_4);
-                            ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
+                            ObjRep.SetParameterValue("_dispone_5", _dispone_5);
+                            ObjRep.SetParameterValue("_dispone_6", _dispone_6);
+                        ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
 
                         
