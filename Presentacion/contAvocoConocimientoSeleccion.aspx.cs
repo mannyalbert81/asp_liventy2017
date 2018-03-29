@@ -281,6 +281,21 @@ namespace Presentacion
                 }
 
             }
+            string _tipo_ley = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["tipo_ley"]))
+            {
+
+
+                if (Request.QueryString["tipo_ley"] != "")
+                {
+                    _tipo_ley = Request.QueryString["tipo_ley"];
+                }
+                else
+                {
+                    _tipo_ley = "S/N";
+                }
+
+            }
 
 
             string _tipo_cartera = "";
@@ -2634,7 +2649,7 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
-
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
                             CrystalReportViewer1.DataBind();
 
@@ -2702,7 +2717,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_pago_total", _agregar_disposicion_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_1_pago_total", _agregar_disposicion_1_pago_total);
                             ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
-
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
 
@@ -3224,6 +3239,7 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
                             CrystalReportViewer1.DataBind();
@@ -3288,7 +3304,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion", _agregar_disposicion);
                             ObjRep.SetParameterValue("_agregar_disposicion_1", _agregar_disposicion_1);
                             ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
-                            
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
+
 
 
 
@@ -4255,7 +4272,7 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
-
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
 
@@ -4327,7 +4344,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_2_pago_total", _agregar_disposicion_2_pago_total);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
-
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
 
@@ -4438,6 +4455,7 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
 
@@ -4505,7 +4523,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_agregar_disposicion_2", _agregar_disposicion_2);
                             ObjRep.SetParameterValue("_remplaza_impulsor", _remplaza_impulsor);
                             ObjRep.SetParameterValue("_impulsor_saliente_cambio_liquidador", _impulsor_saliente_cambio_liquidador);
-
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
 

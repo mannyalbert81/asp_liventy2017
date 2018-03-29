@@ -681,6 +681,14 @@ namespace Presentacion.Reporte {
                 return this.DataDefinition.ParameterFields[54];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__tipo_ley {
+            get {
+                return this.DataDefinition.ParameterFields[55];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
