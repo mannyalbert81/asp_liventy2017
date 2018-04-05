@@ -4093,6 +4093,7 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
                             CrystalReportViewer1.DataBind();
@@ -4154,6 +4155,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_nombre_numero_documento_3", _nombre_numero_documento_3);
                             ObjRep.SetParameterValue("_fecha_documento_3", _fecha_documento_3.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_referencia", _referencia);
+                            ObjRep.SetParameterValue("_tipo_ley", _tipo_ley);
 
 
 
@@ -4760,6 +4762,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
+                            ObjRep.SetParameterValue("_disponer_5", _disponer_5);
+                            ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
 
 
 
@@ -4811,7 +4815,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                             ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                              ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
-
+                            ObjRep.SetParameterValue("_disponer_5", _disponer_5);
+                            ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
 
 
 
