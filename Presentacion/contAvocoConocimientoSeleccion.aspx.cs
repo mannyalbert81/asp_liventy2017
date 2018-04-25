@@ -385,6 +385,21 @@ namespace Presentacion
 
             }
 
+            string _nombre_entidad_cuenta = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["nombre_entidad_cuenta"]))
+            {
+
+
+                if (Request.QueryString["nombre_entidad_cuenta"] != "")
+                {
+                    _nombre_entidad_cuenta = Request.QueryString["nombre_entidad_cuenta"];
+                }
+                else
+                {
+                    _nombre_entidad_cuenta = "S/N";
+                }
+
+            }
 
             string _direccion_juzgado = "";
             if (!String.IsNullOrEmpty(Request.QueryString["direccion_juzgado"]))
@@ -836,8 +851,136 @@ namespace Presentacion
 
             }
 
+            string _numero_conadis_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_conadis_discapacidad"]))
+            {
 
-            
+
+                if (Request.QueryString["numero_conadis_discapacidad"] != "")
+                {
+                    _numero_conadis_discapacidad = Request.QueryString["numero_conadis_discapacidad"];
+                }
+                else
+                {
+                    _numero_conadis_discapacidad = "S/N";
+                }
+
+            }
+
+    DateTime _fecha_conadis_discapacidad = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_conadis_discapacidad"]))
+            {
+
+                string fecha_conadis_discapacidad = Request.QueryString["fecha_conadis_discapacidad"];
+
+                if (fecha_conadis_discapacidad != "0")
+                {
+                    _fecha_conadis_discapacidad = Convert.ToDateTime(fecha_conadis_discapacidad);
+
+                }
+
+
+
+            }
+
+            string _porcentaje_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["porcentaje_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["porcentaje_discapacidad"] != "")
+                {
+                    _porcentaje_discapacidad = Request.QueryString["porcentaje_discapacidad"];
+                }
+                else
+                {
+                    _porcentaje_discapacidad = "S/N";
+                }
+
+            }
+
+            string _acta_validacion_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["acta_validacion_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["acta_validacion_discapacidad"] != "")
+                {
+                    _acta_validacion_discapacidad = Request.QueryString["acta_validacion_discapacidad"];
+                }
+                else
+                {
+                    _acta_validacion_discapacidad = "S/N";
+                }
+
+            }
+
+            string _numero_memorando_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["numero_memorando_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["numero_memorando_discapacidad"] != "")
+                {
+                    _numero_memorando_discapacidad = Request.QueryString["numero_memorando_discapacidad"];
+                }
+                else
+                {
+                    _numero_memorando_discapacidad = "S/N";
+                }
+
+            }
+
+            DateTime _fecha_memorando_discapacidad = DateTime.Now;
+
+            if (!String.IsNullOrEmpty(Request.QueryString["fecha_memorando_discapacidad"]))
+            {
+
+                string fecha_memorando_discapacidad = Request.QueryString["fecha_memorando_discapacidad"];
+
+                if (fecha_memorando_discapacidad != "0")
+                {
+                    _fecha_memorando_discapacidad = Convert.ToDateTime(fecha_memorando_discapacidad);
+
+                }
+
+
+
+            }
+
+            string _porcentaje_condonacion_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["porcentaje_condonacion_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["porcentaje_condonacion_discapacidad"] != "")
+                {
+                    _porcentaje_condonacion_discapacidad = Request.QueryString["porcentaje_condonacion_discapacidad"];
+                }
+                else
+                {
+                    _porcentaje_condonacion_discapacidad = "S/N";
+                }
+
+            }
+
+            string _porcentaje_restructuracion_discapacidad = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["porcentaje_restructuracion_discapacidad"]))
+            {
+
+
+                if (Request.QueryString["porcentaje_restructuracion_discapacidad"] != "")
+                {
+                    _porcentaje_restructuracion_discapacidad = Request.QueryString["porcentaje_restructuracion_discapacidad"];
+                }
+                else
+                {
+                    _porcentaje_restructuracion_discapacidad = "S/N";
+                }
+
+            }
+
             string _citado = "";
             if (!String.IsNullOrEmpty(Request.QueryString["citado"]))
             {
@@ -3689,7 +3832,14 @@ namespace Presentacion
 
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
-
+                            ObjRep.SetParameterValue("_numero_conadis_discapacidad", _numero_conadis_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_conadis_discapacidad", _fecha_conadis_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_porcentaje_discapacidad", _porcentaje_discapacidad);
+                            ObjRep.SetParameterValue("_acta_validacion_discapacidad", _acta_validacion_discapacidad);
+                            ObjRep.SetParameterValue("_numero_memorando_discapacidad", _numero_memorando_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_memorando_discapacidad", _fecha_memorando_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_porcentaje_condonacion_discapacidad", _porcentaje_condonacion_discapacidad);
+                            ObjRep.SetParameterValue("_porcentaje_restructuracion_discapacidad", _porcentaje_restructuracion_discapacidad);
 
                             CrystalReportViewer1.DataBind();
 
@@ -3746,9 +3896,17 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_numero_solicitud_discapacidad", _numero_solicitud_discapacidad);
                         ObjRep.SetParameterValue("_fecha_solicitud_discapacidad", _fecha_solicitud_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                         ObjRep.SetParameterValue("_nombre_discapacitado", _nombre_discapacitado);
+                            ObjRep.SetParameterValue("_numero_conadis_discapacidad", _numero_conadis_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_conadis_discapacidad", _fecha_conadis_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_porcentaje_discapacidad", _porcentaje_discapacidad);
+                            ObjRep.SetParameterValue("_acta_validacion_discapacidad", _acta_validacion_discapacidad);
+                            ObjRep.SetParameterValue("_numero_memorando_discapacidad", _numero_memorando_discapacidad);
+                            ObjRep.SetParameterValue("_fecha_memorando_discapacidad", _fecha_memorando_discapacidad.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
+                            ObjRep.SetParameterValue("_porcentaje_condonacion_discapacidad", _porcentaje_condonacion_discapacidad);
+                            ObjRep.SetParameterValue("_porcentaje_restructuracion_discapacidad", _porcentaje_restructuracion_discapacidad);
 
-                        
-                        CrystalReportViewer1.DataBind();
+
+                            CrystalReportViewer1.DataBind();
 
                         ObjRep.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         ObjRep.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
@@ -4760,6 +4918,7 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_referencia_oficios_tipo_lev_8", _referencia_oficios_tipo_lev_8);
                             ObjRep.SetParameterValue("_pie_oficios", _pie_oficios);
                             ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
+                            ObjRep.SetParameterValue("_nombre_entidad_cuenta", _nombre_entidad_cuenta);
                             ObjRep.SetParameterValue("_fecha_oficios", _fecha_oficios.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                             ObjRep.SetParameterValue("_texto_oficios", _texto_oficios);
                             ObjRep.SetParameterValue("_disponer_5", _disponer_5);
@@ -4814,7 +4973,8 @@ namespace Presentacion
                             ObjRep.SetParameterValue("_fecha_avoco_razones", _fecha_avoco_razones.AddMinutes(5).ToString("dddd, dd \"de\" MMMM \"de\" yyyy\", a las\" HH:mm", ci));
                             ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                             ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
-                             ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
+                            ObjRep.SetParameterValue("_cuenta_retener", _cuenta_retener);
+                            ObjRep.SetParameterValue("_nombre_entidad_cuenta", _nombre_entidad_cuenta);
                             ObjRep.SetParameterValue("_disponer_5", _disponer_5);
                             ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
 

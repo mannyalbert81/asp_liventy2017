@@ -512,6 +512,14 @@ namespace Presentacion.Reporte {
                 return this.DataDefinition.ParameterFields[34];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter__nombre_entidad_cuenta {
+            get {
+                return this.DataDefinition.ParameterFields[35];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
