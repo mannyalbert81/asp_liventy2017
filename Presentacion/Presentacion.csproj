@@ -659,6 +659,12 @@
       <DependentUpon>rptPortadaJuiciotabla.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28ContinuacionProceso%29.cs">
+      <DependentUpon>rptProvidenciaAvocoConocimiento%28ContinuacionProceso%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reporte\rptProvidenciaAvocoConocimiento%28Retencion_Cuentas%29.cs">
       <DependentUpon>rptProvidenciaAvocoConocimiento%28Retencion_Cuentas%29.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -947,6 +953,10 @@
     <EmbeddedResource Include="Reporte\rptPortadaJuiciotabla.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPortadaJuiciotabla.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28ContinuacionProceso%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProvidenciaAvocoConocimiento%28ContinuacionProceso%29.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptProvidenciaAvocoConocimiento%28Retencion_Cuentas%29.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
