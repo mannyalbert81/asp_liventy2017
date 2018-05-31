@@ -2193,6 +2193,90 @@ namespace Presentacion
                     _disponer_5 = "S/N";
                 }
             }
+            string _escrito_presentado_por_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["escrito_presentado_por_continuacion_proceso"]))
+            {
+                if (Request.QueryString["escrito_presentado_por_continuacion_proceso"] != "")
+                {
+                    _escrito_presentado_por_continuacion_proceso = Request.QueryString["escrito_presentado_por_continuacion_proceso"];
+                }
+                else
+                {
+                    _escrito_presentado_por_continuacion_proceso = "S/N";
+                }
+            }
+            string _dispone_1_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_1_continuacion_proceso"]))
+            {
+                if (Request.QueryString["dispone_1_continuacion_proceso"] != "")
+                {
+                    _dispone_1_continuacion_proceso = Request.QueryString["dispone_1_continuacion_proceso"];
+                }
+                else
+                {
+                    _dispone_1_continuacion_proceso = "S/N";
+                }
+            }
+            string _dispone_2_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_2_continuacion_proceso"]))
+            {
+                if (Request.QueryString["dispone_2_continuacion_proceso"] != "")
+                {
+                    _dispone_2_continuacion_proceso = Request.QueryString["dispone_2_continuacion_proceso"];
+                }
+                else
+                {
+                    _dispone_2_continuacion_proceso = "S/N";
+                }
+            }
+            string _dispone_3_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_3_continuacion_proceso"]))
+            {
+                if (Request.QueryString["dispone_3_continuacion_proceso"] != "")
+                {
+                    _dispone_3_continuacion_proceso = Request.QueryString["dispone_3_continuacion_proceso"];
+                }
+                else
+                {
+                    _dispone_3_continuacion_proceso = "S/N";
+                }
+            }
+            string _dispone_4_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_4_continuacion_proceso"]))
+            {
+                if (Request.QueryString["dispone_4_continuacion_proceso"] != "")
+                {
+                    _dispone_4_continuacion_proceso = Request.QueryString["dispone_4_continuacion_proceso"];
+                }
+                else
+                {
+                    _dispone_4_continuacion_proceso = "S/N";
+                }
+            }
+            string _dispone_5_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_5_continuacion_proceso"]))
+            {
+                if (Request.QueryString["dispone_5_continuacion_proceso"] != "")
+                {
+                    _dispone_5_continuacion_proceso = Request.QueryString["dispone_5_continuacion_proceso"];
+                }
+                else
+                {
+                    _dispone_5_continuacion_proceso = "S/N";
+                }
+            }
+            string _dispone_6_continuacion_proceso = "";
+            if (!String.IsNullOrEmpty(Request.QueryString["dispone_6_continuacion_proceso"]))
+            {
+                if (Request.QueryString["dispone_6_continuacion_proceso"] != "")
+                {
+                    _dispone_6_continuacion_proceso = Request.QueryString["dispone_6_continuacion_proceso"];
+                }
+                else
+                {
+                    _dispone_6_continuacion_proceso = "S/N";
+                }
+            }
 
 
             string _numero_solicitud = "S/N";
@@ -4230,16 +4314,16 @@ namespace Presentacion
                         ObjRep.SetParameterValue("_razon_avoco", _razon_avoco);
                         ObjRep.SetParameterValue("_fecha_razon", _fecha_razon.ToString("dddd, dd \"de\" MMMM \"de\" yyyy", ci));
                         ObjRep.SetParameterValue("_tipo_acto", _tipo_acto);
-                        ObjRep.SetParameterValue("_escrito_presentado_por", _escrito_presentado_por);
-                        ObjRep.SetParameterValue("_dispone_1", _dispone_1);
-                        ObjRep.SetParameterValue("_dispone_2", _dispone_2);
-                        ObjRep.SetParameterValue("_dispone_3", _dispone_3);
-                        ObjRep.SetParameterValue("_dispone_4", _dispone_4);
-                        ObjRep.SetParameterValue("_dispone_5", _dispone_5);
-                        ObjRep.SetParameterValue("_dispone_6", _dispone_6);
                         ObjRep.SetParameterValue("_remplaza_impulsor_continuacion_proceso", _remplaza_impulsor_continuacion_proceso);
                         ObjRep.SetParameterValue("_impulsor_saliente_continuacion_proceso", _impulsor_saliente_continuacion_proceso);
-
+                        ObjRep.SetParameterValue("_escrito_presentado_por_continuacion_proceso", _escrito_presentado_por_continuacion_proceso);
+                        ObjRep.SetParameterValue("_dispone_1_continuacion_proceso", _dispone_1_continuacion_proceso);
+                        ObjRep.SetParameterValue("_dispone_2_continuacion_proceso", _dispone_2_continuacion_proceso);
+                        ObjRep.SetParameterValue("_dispone_3_continuacion_proceso", _dispone_3_continuacion_proceso);
+                        ObjRep.SetParameterValue("_dispone_4_continuacion_proceso", _dispone_4_continuacion_proceso);
+                        ObjRep.SetParameterValue("_dispone_5_continuacion_proceso", _dispone_5_continuacion_proceso);
+                        ObjRep.SetParameterValue("_dispone_6_continuacion_proceso", _dispone_6_continuacion_proceso);
+                  
 
 
 

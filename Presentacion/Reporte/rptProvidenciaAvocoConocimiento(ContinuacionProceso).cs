@@ -154,7 +154,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__escrito_presentado_por {
+        public CrystalDecisions.Shared.IParameterField Parameter__escrito_presentado_por_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[5];
             }
@@ -162,7 +162,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_1 {
+        public CrystalDecisions.Shared.IParameterField Parameter__dispone_1_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[6];
             }
@@ -170,7 +170,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_2 {
+        public CrystalDecisions.Shared.IParameterField Parameter__dispone_2_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[7];
             }
@@ -194,7 +194,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_3 {
+        public CrystalDecisions.Shared.IParameterField Parameter__dispone_3_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[10];
             }
@@ -202,7 +202,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_4 {
+        public CrystalDecisions.Shared.IParameterField Parameter__dispone_4_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[11];
             }
@@ -210,7 +210,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_5 {
+        public CrystalDecisions.Shared.IParameterField Parameter__dispone_5_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[12];
             }
@@ -218,7 +218,7 @@ namespace Presentacion.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter__dispone_6 {
+        public CrystalDecisions.Shared.IParameterField Parameter__dispone_6_continuacion_proceso {
             get {
                 return this.DataDefinition.ParameterFields[13];
             }
