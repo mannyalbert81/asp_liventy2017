@@ -343,6 +343,38 @@ namespace Presentacion.Datas {
             
             private global::System.Data.DataColumn columnnumero_carton_jucios;
             
+            private global::System.Data.DataColumn columntipo_leyes;
+            
+            private global::System.Data.DataColumn columnmedida_cautelar;
+            
+            private global::System.Data.DataColumn columnembargo_bienes;
+            
+            private global::System.Data.DataColumn columndetalle_embargo_bienes;
+            
+            private global::System.Data.DataColumn columnobservacion;
+            
+            private global::System.Data.DataColumn columnforma_pago;
+            
+            private global::System.Data.DataColumn columnrecuperacion_cobro_honorario_secretario;
+            
+            private global::System.Data.DataColumn columnhonorario_abogado_impulsor;
+            
+            private global::System.Data.DataColumn columnhonorario_depositario_judicial;
+            
+            private global::System.Data.DataColumn columnhonorario_perito_evaluador;
+            
+            private global::System.Data.DataColumn columngastos_movilizacion_alimentacion_perito;
+            
+            private global::System.Data.DataColumn columnintereses_mora;
+            
+            private global::System.Data.DataColumn columngastos_procesales;
+            
+            private global::System.Data.DataColumn columncapital;
+            
+            private global::System.Data.DataColumn columnrecuperacion_via_coactiva;
+            
+            private global::System.Data.DataColumn columnintereses_normales;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -634,6 +666,134 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn tipo_leyesColumn {
+                get {
+                    return this.columntipo_leyes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn medida_cautelarColumn {
+                get {
+                    return this.columnmedida_cautelar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn embargo_bienesColumn {
+                get {
+                    return this.columnembargo_bienes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn detalle_embargo_bienesColumn {
+                get {
+                    return this.columndetalle_embargo_bienes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn observacionColumn {
+                get {
+                    return this.columnobservacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn forma_pagoColumn {
+                get {
+                    return this.columnforma_pago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn recuperacion_cobro_honorario_secretarioColumn {
+                get {
+                    return this.columnrecuperacion_cobro_honorario_secretario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn honorario_abogado_impulsorColumn {
+                get {
+                    return this.columnhonorario_abogado_impulsor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn honorario_depositario_judicialColumn {
+                get {
+                    return this.columnhonorario_depositario_judicial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn honorario_perito_evaluadorColumn {
+                get {
+                    return this.columnhonorario_perito_evaluador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn gastos_movilizacion_alimentacion_peritoColumn {
+                get {
+                    return this.columngastos_movilizacion_alimentacion_perito;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn intereses_moraColumn {
+                get {
+                    return this.columnintereses_mora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn gastos_procesalesColumn {
+                get {
+                    return this.columngastos_procesales;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn capitalColumn {
+                get {
+                    return this.columncapital;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn recuperacion_via_coactivaColumn {
+                get {
+                    return this.columnrecuperacion_via_coactiva;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn intereses_normalesColumn {
+                get {
+                    return this.columnintereses_normales;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -701,7 +861,23 @@ namespace Presentacion.Datas {
                         bool comprarado_fomento, 
                         int id_origen_juicio, 
                         string nombre_origen_juicio, 
-                        string numero_carton_jucios) {
+                        string numero_carton_jucios, 
+                        string tipo_leyes, 
+                        string medida_cautelar, 
+                        string embargo_bienes, 
+                        string detalle_embargo_bienes, 
+                        string observacion, 
+                        string forma_pago, 
+                        string recuperacion_cobro_honorario_secretario, 
+                        string honorario_abogado_impulsor, 
+                        string honorario_depositario_judicial, 
+                        string honorario_perito_evaluador, 
+                        string gastos_movilizacion_alimentacion_perito, 
+                        string intereses_mora, 
+                        string gastos_procesales, 
+                        string capital, 
+                        string recuperacion_via_coactiva, 
+                        string intereses_normales) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         orden,
@@ -735,7 +911,23 @@ namespace Presentacion.Datas {
                         comprarado_fomento,
                         id_origen_juicio,
                         nombre_origen_juicio,
-                        numero_carton_jucios};
+                        numero_carton_jucios,
+                        tipo_leyes,
+                        medida_cautelar,
+                        embargo_bienes,
+                        detalle_embargo_bienes,
+                        observacion,
+                        forma_pago,
+                        recuperacion_cobro_honorario_secretario,
+                        honorario_abogado_impulsor,
+                        honorario_depositario_judicial,
+                        honorario_perito_evaluador,
+                        gastos_movilizacion_alimentacion_perito,
+                        intereses_mora,
+                        gastos_procesales,
+                        capital,
+                        recuperacion_via_coactiva,
+                        intereses_normales};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -790,6 +982,22 @@ namespace Presentacion.Datas {
                 this.columnid_origen_juicio = base.Columns["id_origen_juicio"];
                 this.columnnombre_origen_juicio = base.Columns["nombre_origen_juicio"];
                 this.columnnumero_carton_jucios = base.Columns["numero_carton_jucios"];
+                this.columntipo_leyes = base.Columns["tipo_leyes"];
+                this.columnmedida_cautelar = base.Columns["medida_cautelar"];
+                this.columnembargo_bienes = base.Columns["embargo_bienes"];
+                this.columndetalle_embargo_bienes = base.Columns["detalle_embargo_bienes"];
+                this.columnobservacion = base.Columns["observacion"];
+                this.columnforma_pago = base.Columns["forma_pago"];
+                this.columnrecuperacion_cobro_honorario_secretario = base.Columns["recuperacion_cobro_honorario_secretario"];
+                this.columnhonorario_abogado_impulsor = base.Columns["honorario_abogado_impulsor"];
+                this.columnhonorario_depositario_judicial = base.Columns["honorario_depositario_judicial"];
+                this.columnhonorario_perito_evaluador = base.Columns["honorario_perito_evaluador"];
+                this.columngastos_movilizacion_alimentacion_perito = base.Columns["gastos_movilizacion_alimentacion_perito"];
+                this.columnintereses_mora = base.Columns["intereses_mora"];
+                this.columngastos_procesales = base.Columns["gastos_procesales"];
+                this.columncapital = base.Columns["capital"];
+                this.columnrecuperacion_via_coactiva = base.Columns["recuperacion_via_coactiva"];
+                this.columnintereses_normales = base.Columns["intereses_normales"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -859,6 +1067,38 @@ namespace Presentacion.Datas {
                 base.Columns.Add(this.columnnombre_origen_juicio);
                 this.columnnumero_carton_jucios = new global::System.Data.DataColumn("numero_carton_jucios", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_carton_jucios);
+                this.columntipo_leyes = new global::System.Data.DataColumn("tipo_leyes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_leyes);
+                this.columnmedida_cautelar = new global::System.Data.DataColumn("medida_cautelar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmedida_cautelar);
+                this.columnembargo_bienes = new global::System.Data.DataColumn("embargo_bienes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnembargo_bienes);
+                this.columndetalle_embargo_bienes = new global::System.Data.DataColumn("detalle_embargo_bienes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndetalle_embargo_bienes);
+                this.columnobservacion = new global::System.Data.DataColumn("observacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobservacion);
+                this.columnforma_pago = new global::System.Data.DataColumn("forma_pago", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnforma_pago);
+                this.columnrecuperacion_cobro_honorario_secretario = new global::System.Data.DataColumn("recuperacion_cobro_honorario_secretario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrecuperacion_cobro_honorario_secretario);
+                this.columnhonorario_abogado_impulsor = new global::System.Data.DataColumn("honorario_abogado_impulsor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhonorario_abogado_impulsor);
+                this.columnhonorario_depositario_judicial = new global::System.Data.DataColumn("honorario_depositario_judicial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhonorario_depositario_judicial);
+                this.columnhonorario_perito_evaluador = new global::System.Data.DataColumn("honorario_perito_evaluador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhonorario_perito_evaluador);
+                this.columngastos_movilizacion_alimentacion_perito = new global::System.Data.DataColumn("gastos_movilizacion_alimentacion_perito", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngastos_movilizacion_alimentacion_perito);
+                this.columnintereses_mora = new global::System.Data.DataColumn("intereses_mora", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnintereses_mora);
+                this.columngastos_procesales = new global::System.Data.DataColumn("gastos_procesales", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngastos_procesales);
+                this.columncapital = new global::System.Data.DataColumn("capital", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncapital);
+                this.columnrecuperacion_via_coactiva = new global::System.Data.DataColumn("recuperacion_via_coactiva", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrecuperacion_via_coactiva);
+                this.columnintereses_normales = new global::System.Data.DataColumn("intereses_normales", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnintereses_normales);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1524,6 +1764,269 @@ namespace Presentacion.Datas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string tipo_leyes {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.tipo_leyesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo_leyes\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.tipo_leyesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string medida_cautelar {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.medida_cautelarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'medida_cautelar\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.medida_cautelarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string embargo_bienes {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.embargo_bienesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'embargo_bienes\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.embargo_bienesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string detalle_embargo_bienes {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.detalle_embargo_bienesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'detalle_embargo_bienes\' de la tabla \'DataTable1\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.detalle_embargo_bienesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string observacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.observacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'observacion\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.observacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string forma_pago {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.forma_pagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'forma_pago\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.forma_pagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string recuperacion_cobro_honorario_secretario {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.recuperacion_cobro_honorario_secretarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'recuperacion_cobro_honorario_secretario\' de la tabla \'Dat" +
+                                "aTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.recuperacion_cobro_honorario_secretarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string honorario_abogado_impulsor {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.honorario_abogado_impulsorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'honorario_abogado_impulsor\' de la tabla \'DataTable1\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.honorario_abogado_impulsorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string honorario_depositario_judicial {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.honorario_depositario_judicialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'honorario_depositario_judicial\' de la tabla \'DataTable1\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.honorario_depositario_judicialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string honorario_perito_evaluador {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.honorario_perito_evaluadorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'honorario_perito_evaluador\' de la tabla \'DataTable1\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.honorario_perito_evaluadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string gastos_movilizacion_alimentacion_perito {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.gastos_movilizacion_alimentacion_peritoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'gastos_movilizacion_alimentacion_perito\' de la tabla \'Dat" +
+                                "aTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.gastos_movilizacion_alimentacion_peritoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string intereses_mora {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.intereses_moraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'intereses_mora\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.intereses_moraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string gastos_procesales {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.gastos_procesalesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'gastos_procesales\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.gastos_procesalesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string capital {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.capitalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'capital\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.capitalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string recuperacion_via_coactiva {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.recuperacion_via_coactivaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'recuperacion_via_coactiva\' de la tabla \'DataTable1\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.recuperacion_via_coactivaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string intereses_normales {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.intereses_normalesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'intereses_normales\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.intereses_normalesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsordenNull() {
                 return this.IsNull(this.tableDataTable1.ordenColumn);
             }
@@ -1904,6 +2407,198 @@ namespace Presentacion.Datas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setnumero_carton_juciosNull() {
                 this[this.tableDataTable1.numero_carton_juciosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istipo_leyesNull() {
+                return this.IsNull(this.tableDataTable1.tipo_leyesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settipo_leyesNull() {
+                this[this.tableDataTable1.tipo_leyesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismedida_cautelarNull() {
+                return this.IsNull(this.tableDataTable1.medida_cautelarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmedida_cautelarNull() {
+                this[this.tableDataTable1.medida_cautelarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isembargo_bienesNull() {
+                return this.IsNull(this.tableDataTable1.embargo_bienesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setembargo_bienesNull() {
+                this[this.tableDataTable1.embargo_bienesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdetalle_embargo_bienesNull() {
+                return this.IsNull(this.tableDataTable1.detalle_embargo_bienesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdetalle_embargo_bienesNull() {
+                this[this.tableDataTable1.detalle_embargo_bienesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsobservacionNull() {
+                return this.IsNull(this.tableDataTable1.observacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetobservacionNull() {
+                this[this.tableDataTable1.observacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isforma_pagoNull() {
+                return this.IsNull(this.tableDataTable1.forma_pagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setforma_pagoNull() {
+                this[this.tableDataTable1.forma_pagoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isrecuperacion_cobro_honorario_secretarioNull() {
+                return this.IsNull(this.tableDataTable1.recuperacion_cobro_honorario_secretarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setrecuperacion_cobro_honorario_secretarioNull() {
+                this[this.tableDataTable1.recuperacion_cobro_honorario_secretarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ishonorario_abogado_impulsorNull() {
+                return this.IsNull(this.tableDataTable1.honorario_abogado_impulsorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Sethonorario_abogado_impulsorNull() {
+                this[this.tableDataTable1.honorario_abogado_impulsorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ishonorario_depositario_judicialNull() {
+                return this.IsNull(this.tableDataTable1.honorario_depositario_judicialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Sethonorario_depositario_judicialNull() {
+                this[this.tableDataTable1.honorario_depositario_judicialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ishonorario_perito_evaluadorNull() {
+                return this.IsNull(this.tableDataTable1.honorario_perito_evaluadorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Sethonorario_perito_evaluadorNull() {
+                this[this.tableDataTable1.honorario_perito_evaluadorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isgastos_movilizacion_alimentacion_peritoNull() {
+                return this.IsNull(this.tableDataTable1.gastos_movilizacion_alimentacion_peritoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setgastos_movilizacion_alimentacion_peritoNull() {
+                this[this.tableDataTable1.gastos_movilizacion_alimentacion_peritoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isintereses_moraNull() {
+                return this.IsNull(this.tableDataTable1.intereses_moraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setintereses_moraNull() {
+                this[this.tableDataTable1.intereses_moraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isgastos_procesalesNull() {
+                return this.IsNull(this.tableDataTable1.gastos_procesalesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setgastos_procesalesNull() {
+                this[this.tableDataTable1.gastos_procesalesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscapitalNull() {
+                return this.IsNull(this.tableDataTable1.capitalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcapitalNull() {
+                this[this.tableDataTable1.capitalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isrecuperacion_via_coactivaNull() {
+                return this.IsNull(this.tableDataTable1.recuperacion_via_coactivaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setrecuperacion_via_coactivaNull() {
+                this[this.tableDataTable1.recuperacion_via_coactivaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isintereses_normalesNull() {
+                return this.IsNull(this.tableDataTable1.intereses_normalesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setintereses_normalesNull() {
+                this[this.tableDataTable1.intereses_normalesColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -62,7 +62,8 @@ namespace Presentacion.Clases
         public string documento { get; set; }
         public string tipo_documento { get; set; }
         public string firma { get; set; }
-      
+        public string tipo_reporte { get; set; }
+
 
 
     }
